@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
 
 namespace SALUDGODSV.View
@@ -32,19 +29,19 @@ namespace SALUDGODSV.View
             lblWarningFive.Visible = false;
             lblWarningSix.Visible = false;
             lblGeneralWarning.Visible = false;
+            string src = DateTime.Now.ToString("HH:mm");
+            MessageBox.Show(src, "Hola", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void dgvAppointmentRecords_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            Hide();
             using( var varToShow = new AppointmentView())
             {
                 varToShow.Show();
             }
+            Show();
         }
 
-        private void AppointmentSystem_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Close();
-        }
     }
 }
