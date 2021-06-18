@@ -63,9 +63,29 @@ namespace SALUDGODSV.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ciudadMain {
+            get {
+                object obj = ResourceManager.GetObject("ciudadMain", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ElSalvadorlogo {
             get {
                 object obj = ResourceManager.GetObject("ElSalvadorlogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gobiernoDelSalvador {
+            get {
+                object obj = ResourceManager.GetObject("gobiernoDelSalvador", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

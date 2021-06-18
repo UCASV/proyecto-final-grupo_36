@@ -604,7 +604,6 @@ namespace SALUDGODSV.View
             this.MaximizeBox = false;
             this.Name = "AppointmentSystem";
             this.Text = "Seguimiento de procesos";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AppointmentSystem_FormClosing);
             this.Load += new System.EventHandler(this.AppointmentSystem_Load);
             this.tlpToMainDesign.ResumeLayout(false);
             this.tlpToMainDesign.PerformLayout();
