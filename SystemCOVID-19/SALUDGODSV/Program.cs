@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using SALUDGODSV.View;
 using System.Windows.Forms;
 
 namespace SALUDGODSV
@@ -18,7 +17,7 @@ namespace SALUDGODSV
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AppointmentSystem());
+            Application.Run(new RegistroDeCabina());
         }
     }
 }
