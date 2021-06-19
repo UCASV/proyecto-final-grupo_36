@@ -123,7 +123,7 @@ namespace SALUDGODSV
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(480, 317);
             this.tableLayoutPanel2.TabIndex = 1;
-            this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
+            
             // 
             // txtContraG
             // 
@@ -155,7 +155,7 @@ namespace SALUDGODSV
             this.btnIngresarGestor.TabIndex = 3;
             this.btnIngresarGestor.Text = "Ingresar";
             this.btnIngresarGestor.UseVisualStyleBackColor = false;
-            this.btnIngresarGestor.Click += new System.EventHandler(this.btnIngresarGestor_Click);
+            
             // 
             // label2
             // 
@@ -197,7 +197,7 @@ namespace SALUDGODSV
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "IniciandoGestor";
             this.Text = "IniciandoGestor";
-            this.Load += new System.EventHandler(this.IniciandoGestor_Load);
+            
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
