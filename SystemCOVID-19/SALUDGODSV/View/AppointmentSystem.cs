@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-
+using SALUDGODSV.Functions;
 using System.Windows.Forms;
 
 namespace SALUDGODSV.View
@@ -22,13 +22,8 @@ namespace SALUDGODSV.View
             BackColor = myColor;
             tlpToMainDesign.BackColor = myColor2;
             btnNewAppointment.BackColor = myColor2;
-            lblWarningOne.Visible = false;
-            lblWarningTwo.Visible = false;
-            lblWarningThree.Visible = false;
-            lblWarningFour.Visible = false;
-            lblWarningFive.Visible = false;
-            lblWarningSix.Visible = false;
             lblGeneralWarning.Visible = false;
+            lblGeneralWarningTwo.Visible = false;
             string src = DateTime.Now.ToString("HH:mm");
             MessageBox.Show(src, "Hola", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
@@ -43,5 +38,31 @@ namespace SALUDGODSV.View
             Show();
         }
 
+        private void btnNewAppointment_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                StringVerifications.VerifyString(txtInsertEmail.Text);
+                StringVerifications.VerifyString(txtInsertLastNames.Text);
+                StringVerifications.VerifyString(txtInsertName.Text);
+                StringVerifications.VerifyString(txtMedicalRecord.Text);
+                try
+                {
+                    var auxiliarDuiNumber = Convert.ToInt32(txtInsertDUI.Text);
+                    var auxiliarPhoneNumber = Convert.ToInt32(txtInsertPhoneNumer.Text);
+                    var auxiliarGobNumber = Convert.ToInt32(txtInsertGobNumber.Text);
+                    lblGeneralWarningTwo.Visible = false;
+                }
+                catch
+                {
+                    lblGeneralWarningTwo.Visible = true;
+                }
+                lblGeneralWarning.Visible = false;
+            }
+            catch
+            {
+                lblGeneralWarning.Visible = true;
+            }
+        }
     }
 }

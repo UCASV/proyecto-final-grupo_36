@@ -37,21 +37,18 @@ namespace SALUDGODSV.View
             this.lblFirstText = new System.Windows.Forms.Label();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.tpNewAppointment = new System.Windows.Forms.TabPage();
+            this.lblGeneralWarningTwo = new System.Windows.Forms.Label();
             this.lblGeneralWarning = new System.Windows.Forms.Label();
             this.btnNewAppointment = new System.Windows.Forms.Button();
             this.grpMedicalInformation = new System.Windows.Forms.GroupBox();
             this.rtxMedicalRecord = new System.Windows.Forms.RichTextBox();
             this.txtMedicalRecord = new System.Windows.Forms.Label();
             this.grpSalvadoranInformation = new System.Windows.Forms.GroupBox();
-            this.lblWarningSix = new System.Windows.Forms.Label();
-            this.lblWarningFive = new System.Windows.Forms.Label();
             this.txtInsertGobNumber = new System.Windows.Forms.TextBox();
             this.lblGobNumber = new System.Windows.Forms.Label();
             this.txtInsertDUI = new System.Windows.Forms.TextBox();
             this.lblDUI = new System.Windows.Forms.Label();
             this.grpContactThem = new System.Windows.Forms.GroupBox();
-            this.lblWarningFour = new System.Windows.Forms.Label();
-            this.lblWarningThree = new System.Windows.Forms.Label();
             this.txtInsertEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.txtInsertPhoneNumer = new System.Windows.Forms.TextBox();
@@ -63,8 +60,6 @@ namespace SALUDGODSV.View
             this.lblDirection = new System.Windows.Forms.Label();
             this.dtpBirtrhday = new System.Windows.Forms.DateTimePicker();
             this.lblBirthday = new System.Windows.Forms.Label();
-            this.lblWarningTwo = new System.Windows.Forms.Label();
-            this.lblWarningOne = new System.Windows.Forms.Label();
             this.txtInsertLastNames = new System.Windows.Forms.TextBox();
             this.lblLastNames = new System.Windows.Forms.Label();
             this.txtInsertName = new System.Windows.Forms.TextBox();
@@ -181,6 +176,7 @@ namespace SALUDGODSV.View
             // tpNewAppointment
             // 
             this.tpNewAppointment.BackColor = System.Drawing.Color.White;
+            this.tpNewAppointment.Controls.Add(this.lblGeneralWarningTwo);
             this.tpNewAppointment.Controls.Add(this.lblGeneralWarning);
             this.tpNewAppointment.Controls.Add(this.btnNewAppointment);
             this.tpNewAppointment.Controls.Add(this.grpMedicalInformation);
@@ -194,13 +190,26 @@ namespace SALUDGODSV.View
             this.tpNewAppointment.TabIndex = 1;
             this.tpNewAppointment.Text = "Generar nueva cita";
             // 
+            // lblGeneralWarningTwo
+            // 
+            this.lblGeneralWarningTwo.BackColor = System.Drawing.Color.White;
+            this.lblGeneralWarningTwo.Font = new System.Drawing.Font("Bembo Std", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblGeneralWarningTwo.ForeColor = System.Drawing.Color.Red;
+            this.lblGeneralWarningTwo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblGeneralWarningTwo.Location = new System.Drawing.Point(623, 259);
+            this.lblGeneralWarningTwo.Name = "lblGeneralWarningTwo";
+            this.lblGeneralWarningTwo.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblGeneralWarningTwo.Size = new System.Drawing.Size(267, 47);
+            this.lblGeneralWarningTwo.TabIndex = 16;
+            this.lblGeneralWarningTwo.Text = "Los campos que deben poseer numeros, no pueden poseer letras o simbolos.";
+            // 
             // lblGeneralWarning
             // 
             this.lblGeneralWarning.BackColor = System.Drawing.Color.White;
-            this.lblGeneralWarning.Font = new System.Drawing.Font("Bembo Std", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblGeneralWarning.Font = new System.Drawing.Font("Bembo Std", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblGeneralWarning.ForeColor = System.Drawing.Color.Red;
             this.lblGeneralWarning.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblGeneralWarning.Location = new System.Drawing.Point(626, 306);
+            this.lblGeneralWarning.Location = new System.Drawing.Point(626, 301);
             this.lblGeneralWarning.Name = "lblGeneralWarning";
             this.lblGeneralWarning.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblGeneralWarning.Size = new System.Drawing.Size(267, 47);
@@ -214,12 +223,13 @@ namespace SALUDGODSV.View
             this.btnNewAppointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewAppointment.Font = new System.Drawing.Font("Bembo Std", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnNewAppointment.ForeColor = System.Drawing.Color.White;
-            this.btnNewAppointment.Location = new System.Drawing.Point(620, 265);
+            this.btnNewAppointment.Location = new System.Drawing.Point(626, 219);
             this.btnNewAppointment.Name = "btnNewAppointment";
             this.btnNewAppointment.Size = new System.Drawing.Size(143, 36);
             this.btnNewAppointment.TabIndex = 14;
             this.btnNewAppointment.Text = "Registrar cita";
             this.btnNewAppointment.UseVisualStyleBackColor = true;
+            this.btnNewAppointment.Click += new System.EventHandler(this.btnNewAppointment_Click);
             // 
             // grpMedicalInformation
             // 
@@ -227,7 +237,7 @@ namespace SALUDGODSV.View
             this.grpMedicalInformation.Controls.Add(this.txtMedicalRecord);
             this.grpMedicalInformation.Location = new System.Drawing.Point(620, 6);
             this.grpMedicalInformation.Name = "grpMedicalInformation";
-            this.grpMedicalInformation.Size = new System.Drawing.Size(270, 249);
+            this.grpMedicalInformation.Size = new System.Drawing.Size(270, 207);
             this.grpMedicalInformation.TabIndex = 13;
             this.grpMedicalInformation.TabStop = false;
             this.grpMedicalInformation.Text = "Datos medicos";
@@ -238,7 +248,7 @@ namespace SALUDGODSV.View
             this.rtxMedicalRecord.Font = new System.Drawing.Font("Bembo Std", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rtxMedicalRecord.Location = new System.Drawing.Point(6, 56);
             this.rtxMedicalRecord.Name = "rtxMedicalRecord";
-            this.rtxMedicalRecord.Size = new System.Drawing.Size(258, 187);
+            this.rtxMedicalRecord.Size = new System.Drawing.Size(258, 145);
             this.rtxMedicalRecord.TabIndex = 10;
             this.rtxMedicalRecord.Text = "";
             // 
@@ -254,8 +264,6 @@ namespace SALUDGODSV.View
             // 
             // grpSalvadoranInformation
             // 
-            this.grpSalvadoranInformation.Controls.Add(this.lblWarningSix);
-            this.grpSalvadoranInformation.Controls.Add(this.lblWarningFive);
             this.grpSalvadoranInformation.Controls.Add(this.txtInsertGobNumber);
             this.grpSalvadoranInformation.Controls.Add(this.lblGobNumber);
             this.grpSalvadoranInformation.Controls.Add(this.txtInsertDUI);
@@ -266,36 +274,6 @@ namespace SALUDGODSV.View
             this.grpSalvadoranInformation.TabIndex = 12;
             this.grpSalvadoranInformation.TabStop = false;
             this.grpSalvadoranInformation.Text = "Datos legales";
-            // 
-            // lblWarningSix
-            // 
-            this.lblWarningSix.AutoSize = true;
-            this.lblWarningSix.BackColor = System.Drawing.Color.White;
-            this.lblWarningSix.Font = new System.Drawing.Font("Bembo Std", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblWarningSix.ForeColor = System.Drawing.Color.Red;
-            this.lblWarningSix.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblWarningSix.Location = new System.Drawing.Point(174, 138);
-            this.lblWarningSix.Name = "lblWarningSix";
-            this.lblWarningSix.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblWarningSix.Size = new System.Drawing.Size(89, 12);
-            this.lblWarningSix.TabIndex = 14;
-            this.lblWarningSix.Text = "!Número invalido¡";
-            this.lblWarningSix.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblWarningFive
-            // 
-            this.lblWarningFive.AutoSize = true;
-            this.lblWarningFive.BackColor = System.Drawing.Color.White;
-            this.lblWarningFive.Font = new System.Drawing.Font("Bembo Std", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblWarningFive.ForeColor = System.Drawing.Color.Red;
-            this.lblWarningFive.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblWarningFive.Location = new System.Drawing.Point(192, 67);
-            this.lblWarningFive.Name = "lblWarningFive";
-            this.lblWarningFive.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblWarningFive.Size = new System.Drawing.Size(71, 12);
-            this.lblWarningFive.TabIndex = 13;
-            this.lblWarningFive.Text = "!DUI invalido¡";
-            this.lblWarningFive.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtInsertGobNumber
             // 
@@ -339,8 +317,6 @@ namespace SALUDGODSV.View
             // 
             // grpContactThem
             // 
-            this.grpContactThem.Controls.Add(this.lblWarningFour);
-            this.grpContactThem.Controls.Add(this.lblWarningThree);
             this.grpContactThem.Controls.Add(this.txtInsertEmail);
             this.grpContactThem.Controls.Add(this.lblEmail);
             this.grpContactThem.Controls.Add(this.txtInsertPhoneNumer);
@@ -352,36 +328,6 @@ namespace SALUDGODSV.View
             this.grpContactThem.TabIndex = 1;
             this.grpContactThem.TabStop = false;
             this.grpContactThem.Text = "Información de contacto";
-            // 
-            // lblWarningFour
-            // 
-            this.lblWarningFour.AutoSize = true;
-            this.lblWarningFour.BackColor = System.Drawing.Color.White;
-            this.lblWarningFour.Font = new System.Drawing.Font("Bembo Std", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblWarningFour.ForeColor = System.Drawing.Color.Red;
-            this.lblWarningFour.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblWarningFour.Location = new System.Drawing.Point(180, 131);
-            this.lblWarningFour.Name = "lblWarningFour";
-            this.lblWarningFour.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblWarningFour.Size = new System.Drawing.Size(83, 12);
-            this.lblWarningFour.TabIndex = 12;
-            this.lblWarningFour.Text = "!Correo invalido¡";
-            this.lblWarningFour.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblWarningThree
-            // 
-            this.lblWarningThree.AutoSize = true;
-            this.lblWarningThree.BackColor = System.Drawing.Color.White;
-            this.lblWarningThree.Font = new System.Drawing.Font("Bembo Std", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblWarningThree.ForeColor = System.Drawing.Color.Red;
-            this.lblWarningThree.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblWarningThree.Location = new System.Drawing.Point(174, 65);
-            this.lblWarningThree.Name = "lblWarningThree";
-            this.lblWarningThree.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblWarningThree.Size = new System.Drawing.Size(89, 12);
-            this.lblWarningThree.TabIndex = 10;
-            this.lblWarningThree.Text = "!Número invalido¡";
-            this.lblWarningThree.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtInsertEmail
             // 
@@ -441,8 +387,6 @@ namespace SALUDGODSV.View
             this.grpInformation.Controls.Add(this.lblDirection);
             this.grpInformation.Controls.Add(this.dtpBirtrhday);
             this.grpInformation.Controls.Add(this.lblBirthday);
-            this.grpInformation.Controls.Add(this.lblWarningTwo);
-            this.grpInformation.Controls.Add(this.lblWarningOne);
             this.grpInformation.Controls.Add(this.txtInsertLastNames);
             this.grpInformation.Controls.Add(this.lblLastNames);
             this.grpInformation.Controls.Add(this.txtInsertName);
@@ -501,36 +445,6 @@ namespace SALUDGODSV.View
             this.lblBirthday.Size = new System.Drawing.Size(137, 17);
             this.lblBirthday.TabIndex = 6;
             this.lblBirthday.Text = "Fecha de nacimiento:";
-            // 
-            // lblWarningTwo
-            // 
-            this.lblWarningTwo.AutoSize = true;
-            this.lblWarningTwo.BackColor = System.Drawing.Color.White;
-            this.lblWarningTwo.Font = new System.Drawing.Font("Bembo Std", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblWarningTwo.ForeColor = System.Drawing.Color.Red;
-            this.lblWarningTwo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblWarningTwo.Location = new System.Drawing.Point(147, 131);
-            this.lblWarningTwo.Name = "lblWarningTwo";
-            this.lblWarningTwo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblWarningTwo.Size = new System.Drawing.Size(95, 12);
-            this.lblWarningTwo.TabIndex = 5;
-            this.lblWarningTwo.Text = "!Apellidos invalidos¡";
-            this.lblWarningTwo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblWarningOne
-            // 
-            this.lblWarningOne.AutoSize = true;
-            this.lblWarningOne.BackColor = System.Drawing.Color.White;
-            this.lblWarningOne.Font = new System.Drawing.Font("Bembo Std", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblWarningOne.ForeColor = System.Drawing.Color.Red;
-            this.lblWarningOne.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblWarningOne.Location = new System.Drawing.Point(146, 65);
-            this.lblWarningOne.Name = "lblWarningOne";
-            this.lblWarningOne.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblWarningOne.Size = new System.Drawing.Size(95, 12);
-            this.lblWarningOne.TabIndex = 4;
-            this.lblWarningOne.Text = "!Nombres invalidos¡";
-            this.lblWarningOne.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtInsertLastNames
             // 
@@ -642,8 +556,6 @@ namespace SALUDGODSV.View
         private System.Windows.Forms.TextBox txtInsertName;
         private System.Windows.Forms.Label lblLastNames;
         private System.Windows.Forms.TextBox txtInsertLastNames;
-        private System.Windows.Forms.Label lblWarningOne;
-        private System.Windows.Forms.Label lblWarningTwo;
         private System.Windows.Forms.Label lblBirthday;
         private System.Windows.Forms.DateTimePicker dtpBirtrhday;
         private System.Windows.Forms.Label lblDirection;
@@ -664,12 +576,9 @@ namespace SALUDGODSV.View
         private System.Windows.Forms.Label txtMedicalRecord;
         private System.Windows.Forms.RichTextBox rtxMedicalRecord;
         private System.Windows.Forms.Button btnNewAppointment;
-        private System.Windows.Forms.Label lblWarningThree;
-        private System.Windows.Forms.Label lblWarningFour;
-        private System.Windows.Forms.Label lblWarningFive;
-        private System.Windows.Forms.Label lblWarningSix;
         private System.Windows.Forms.Label lblGeneralWarning;
         private System.Windows.Forms.TabPage tpViewAppointments;
         private System.Windows.Forms.DataGridView dgvAppointmentRecords;
+        private System.Windows.Forms.Label lblGeneralWarningTwo;
     }
 }
