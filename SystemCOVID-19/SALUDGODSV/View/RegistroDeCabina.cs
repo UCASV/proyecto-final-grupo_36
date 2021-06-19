@@ -31,5 +31,10 @@ namespace SALUDGODSV
         {
 
         }
+
+        private void RegistroDeCabina_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

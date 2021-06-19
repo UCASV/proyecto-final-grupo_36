@@ -34,11 +34,11 @@ namespace SALUDGODSV
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtContraGReg = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnRegistrarGestor = new System.Windows.Forms.Button();
             this.txtUsuarioGReg = new System.Windows.Forms.TextBox();
-            this.txtContraGReg = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -106,6 +106,15 @@ namespace SALUDGODSV
             this.tableLayoutPanel2.Size = new System.Drawing.Size(480, 317);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
+            // txtContraGReg
+            // 
+            this.txtContraGReg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtContraGReg.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtContraGReg.Location = new System.Drawing.Point(171, 160);
+            this.txtContraGReg.Name = "txtContraGReg";
+            this.txtContraGReg.Size = new System.Drawing.Size(183, 27);
+            this.txtContraGReg.TabIndex = 4;
+            // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -156,19 +165,11 @@ namespace SALUDGODSV
             this.txtUsuarioGReg.Size = new System.Drawing.Size(183, 27);
             this.txtUsuarioGReg.TabIndex = 3;
             // 
-            // txtContraGReg
-            // 
-            this.txtContraGReg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtContraGReg.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.txtContraGReg.Location = new System.Drawing.Point(171, 160);
-            this.txtContraGReg.Name = "txtContraGReg";
-            this.txtContraGReg.Size = new System.Drawing.Size(183, 27);
-            this.txtContraGReg.TabIndex = 4;
-            // 
             // RegistroGestor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(31)))), ((int)(((byte)(122)))));
             this.ClientSize = new System.Drawing.Size(533, 450);
             this.Controls.Add(this.tableLayoutPanel2);

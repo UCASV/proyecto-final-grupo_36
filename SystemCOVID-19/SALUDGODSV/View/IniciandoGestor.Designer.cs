@@ -33,13 +33,13 @@ namespace SALUDGODSV
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtContraG = new System.Windows.Forms.TextBox();
+            this.txtUsuarioG = new System.Windows.Forms.TextBox();
+            this.btnIngresarGestor = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnIngresarGestor = new System.Windows.Forms.Button();
-            this.txtUsuarioG = new System.Windows.Forms.TextBox();
-            this.txtContraG = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -91,6 +91,19 @@ namespace SALUDGODSV
             this.label1.Text = "Iniciando Sesión";
             this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(31)))), ((int)(((byte)(122)))));
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(418, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(62, 23);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Gestor";
+            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.BackColor = System.Drawing.Color.White;
@@ -110,6 +123,39 @@ namespace SALUDGODSV
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(480, 317);
             this.tableLayoutPanel2.TabIndex = 1;
+            this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
+            // 
+            // txtContraG
+            // 
+            this.txtContraG.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtContraG.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtContraG.Location = new System.Drawing.Point(171, 160);
+            this.txtContraG.Name = "txtContraG";
+            this.txtContraG.Size = new System.Drawing.Size(183, 27);
+            this.txtContraG.TabIndex = 5;
+            // 
+            // txtUsuarioG
+            // 
+            this.txtUsuarioG.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtUsuarioG.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtUsuarioG.Location = new System.Drawing.Point(171, 65);
+            this.txtUsuarioG.Name = "txtUsuarioG";
+            this.txtUsuarioG.Size = new System.Drawing.Size(183, 27);
+            this.txtUsuarioG.TabIndex = 4;
+            // 
+            // btnIngresarGestor
+            // 
+            this.btnIngresarGestor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnIngresarGestor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(77)))), ((int)(((byte)(188)))));
+            this.btnIngresarGestor.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnIngresarGestor.ForeColor = System.Drawing.Color.White;
+            this.btnIngresarGestor.Location = new System.Drawing.Point(53, 276);
+            this.btnIngresarGestor.Name = "btnIngresarGestor";
+            this.btnIngresarGestor.Size = new System.Drawing.Size(112, 38);
+            this.btnIngresarGestor.TabIndex = 3;
+            this.btnIngresarGestor.Text = "Ingresar";
+            this.btnIngresarGestor.UseVisualStyleBackColor = false;
+            this.btnIngresarGestor.Click += new System.EventHandler(this.btnIngresarGestor_Click);
             // 
             // label2
             // 
@@ -139,54 +185,11 @@ namespace SALUDGODSV
             this.label3.Text = "Contraseña:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
-            // btnIngresarGestor
-            // 
-            this.btnIngresarGestor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnIngresarGestor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(77)))), ((int)(((byte)(188)))));
-            this.btnIngresarGestor.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnIngresarGestor.ForeColor = System.Drawing.Color.White;
-            this.btnIngresarGestor.Location = new System.Drawing.Point(53, 276);
-            this.btnIngresarGestor.Name = "btnIngresarGestor";
-            this.btnIngresarGestor.Size = new System.Drawing.Size(112, 38);
-            this.btnIngresarGestor.TabIndex = 3;
-            this.btnIngresarGestor.Text = "Ingresar";
-            this.btnIngresarGestor.UseVisualStyleBackColor = false;
-            // 
-            // txtUsuarioG
-            // 
-            this.txtUsuarioG.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtUsuarioG.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.txtUsuarioG.Location = new System.Drawing.Point(171, 65);
-            this.txtUsuarioG.Name = "txtUsuarioG";
-            this.txtUsuarioG.Size = new System.Drawing.Size(183, 27);
-            this.txtUsuarioG.TabIndex = 4;
-            // 
-            // txtContraG
-            // 
-            this.txtContraG.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtContraG.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.txtContraG.Location = new System.Drawing.Point(171, 160);
-            this.txtContraG.Name = "txtContraG";
-            this.txtContraG.Size = new System.Drawing.Size(183, 27);
-            this.txtContraG.TabIndex = 5;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(31)))), ((int)(((byte)(122)))));
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(418, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 23);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Gestor";
-            // 
             // IniciandoGestor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(31)))), ((int)(((byte)(122)))));
             this.ClientSize = new System.Drawing.Size(533, 450);
             this.Controls.Add(this.tableLayoutPanel2);
@@ -194,6 +197,7 @@ namespace SALUDGODSV
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "IniciandoGestor";
             this.Text = "IniciandoGestor";
+            this.Load += new System.EventHandler(this.IniciandoGestor_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
