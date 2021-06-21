@@ -77,10 +77,17 @@ namespace SALUDGODSV.View
                     {
                         var auxiliarDateTime = Convert.ToDateTime(dtpBirtrhday);
                         var auxiliarAge = DateTime.Now.Year - auxiliarDateTime.Year;
+                       
                         if (DateTime.Now.DayOfYear < auxiliarDateTime.DayOfYear)
                             auxiliarAge -= 1;
 
-                        var db = new SyscovidContext();
+                        var startDate = DateTime.Today;
+                        var finalDdate = new DateTime(2022, 1, 1);
+                        var randomDate = new Random();
+                        var randomRange = (startDate - finalDdate).Days;
+                        var AppointmentDate = startDate.AddDays(randomDate.Next(randomRange));
+
+                        var db = new covidcontext();
                         var auxCitizen = new Citizen
                         {
                             /*Dui = auxiliarDuiNumber,
@@ -94,6 +101,7 @@ namespace SALUDGODSV.View
                             AssociateNumber = Convert.ToInt32(txtInsertGobNumber.Text),
                             */
                         };
+
 
                     }
                     catch
@@ -480,19 +488,6 @@ namespace SALUDGODSV.View
                     });
                     break;
             }
-        }
-
-        private void txtInsertName_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                StringVerifications.VerifyString(txtInsertName.Text);
-            }
-            catch
-            {
-                lblGeneralWarning.Visible = true;
-            }
-
         }
     }
 }
