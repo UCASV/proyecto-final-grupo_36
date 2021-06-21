@@ -90,16 +90,15 @@ namespace SALUDGODSV.View
                         var db = new covidcontext();
                         var auxCitizen = new Citizen
                         {
-                            /*Dui = auxiliarDuiNumber,
+                            Dui = auxiliarDuiNumber,
                             Name = txtInsertName.Text + " " + txtInsertLastNames.Text,
                             Mail = txtInsertEmail.Text,
                             City = cmbCity.SelectedItem.ToString(),
-                            Street = "N/A",
                             Departament = cmbDepartaments.SelectedItem.ToString(),
                             Phone = Convert.ToInt32(txtInsertPhoneNumer.Text),
                             Age = auxiliarAge,
                             AssociateNumber = Convert.ToInt32(txtInsertGobNumber.Text),
-                            */
+                            
                         };
 
 
