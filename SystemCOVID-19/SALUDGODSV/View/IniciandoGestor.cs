@@ -7,10 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-<<<<<<< HEAD
-=======
 using SALUDGODSV.Functions;
->>>>>>> 10c29ffa429b3b506166fe2916b38a60eaf9e14e
 
 namespace SALUDGODSV
 {

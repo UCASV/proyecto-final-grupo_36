@@ -113,7 +113,6 @@ namespace SALUDGODSV.View
             }
         }
 
-<<<<<<< HEAD
         private void AppointmentSystem_StartVars()
         {
             lblGeneralWarning.Visible = false;
@@ -495,8 +494,5 @@ namespace SALUDGODSV.View
             }
 
         }
-=======
-
->>>>>>> 10c29ffa429b3b506166fe2916b38a60eaf9e14e
     }
 }
