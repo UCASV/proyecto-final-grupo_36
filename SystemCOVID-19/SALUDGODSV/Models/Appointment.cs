@@ -9,7 +9,8 @@ namespace SALUDGODSV.Models
     {
         public Appointment()
         {
-            Managers = new HashSet<Manager>();
+            Citizens = new HashSet<Citizen>();
+            Employees = new HashSet<Employee>();
         }
 
         public int Code { get; set; }
@@ -20,6 +21,7 @@ namespace SALUDGODSV.Models
         public string Departament { get; set; }
         public string Dose { get; set; }
 
-        public virtual ICollection<Manager> Managers { get; set; }
+        public virtual ICollection<Citizen> Citizens { get; set; }
+        public virtual ICollection<Employee> Employees { get; set; }
     }
 }

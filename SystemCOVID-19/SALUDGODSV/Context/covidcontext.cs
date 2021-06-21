@@ -1,19 +1,19 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
 using SALUDGODSV.Models;
+using Microsoft.EntityFrameworkCore.Metadata;
 
 #nullable disable
 
 namespace SALUDGODSV.Context
 {
-    public partial class SyscovidContext : DbContext
+    public partial class covidcontext : DbContext
     {
-        public SyscovidContext()
+        public covidcontext()
         {
         }
 
-        public SyscovidContext(DbContextOptions<SyscovidContext> options)
+        public covidcontext(DbContextOptions<covidcontext> options)
             : base(options)
         {
         }
@@ -102,16 +102,12 @@ namespace SALUDGODSV.Context
 
                 entity.ToTable("cabin");
 
-                entity.HasIndex(e => e.CitizenDui, "FK_cabin_citizen");
-
                 entity.Property(e => e.Code).HasColumnName("code");
 
                 entity.Property(e => e.Caretaker)
                     .IsRequired()
                     .HasMaxLength(35)
                     .HasColumnName("caretaker");
-
-                entity.Property(e => e.CitizenDui).HasColumnName("citizen_DUI");
 
                 entity.Property(e => e.City)
                     .IsRequired()
@@ -127,17 +123,6 @@ namespace SALUDGODSV.Context
                 entity.Property(e => e.EmployeeCode).HasColumnName("employee_code");
 
                 entity.Property(e => e.Phone).HasColumnName("phone");
-
-                entity.Property(e => e.Street)
-                    .IsRequired()
-                    .HasMaxLength(30)
-                    .HasColumnName("street");
-
-                entity.HasOne(d => d.CitizenDuiNavigation)
-                    .WithMany(p => p.Cabins)
-                    .HasForeignKey(d => d.CitizenDui)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_cabin_citizen");
             });
 
             modelBuilder.Entity<Citizen>(entity =>
@@ -147,11 +132,15 @@ namespace SALUDGODSV.Context
 
                 entity.ToTable("citizen");
 
+                entity.HasIndex(e => e.AppointmentId, "FK_citizen_appointment");
+
                 entity.HasIndex(e => e.GobInstitutionId, "FK_citizen_gob");
 
                 entity.Property(e => e.Dui).HasColumnName("DUI");
 
                 entity.Property(e => e.Age).HasColumnName("age");
+
+                entity.Property(e => e.AppointmentId).HasColumnName("Appointment_id");
 
                 entity.Property(e => e.AssociateNumber).HasColumnName("associate_number");
 
@@ -180,10 +169,10 @@ namespace SALUDGODSV.Context
 
                 entity.Property(e => e.Phone).HasColumnName("phone");
 
-                entity.Property(e => e.Street)
-                    .IsRequired()
-                    .HasMaxLength(30)
-                    .HasColumnName("street");
+                entity.HasOne(d => d.Appointment)
+                    .WithMany(p => p.Citizens)
+                    .HasForeignKey(d => d.AppointmentId)
+                    .HasConstraintName("FK_citizen_appointment");
 
                 entity.HasOne(d => d.GobInstitution)
                     .WithMany(p => p.Citizens)
@@ -254,12 +243,20 @@ namespace SALUDGODSV.Context
 
                 entity.ToTable("employee");
 
+                entity.HasIndex(e => e.CodeAccesslog, "FK_employee_accesslog");
+
+                entity.HasIndex(e => e.CodeAppointment, "FK_employee_appointment");
+
                 entity.Property(e => e.Code).HasColumnName("code");
 
                 entity.Property(e => e.City)
                     .IsRequired()
                     .HasMaxLength(25)
                     .HasColumnName("city");
+
+                entity.Property(e => e.CodeAccesslog).HasColumnName("code_accesslog");
+
+                entity.Property(e => e.CodeAppointment).HasColumnName("code_appointment");
 
                 entity.Property(e => e.Departament)
                     .IsRequired()
@@ -277,10 +274,17 @@ namespace SALUDGODSV.Context
                     .HasMaxLength(30)
                     .HasColumnName("occupation");
 
-                entity.Property(e => e.Street)
-                    .IsRequired()
-                    .HasMaxLength(30)
-                    .HasColumnName("street");
+                entity.HasOne(d => d.CodeAccesslogNavigation)
+                    .WithMany(p => p.Employees)
+                    .HasForeignKey(d => d.CodeAccesslog)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_employee_accesslog");
+
+                entity.HasOne(d => d.CodeAppointmentNavigation)
+                    .WithMany(p => p.Employees)
+                    .HasForeignKey(d => d.CodeAppointment)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_employee_appointment");
             });
 
             modelBuilder.Entity<GobInstitution>(entity =>
@@ -305,19 +309,11 @@ namespace SALUDGODSV.Context
 
                 entity.ToTable("manager");
 
-                entity.HasIndex(e => e.CodeAccesslog, "FK_manager_accesslog");
-
-                entity.HasIndex(e => e.CodeAppointment, "FK_manager_appointment");
-
                 entity.HasIndex(e => e.CodeCabin, "FK_manager_cabin");
 
                 entity.HasIndex(e => e.CodeEmployee, "FK_manager_employee");
 
                 entity.Property(e => e.Code).HasColumnName("code");
-
-                entity.Property(e => e.CodeAccesslog).HasColumnName("code_accesslog");
-
-                entity.Property(e => e.CodeAppointment).HasColumnName("code_appointment");
 
                 entity.Property(e => e.CodeCabin).HasColumnName("code_cabin");
 
@@ -332,18 +328,6 @@ namespace SALUDGODSV.Context
                     .IsRequired()
                     .HasMaxLength(30)
                     .HasColumnName("user");
-
-                entity.HasOne(d => d.CodeAccesslogNavigation)
-                    .WithMany(p => p.Managers)
-                    .HasForeignKey(d => d.CodeAccesslog)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_manager_accesslog");
-
-                entity.HasOne(d => d.CodeAppointmentNavigation)
-                    .WithMany(p => p.Managers)
-                    .HasForeignKey(d => d.CodeAppointment)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_manager_appointment");
 
                 entity.HasOne(d => d.CodeCabinNavigation)
                     .WithMany(p => p.Managers)

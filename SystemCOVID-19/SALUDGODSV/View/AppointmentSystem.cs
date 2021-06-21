@@ -87,7 +87,7 @@ namespace SALUDGODSV.View
                         var randomRange = (startDate - finalDdate).Days;
                         var AppointmentDate = startDate.AddDays(randomDate.Next(randomRange));
 
-                       var db = new SyscovidContext();
+                        var db = new covidcontext();
                         var auxCitizen = new Citizen
                         {
                             /*Dui = auxiliarDuiNumber,

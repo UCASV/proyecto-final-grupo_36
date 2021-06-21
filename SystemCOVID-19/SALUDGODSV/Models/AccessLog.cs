@@ -9,13 +9,13 @@ namespace SALUDGODSV.Models
     {
         public AccessLog()
         {
-            Managers = new HashSet<Manager>();
+            Employees = new HashSet<Employee>();
         }
 
         public int Code { get; set; }
         public DateTime Date { get; set; }
         public TimeSpan Hour { get; set; }
 
-        public virtual ICollection<Manager> Managers { get; set; }
+        public virtual ICollection<Employee> Employees { get; set; }
     }
 }

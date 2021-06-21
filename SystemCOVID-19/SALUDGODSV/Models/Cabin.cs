@@ -15,13 +15,10 @@ namespace SALUDGODSV.Models
         public int Code { get; set; }
         public int Phone { get; set; }
         public string Caretaker { get; set; }
-        public string Street { get; set; }
         public string City { get; set; }
         public string Departament { get; set; }
         public int EmployeeCode { get; set; }
-        public int CitizenDui { get; set; }
 
-        public virtual Citizen CitizenDuiNavigation { get; set; }
         public virtual ICollection<Manager> Managers { get; set; }
     }
 }
