@@ -41,7 +41,6 @@ namespace SALUDGODSV.View
             this.lblGeneralWarning = new System.Windows.Forms.Label();
             this.btnNewAppointment = new System.Windows.Forms.Button();
             this.grpMedicalInformation = new System.Windows.Forms.GroupBox();
-            this.rtxMedicalRecord = new System.Windows.Forms.RichTextBox();
             this.txtMedicalRecord = new System.Windows.Forms.Label();
             this.grpSalvadoranInformation = new System.Windows.Forms.GroupBox();
             this.txtInsertGobNumber = new System.Windows.Forms.TextBox();
@@ -66,6 +65,9 @@ namespace SALUDGODSV.View
             this.lblName = new System.Windows.Forms.Label();
             this.tpViewAppointments = new System.Windows.Forms.TabPage();
             this.dgvAppointmentRecords = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.tlpToMainDesign.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMinSalud)).BeginInit();
             this.tabAppointment.SuspendLayout();
@@ -147,7 +149,7 @@ namespace SALUDGODSV.View
             this.tpWelcome.ForeColor = System.Drawing.Color.Transparent;
             this.tpWelcome.Location = new System.Drawing.Point(4, 24);
             this.tpWelcome.Name = "tpWelcome";
-            this.tpWelcome.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tpWelcome.Padding = new System.Windows.Forms.Padding(3);
             this.tpWelcome.Size = new System.Drawing.Size(896, 356);
             this.tpWelcome.TabIndex = 0;
             this.tpWelcome.Text = "Bienvenido";
@@ -155,11 +157,11 @@ namespace SALUDGODSV.View
             // lblFirstText
             // 
             this.lblFirstText.AutoSize = true;
-            this.lblFirstText.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblFirstText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblFirstText.ForeColor = System.Drawing.Color.White;
-            this.lblFirstText.Location = new System.Drawing.Point(33, 326);
+            this.lblFirstText.Location = new System.Drawing.Point(47, 328);
             this.lblFirstText.Name = "lblFirstText";
-            this.lblFirstText.Size = new System.Drawing.Size(908, 29);
+            this.lblFirstText.Size = new System.Drawing.Size(817, 25);
             this.lblFirstText.TabIndex = 1;
             this.lblFirstText.Text = "Sistema de control de vacunas contra COVID-19, Ministerio de Salud de El Salvador" +
     "";
@@ -187,7 +189,7 @@ namespace SALUDGODSV.View
             this.tpNewAppointment.Controls.Add(this.grpInformation);
             this.tpNewAppointment.Location = new System.Drawing.Point(4, 24);
             this.tpNewAppointment.Name = "tpNewAppointment";
-            this.tpNewAppointment.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tpNewAppointment.Padding = new System.Windows.Forms.Padding(3);
             this.tpNewAppointment.Size = new System.Drawing.Size(896, 356);
             this.tpNewAppointment.TabIndex = 1;
             this.tpNewAppointment.Text = "Generar nueva cita";
@@ -195,10 +197,10 @@ namespace SALUDGODSV.View
             // lblGeneralWarningTwo
             // 
             this.lblGeneralWarningTwo.BackColor = System.Drawing.Color.White;
-            this.lblGeneralWarningTwo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblGeneralWarningTwo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblGeneralWarningTwo.ForeColor = System.Drawing.Color.Red;
             this.lblGeneralWarningTwo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblGeneralWarningTwo.Location = new System.Drawing.Point(623, 259);
+            this.lblGeneralWarningTwo.Location = new System.Drawing.Point(620, 147);
             this.lblGeneralWarningTwo.Name = "lblGeneralWarningTwo";
             this.lblGeneralWarningTwo.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblGeneralWarningTwo.Size = new System.Drawing.Size(267, 47);
@@ -211,7 +213,7 @@ namespace SALUDGODSV.View
             this.lblGeneralWarning.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblGeneralWarning.ForeColor = System.Drawing.Color.Red;
             this.lblGeneralWarning.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblGeneralWarning.Location = new System.Drawing.Point(626, 301);
+            this.lblGeneralWarning.Location = new System.Drawing.Point(620, 188);
             this.lblGeneralWarning.Name = "lblGeneralWarning";
             this.lblGeneralWarning.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblGeneralWarning.Size = new System.Drawing.Size(267, 47);
@@ -225,7 +227,7 @@ namespace SALUDGODSV.View
             this.btnNewAppointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewAppointment.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnNewAppointment.ForeColor = System.Drawing.Color.White;
-            this.btnNewAppointment.Location = new System.Drawing.Point(626, 219);
+            this.btnNewAppointment.Location = new System.Drawing.Point(626, 101);
             this.btnNewAppointment.Name = "btnNewAppointment";
             this.btnNewAppointment.Size = new System.Drawing.Size(187, 43);
             this.btnNewAppointment.TabIndex = 14;
@@ -235,44 +237,36 @@ namespace SALUDGODSV.View
             // 
             // grpMedicalInformation
             // 
-            this.grpMedicalInformation.Controls.Add(this.rtxMedicalRecord);
+            this.grpMedicalInformation.Controls.Add(this.comboBox2);
             this.grpMedicalInformation.Controls.Add(this.txtMedicalRecord);
             this.grpMedicalInformation.Location = new System.Drawing.Point(620, 6);
             this.grpMedicalInformation.Name = "grpMedicalInformation";
-            this.grpMedicalInformation.Size = new System.Drawing.Size(270, 207);
+            this.grpMedicalInformation.Size = new System.Drawing.Size(270, 89);
             this.grpMedicalInformation.TabIndex = 13;
             this.grpMedicalInformation.TabStop = false;
             this.grpMedicalInformation.Text = "Datos medicos";
             // 
-            // rtxMedicalRecord
-            // 
-            this.rtxMedicalRecord.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rtxMedicalRecord.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rtxMedicalRecord.Location = new System.Drawing.Point(6, 56);
-            this.rtxMedicalRecord.Name = "rtxMedicalRecord";
-            this.rtxMedicalRecord.Size = new System.Drawing.Size(258, 145);
-            this.rtxMedicalRecord.TabIndex = 10;
-            this.rtxMedicalRecord.Text = "";
-            // 
             // txtMedicalRecord
             // 
             this.txtMedicalRecord.AutoSize = true;
-            this.txtMedicalRecord.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtMedicalRecord.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtMedicalRecord.Location = new System.Drawing.Point(6, 19);
             this.txtMedicalRecord.Name = "txtMedicalRecord";
-            this.txtMedicalRecord.Size = new System.Drawing.Size(220, 36);
+            this.txtMedicalRecord.Size = new System.Drawing.Size(199, 32);
             this.txtMedicalRecord.TabIndex = 10;
             this.txtMedicalRecord.Text = "Enfermedades no transmisibles \r\nque padece:";
             // 
             // grpSalvadoranInformation
             // 
+            this.grpSalvadoranInformation.Controls.Add(this.comboBox1);
+            this.grpSalvadoranInformation.Controls.Add(this.label1);
             this.grpSalvadoranInformation.Controls.Add(this.txtInsertGobNumber);
             this.grpSalvadoranInformation.Controls.Add(this.lblGobNumber);
             this.grpSalvadoranInformation.Controls.Add(this.txtInsertDUI);
             this.grpSalvadoranInformation.Controls.Add(this.lblDUI);
-            this.grpSalvadoranInformation.Location = new System.Drawing.Point(307, 191);
+            this.grpSalvadoranInformation.Location = new System.Drawing.Point(307, 141);
             this.grpSalvadoranInformation.Name = "grpSalvadoranInformation";
-            this.grpSalvadoranInformation.Size = new System.Drawing.Size(270, 160);
+            this.grpSalvadoranInformation.Size = new System.Drawing.Size(270, 212);
             this.grpSalvadoranInformation.TabIndex = 12;
             this.grpSalvadoranInformation.TabStop = false;
             this.grpSalvadoranInformation.Text = "Datos legales";
@@ -290,10 +284,10 @@ namespace SALUDGODSV.View
             // lblGobNumber
             // 
             this.lblGobNumber.AutoSize = true;
-            this.lblGobNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblGobNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblGobNumber.Location = new System.Drawing.Point(6, 85);
             this.lblGobNumber.Name = "lblGobNumber";
-            this.lblGobNumber.Size = new System.Drawing.Size(280, 18);
+            this.lblGobNumber.Size = new System.Drawing.Size(251, 16);
             this.lblGobNumber.TabIndex = 11;
             this.lblGobNumber.Text = "Numero Asociado a Inst. Gubernamental:";
             // 
@@ -310,10 +304,10 @@ namespace SALUDGODSV.View
             // lblDUI
             // 
             this.lblDUI.AutoSize = true;
-            this.lblDUI.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblDUI.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblDUI.Location = new System.Drawing.Point(6, 19);
             this.lblDUI.Name = "lblDUI";
-            this.lblDUI.Size = new System.Drawing.Size(211, 18);
+            this.lblDUI.Size = new System.Drawing.Size(192, 16);
             this.lblDUI.TabIndex = 10;
             this.lblDUI.Text = "Documento Unico de Idenidad:";
             // 
@@ -326,7 +320,7 @@ namespace SALUDGODSV.View
             this.grpContactThem.Controls.Add(this.lblPhoneNumer);
             this.grpContactThem.Location = new System.Drawing.Point(307, 6);
             this.grpContactThem.Name = "grpContactThem";
-            this.grpContactThem.Size = new System.Drawing.Size(270, 165);
+            this.grpContactThem.Size = new System.Drawing.Size(270, 129);
             this.grpContactThem.TabIndex = 1;
             this.grpContactThem.TabStop = false;
             this.grpContactThem.Text = "Información de contacto";
@@ -336,7 +330,7 @@ namespace SALUDGODSV.View
             this.txtInsertEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtInsertEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtInsertEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtInsertEmail.Location = new System.Drawing.Point(6, 103);
+            this.txtInsertEmail.Location = new System.Drawing.Point(7, 92);
             this.txtInsertEmail.Name = "txtInsertEmail";
             this.txtInsertEmail.Size = new System.Drawing.Size(257, 24);
             this.txtInsertEmail.TabIndex = 10;
@@ -345,10 +339,10 @@ namespace SALUDGODSV.View
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblEmail.Location = new System.Drawing.Point(6, 83);
+            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblEmail.Location = new System.Drawing.Point(6, 73);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(136, 18);
+            this.lblEmail.Size = new System.Drawing.Size(120, 16);
             this.lblEmail.TabIndex = 11;
             this.lblEmail.Text = "Correo electronico:";
             // 
@@ -365,20 +359,20 @@ namespace SALUDGODSV.View
             // lblAditionalText
             // 
             this.lblAditionalText.AutoSize = true;
-            this.lblAditionalText.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblAditionalText.Location = new System.Drawing.Point(138, 39);
+            this.lblAditionalText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblAditionalText.Location = new System.Drawing.Point(142, 39);
             this.lblAditionalText.Name = "lblAditionalText";
-            this.lblAditionalText.Size = new System.Drawing.Size(41, 18);
+            this.lblAditionalText.Size = new System.Drawing.Size(35, 16);
             this.lblAditionalText.TabIndex = 10;
             this.lblAditionalText.Text = "+503";
             // 
             // lblPhoneNumer
             // 
             this.lblPhoneNumer.AutoSize = true;
-            this.lblPhoneNumer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblPhoneNumer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblPhoneNumer.Location = new System.Drawing.Point(6, 19);
             this.lblPhoneNumer.Name = "lblPhoneNumer";
-            this.lblPhoneNumer.Size = new System.Drawing.Size(143, 18);
+            this.lblPhoneNumer.Size = new System.Drawing.Size(128, 16);
             this.lblPhoneNumer.TabIndex = 10;
             this.lblPhoneNumer.Text = "Número de teléfono:";
             // 
@@ -441,10 +435,10 @@ namespace SALUDGODSV.View
             // lblDirection
             // 
             this.lblDirection.AutoSize = true;
-            this.lblDirection.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblDirection.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblDirection.Location = new System.Drawing.Point(6, 213);
             this.lblDirection.Name = "lblDirection";
-            this.lblDirection.Size = new System.Drawing.Size(75, 18);
+            this.lblDirection.Size = new System.Drawing.Size(67, 16);
             this.lblDirection.TabIndex = 7;
             this.lblDirection.Text = "Direccion:";
             // 
@@ -459,10 +453,10 @@ namespace SALUDGODSV.View
             // lblBirthday
             // 
             this.lblBirthday.AutoSize = true;
-            this.lblBirthday.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblBirthday.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblBirthday.Location = new System.Drawing.Point(5, 148);
             this.lblBirthday.Name = "lblBirthday";
-            this.lblBirthday.Size = new System.Drawing.Size(149, 18);
+            this.lblBirthday.Size = new System.Drawing.Size(135, 16);
             this.lblBirthday.TabIndex = 6;
             this.lblBirthday.Text = "Fecha de nacimiento:";
             // 
@@ -479,10 +473,10 @@ namespace SALUDGODSV.View
             // lblLastNames
             // 
             this.lblLastNames.AutoSize = true;
-            this.lblLastNames.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblLastNames.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblLastNames.Location = new System.Drawing.Point(5, 85);
             this.lblLastNames.Name = "lblLastNames";
-            this.lblLastNames.Size = new System.Drawing.Size(71, 18);
+            this.lblLastNames.Size = new System.Drawing.Size(67, 16);
             this.lblLastNames.TabIndex = 2;
             this.lblLastNames.Text = "Apellidos:";
             // 
@@ -495,15 +489,14 @@ namespace SALUDGODSV.View
             this.txtInsertName.Name = "txtInsertName";
             this.txtInsertName.Size = new System.Drawing.Size(168, 24);
             this.txtInsertName.TabIndex = 1;
-            this.txtInsertName.TextChanged += new System.EventHandler(this.txtInsertName_TextChanged);
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblName.Location = new System.Drawing.Point(6, 19);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(74, 18);
+            this.lblName.Size = new System.Drawing.Size(66, 16);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Nombres:";
             // 
@@ -530,6 +523,38 @@ namespace SALUDGODSV.View
             this.dgvAppointmentRecords.Size = new System.Drawing.Size(890, 350);
             this.dgvAppointmentRecords.TabIndex = 0;
             this.dgvAppointmentRecords.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAppointmentRecords_CellContentClick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(6, 149);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(161, 16);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Institucion gubernamental:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(7, 167);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(250, 23);
+            this.comboBox1.TabIndex = 12;
+            this.comboBox1.Tag = "Departamento";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(6, 53);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(258, 23);
+            this.comboBox2.TabIndex = 14;
+            this.comboBox2.Tag = "Departamento";
             // 
             // AppointmentSystem
             // 
@@ -595,7 +620,6 @@ namespace SALUDGODSV.View
         private System.Windows.Forms.TextBox txtInsertGobNumber;
         private System.Windows.Forms.GroupBox grpMedicalInformation;
         private System.Windows.Forms.Label txtMedicalRecord;
-        private System.Windows.Forms.RichTextBox rtxMedicalRecord;
         private System.Windows.Forms.Button btnNewAppointment;
         private System.Windows.Forms.Label lblGeneralWarning;
         private System.Windows.Forms.TabPage tpViewAppointments;
@@ -603,5 +627,8 @@ namespace SALUDGODSV.View
         private System.Windows.Forms.Label lblGeneralWarningTwo;
         private System.Windows.Forms.ComboBox cmbDepartaments;
         private System.Windows.Forms.ComboBox cmbCity;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
