@@ -5,13 +5,13 @@ CREATE TABLE CITIZEN(
 	DUI INT PRIMARY KEY NOT NULL auto_increment,
     name varchar(40) NOT NULL,
     mail varchar(25) NOT NULL,
-    street varchar(30) NOT NULL,
     city varchar(25) NOT NULL,
     departament char(15) NOT NULL,
     phone int NOT NULL,
     age int NOT NULL,
     associate_number int,
-    GOB_institution_id int
+    GOB_institution_id int,
+    Appointment_id int
     );
 CREATE TABLE GOB_institution(
 	code int PRIMARY KEY NOT NULL auto_increment,
@@ -39,27 +39,24 @@ CREATE TABLE cabin(
 	code int PRIMARY KEY NOT NULL auto_increment,
     phone int NOT NULL,
     caretaker varchar(35) NOT NULL,
-    street varchar(30) NOT NULL,
     city varchar(25) NOT NULL,
     departament char(15) NOT NULL,
-    employee_code int NOT NULL,
-    citizen_DUI int NOT NULL
+    employee_code int NOT NULL
 );
 CREATE TABLE employee(
 	code int PRIMARY KEY NOT NULL auto_increment,
     mail varchar(25) NOT NULL,
-    street varchar(30) NOT NULL,
     city varchar(25) NOT NULL,
     departament char(15) NOT NULL,
-    occupation varchar(30) NOT NULL	
+    occupation varchar(30) NOT NULL,
+	code_appointment int NOT NULL,
+	code_accesslog int NOT NULL
 );
 
 CREATE TABLE manager(
 	code int PRIMARY KEY NOT NULL auto_increment,
     user varchar(30) NOT NULL,
     password varchar(40) NOT NULL,
-    code_appointment int NOT NULL,
-    code_accesslog int NOT NULL,
     code_employee int NOT NULL,
     code_cabin int NOT NULL
 );
@@ -97,22 +94,23 @@ FOREIGN KEY (sickness_code) REFERENCES sickness (code);
 ALTER TABLE citizen
 ADD CONSTRAINT FK_citizen_gob
 FOREIGN KEY (gob_institution_id) REFERENCES gob_institution (code);
+ALTER TABLE citizen
+ADD CONSTRAINT FK_citizen_appointment
+FOREIGN KEY (Appointment_id) REFERENCES appointment (code);
 
-ALTER TABLE cabin
-ADD CONSTRAINT FK_cabin_citizen
-FOREIGN KEY (citizen_DUI) REFERENCES citizen (DUI);
 
 ALTER TABLE manager
 ADD CONSTRAINT FK_manager_cabin
 FOREIGN KEY (code_cabin) REFERENCES cabin (code);
 ALTER TABLE manager
-ADD CONSTRAINT FK_manager_appointment
-FOREIGN KEY (code_appointment) REFERENCES appointment (code);
-ALTER TABLE manager
 ADD CONSTRAINT FK_manager_employee
 FOREIGN KEY (code_employee) REFERENCES employee (code);
-ALTER TABLE manager
-ADD CONSTRAINT FK_manager_accesslog
+
+ALTER TABLE employee
+ADD CONSTRAINT FK_employee_appointment
+FOREIGN KEY (code_appointment) REFERENCES appointment (code);
+ALTER TABLE employee
+ADD CONSTRAINT FK_employee_accesslog
 FOREIGN KEY (code_accesslog) REFERENCES access_log (code);
-	
+
 
