@@ -20,30 +20,28 @@ namespace SALUDGODSV
 
         private void btnIngresarGestor_Click(object sender, EventArgs e)
         {
+            lblSignosWarning.Visible = false;
+            lblVacioWarning.Visible = false;
             try
             {
                 StringVerifications.VerifyString(txtUsuarioG.Text);
                 StringVerifications.VerifyString(txtContraG.Text);
-                
-                try
-                {
-                    var auxiliarUsuario = Convert.ToInt32(txtUsuarioG.Text);
-                    var auxiliarContra = Convert.ToInt32(txtContraG.Text);
-                    lblSignosWarning.Visible = false;
-                }
-                catch
-                {
-                    lblSignosWarning.Visible = true;
-                }
-                lblVacioWarning.Visible = false;
+                lblSignosWarning.Visible = true;
+                    
             }
             catch
             {
-                lblVacioWarning.Visible = true;
+               lblVacioWarning.Visible = true;
             }
+            lblSignosWarning.Visible = false;
+            
         }
     }
-    }
+}
+
+
+
+
 
 
 
