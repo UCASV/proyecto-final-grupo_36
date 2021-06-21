@@ -5,7 +5,7 @@ namespace SALUDGODSV.Functions
     {
         static public void VerifyString(string toVerify)
         {
-            var toCompare = "$/-*@";
+            var toCompare = "$/-*";
             int counToReturn = 0;
             for ( var i = 0; i < toCompare.Length; i++)
                 for(var j = 0; j < toVerify.Length; j++)

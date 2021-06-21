@@ -55,8 +55,8 @@ namespace SALUDGODSV.View
             this.lblAditionalText = new System.Windows.Forms.Label();
             this.lblPhoneNumer = new System.Windows.Forms.Label();
             this.grpInformation = new System.Windows.Forms.GroupBox();
-            this.lblFormat = new System.Windows.Forms.Label();
-            this.rtxInsertDirection = new System.Windows.Forms.RichTextBox();
+            this.cmbCity = new System.Windows.Forms.ComboBox();
+            this.cmbDepartaments = new System.Windows.Forms.ComboBox();
             this.lblDirection = new System.Windows.Forms.Label();
             this.dtpBirtrhday = new System.Windows.Forms.DateTimePicker();
             this.lblBirthday = new System.Windows.Forms.Label();
@@ -81,6 +81,7 @@ namespace SALUDGODSV.View
             // 
             // tlpToMainDesign
             // 
+            this.tlpToMainDesign.BackColor = System.Drawing.Color.White;
             this.tlpToMainDesign.ColumnCount = 2;
             this.tlpToMainDesign.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tlpToMainDesign.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85F));
@@ -113,6 +114,7 @@ namespace SALUDGODSV.View
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMinSalud.AutoSize = true;
+            this.lblMinSalud.BackColor = System.Drawing.Color.Transparent;
             this.lblMinSalud.Font = new System.Drawing.Font("Bembo Std", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblMinSalud.ForeColor = System.Drawing.Color.White;
             this.lblMinSalud.Location = new System.Drawing.Point(139, 0);
@@ -193,10 +195,10 @@ namespace SALUDGODSV.View
             // lblGeneralWarningTwo
             // 
             this.lblGeneralWarningTwo.BackColor = System.Drawing.Color.White;
-            this.lblGeneralWarningTwo.Font = new System.Drawing.Font("Bembo Std", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblGeneralWarningTwo.Font = new System.Drawing.Font("Bembo Std", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblGeneralWarningTwo.ForeColor = System.Drawing.Color.Red;
             this.lblGeneralWarningTwo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblGeneralWarningTwo.Location = new System.Drawing.Point(623, 259);
+            this.lblGeneralWarningTwo.Location = new System.Drawing.Point(629, 254);
             this.lblGeneralWarningTwo.Name = "lblGeneralWarningTwo";
             this.lblGeneralWarningTwo.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblGeneralWarningTwo.Size = new System.Drawing.Size(267, 47);
@@ -382,8 +384,8 @@ namespace SALUDGODSV.View
             // 
             // grpInformation
             // 
-            this.grpInformation.Controls.Add(this.lblFormat);
-            this.grpInformation.Controls.Add(this.rtxInsertDirection);
+            this.grpInformation.Controls.Add(this.cmbCity);
+            this.grpInformation.Controls.Add(this.cmbDepartaments);
             this.grpInformation.Controls.Add(this.lblDirection);
             this.grpInformation.Controls.Add(this.dtpBirtrhday);
             this.grpInformation.Controls.Add(this.lblBirthday);
@@ -398,25 +400,41 @@ namespace SALUDGODSV.View
             this.grpInformation.TabStop = false;
             this.grpInformation.Text = "Datos personales";
             // 
-            // lblFormat
+            // cmbCity
             // 
-            this.lblFormat.AutoSize = true;
-            this.lblFormat.Font = new System.Drawing.Font("Bembo Std", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblFormat.Location = new System.Drawing.Point(6, 282);
-            this.lblFormat.Name = "lblFormat";
-            this.lblFormat.Size = new System.Drawing.Size(243, 30);
-            this.lblFormat.TabIndex = 9;
-            this.lblFormat.Text = "Formato recomendado \r\n(Calle, Num Casa, Municipio, Departamento)";
+            this.cmbCity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCity.FormattingEnabled = true;
+            this.cmbCity.Location = new System.Drawing.Point(6, 269);
+            this.cmbCity.Name = "cmbCity";
+            this.cmbCity.Size = new System.Drawing.Size(236, 23);
+            this.cmbCity.TabIndex = 11;
+            this.cmbCity.Tag = "Departamento";
             // 
-            // rtxInsertDirection
+            // cmbDepartaments
             // 
-            this.rtxInsertDirection.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rtxInsertDirection.Font = new System.Drawing.Font("Bembo Std", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rtxInsertDirection.Location = new System.Drawing.Point(74, 237);
-            this.rtxInsertDirection.Name = "rtxInsertDirection";
-            this.rtxInsertDirection.Size = new System.Drawing.Size(168, 42);
-            this.rtxInsertDirection.TabIndex = 8;
-            this.rtxInsertDirection.Text = "";
+            this.cmbDepartaments.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDepartaments.FormattingEnabled = true;
+            this.cmbDepartaments.Items.AddRange(new object[] {
+            "Ahuachapán",
+            "Cabañas",
+            "Chalatenango",
+            "Cuscatlán",
+            "La Libertad",
+            "La Paz",
+            "La Unión",
+            "Morazán",
+            "San Miguel",
+            "San Salvador",
+            "San Vicente",
+            "Santa Ana",
+            "Sonsonate",
+            "Usulután"});
+            this.cmbDepartaments.Location = new System.Drawing.Point(6, 233);
+            this.cmbDepartaments.Name = "cmbDepartaments";
+            this.cmbDepartaments.Size = new System.Drawing.Size(236, 23);
+            this.cmbDepartaments.TabIndex = 10;
+            this.cmbDepartaments.Tag = "Departamento";
+            this.cmbDepartaments.SelectedIndexChanged += new System.EventHandler(this.cmbDepartaments_SelectedIndexChanged);
             // 
             // lblDirection
             // 
@@ -475,6 +493,7 @@ namespace SALUDGODSV.View
             this.txtInsertName.Name = "txtInsertName";
             this.txtInsertName.Size = new System.Drawing.Size(168, 25);
             this.txtInsertName.TabIndex = 1;
+            this.txtInsertName.TextChanged += new System.EventHandler(this.txtInsertName_TextChanged);
             // 
             // lblName
             // 
@@ -513,6 +532,7 @@ namespace SALUDGODSV.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(31)))), ((int)(((byte)(122)))));
             this.ClientSize = new System.Drawing.Size(934, 511);
             this.Controls.Add(this.tlpToMainDesign);
             this.MaximizeBox = false;
@@ -559,8 +579,6 @@ namespace SALUDGODSV.View
         private System.Windows.Forms.Label lblBirthday;
         private System.Windows.Forms.DateTimePicker dtpBirtrhday;
         private System.Windows.Forms.Label lblDirection;
-        private System.Windows.Forms.RichTextBox rtxInsertDirection;
-        private System.Windows.Forms.Label lblFormat;
         private System.Windows.Forms.GroupBox grpContactThem;
         private System.Windows.Forms.Label lblPhoneNumer;
         private System.Windows.Forms.Label lblAditionalText;
@@ -580,5 +598,7 @@ namespace SALUDGODSV.View
         private System.Windows.Forms.TabPage tpViewAppointments;
         private System.Windows.Forms.DataGridView dgvAppointmentRecords;
         private System.Windows.Forms.Label lblGeneralWarningTwo;
+        private System.Windows.Forms.ComboBox cmbDepartaments;
+        private System.Windows.Forms.ComboBox cmbCity;
     }
 }

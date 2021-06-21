@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace SALUDGODSV
+namespace SALUDGODSV.Models
 {
     public partial class CitizenxsecondaryEffect
     {
