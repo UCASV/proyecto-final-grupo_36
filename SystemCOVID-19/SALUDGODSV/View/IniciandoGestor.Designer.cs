@@ -40,6 +40,8 @@ namespace SALUDGODSV
             this.btnIngresarGestor = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.lblVacioWarning = new System.Windows.Forms.Label();
+            this.lblSignosWarning = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -110,20 +112,22 @@ namespace SALUDGODSV
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65F));
+            this.tableLayoutPanel2.Controls.Add(this.lblSignosWarning, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.txtContraG, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.txtUsuarioG, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnIngresarGestor, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label3, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.lblVacioWarning, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.btnIngresarGestor, 0, 3);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(25, 104);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 3;
+            this.tableLayoutPanel2.RowCount = 4;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(480, 317);
             this.tableLayoutPanel2.TabIndex = 1;
-            
             // 
             // txtContraG
             // 
@@ -155,7 +159,7 @@ namespace SALUDGODSV
             this.btnIngresarGestor.TabIndex = 3;
             this.btnIngresarGestor.Text = "Ingresar";
             this.btnIngresarGestor.UseVisualStyleBackColor = false;
-            
+            this.btnIngresarGestor.Click += new System.EventHandler(this.btnIngresarGestor_Click);
             // 
             // label2
             // 
@@ -185,6 +189,35 @@ namespace SALUDGODSV
             this.label3.Text = "Contraseña:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
+            // lblVacioWarning
+            // 
+            this.lblVacioWarning.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblVacioWarning.AutoSize = true;
+            this.lblVacioWarning.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lblVacioWarning.ForeColor = System.Drawing.Color.Red;
+            this.lblVacioWarning.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblVacioWarning.Location = new System.Drawing.Point(177, 213);
+            this.lblVacioWarning.Name = "lblVacioWarning";
+            this.lblVacioWarning.Size = new System.Drawing.Size(300, 40);
+            this.lblVacioWarning.TabIndex = 6;
+            this.lblVacioWarning.Text = "Los campos no pueden estar vacíos, rellenelos por favor.";
+            this.lblVacioWarning.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            // 
+            // lblSignosWarning
+            // 
+            this.lblSignosWarning.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSignosWarning.AutoSize = true;
+            this.lblSignosWarning.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lblSignosWarning.ForeColor = System.Drawing.Color.Red;
+            this.lblSignosWarning.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblSignosWarning.Location = new System.Drawing.Point(174, 277);
+            this.lblSignosWarning.Name = "lblSignosWarning";
+            this.lblSignosWarning.Size = new System.Drawing.Size(303, 40);
+            this.lblSignosWarning.TabIndex = 7;
+            this.lblSignosWarning.Text = "Los campos rellenados no pueden poseer ninguno de los siguientes signos: \"\\,@,^,$" +
+    ",%,-\"";
+            this.lblSignosWarning.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            // 
             // IniciandoGestor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -197,7 +230,6 @@ namespace SALUDGODSV
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "IniciandoGestor";
             this.Text = "IniciandoGestor";
-            
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -219,5 +251,7 @@ namespace SALUDGODSV
         private System.Windows.Forms.TextBox txtUsuarioG;
         private System.Windows.Forms.TextBox txtContraG;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblVacioWarning;
+        private System.Windows.Forms.Label lblSignosWarning;
     }
 }

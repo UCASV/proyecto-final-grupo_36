@@ -64,5 +64,7 @@ namespace SALUDGODSV.View
                 lblGeneralWarning.Visible = true;
             }
         }
+
+
     }
 }
