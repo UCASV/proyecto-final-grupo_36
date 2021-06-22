@@ -11,7 +11,7 @@ using SALUDGODSV.Functions;
 using SALUDGODSV.Models;
 using SALUDGODSV.Context;
 
-namespace SALUDGODSV
+namespace SALUDGODSV.View
 {
     public partial class RegistroDeCabina : Form
     {
@@ -32,15 +32,17 @@ namespace SALUDGODSV
         {
             //Q no este vacio / lo de los signos para todo / Registrar la cabina (Hacer variable cabina y agrgarlo a la db con todos los atributos q tiene ademas del code cabin) = Asignar Code Cabin a Manager / Verificar el Usuario y Contra y guardarlos en la db
             try
-            {
-                StringVerifications.VerifyString(txtDireccion.Text);
+            {   
                 StringVerifications.VerifyString(txtNombreEncargado.Text);
-                StringVerifications.VerifyString(txtCorreo.Text);
                 StringVerifications.VerifyString(txtUsuarioCabina.Text);
                 StringVerifications.VerifyString(txtContraCabina.Text);
                 try
                 {
-                    var auxiliarNumero = Convert.ToInt32(txtTelefono.Text);
+                    if(txtCorreo.Text.CompareTo("") != 0)
+                    {
+                        lblVacio3Warning.Visible = true;
+                    }
+                    var auxiliarNumero = Convert.ToInt32(txtTelefono.Text); //verificar q no tenga letras el telefono!
                     if (txtTelefono.Text.CompareTo("") != 0)
                     {
                         try
@@ -54,29 +56,29 @@ namespace SALUDGODSV
                         }
                     }
                     lblSignos3Warning.Visible = false;
-                    try
+                    
+                    if (Username = txtUsuarioCabina.Text && Password = txtContraCabina.Text)
                     {
-                        
-                        var db = new covidcontext();
-                        var auxCabin = new Cabin
+                        try//meter este try catch en un if del si user y contra son iguales
                         {
-                            Di = auxiliarDuiNumber,
-                            Name = txtInsertName.Text + " " + txtInsertLastNames.Text,
-                            Mail = txtInsertEmail.Text,
-                            City = cmbCity.SelectedItem.ToString(),
-                            Departament = cmbDepartaments.SelectedItem.ToString(),
-                            Phone = Convert.ToInt32(txtInsertPhoneNumer.Text),
-                            Age = auxiliarAge,
-                            AssociateNumber = Convert.ToInt32(txtInsertGobNumber.Text),
 
-                        };
+                            var db = new covidcontext();
+                            List<Cabin> auxCabina = db.Cabins.ToList();
+                            var auxCabin = new Cabin
+                            {
+                                Phone = txtTelefono.Text,
+                                Caretaker = txtNombreEncargado.Text,
+                                Code = auxCabina[0].Code
+                            };
 
 
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Ocurrio un error al usar la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
-                    catch
-                    {
-                        MessageBox.Show("Ocurrio un error al usar la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    
                 }
                 catch
                 {

@@ -1,5 +1,5 @@
 ﻿
-namespace SALUDGODSV
+namespace SALUDGODSV.View
 {
     partial class RegistroDeCabina
     {
@@ -40,16 +40,17 @@ namespace SALUDGODSV
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.txtNombreEncargado = new System.Windows.Forms.TextBox();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.txtUsuarioCabina = new System.Windows.Forms.TextBox();
             this.txtContraCabina = new System.Windows.Forms.TextBox();
-            this.btnRegistrarCabina = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
+            this.btnRegistrarCabina = new System.Windows.Forms.Button();
             this.lblVacio3Warning = new System.Windows.Forms.Label();
             this.lblSignos3Warning = new System.Windows.Forms.Label();
+            this.cmbCiudad = new System.Windows.Forms.ComboBox();
+            this.cmbDepartamento = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -63,37 +64,39 @@ namespace SALUDGODSV
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.80614F));
             this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.label7, 1, 7);
-            this.tableLayoutPanel1.Controls.Add(this.label8, 1, 8);
             this.tableLayoutPanel1.Controls.Add(this.label6, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtDireccion, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.txtTelefono, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.txtNombreEncargado, 2, 4);
-            this.tableLayoutPanel1.Controls.Add(this.txtCorreo, 2, 5);
-            this.tableLayoutPanel1.Controls.Add(this.txtUsuarioCabina, 2, 7);
-            this.tableLayoutPanel1.Controls.Add(this.txtContraCabina, 2, 8);
-            this.tableLayoutPanel1.Controls.Add(this.label9, 2, 6);
-            this.tableLayoutPanel1.Controls.Add(this.btnRegistrarCabina, 1, 10);
-            this.tableLayoutPanel1.Controls.Add(this.lblVacio3Warning, 2, 9);
-            this.tableLayoutPanel1.Controls.Add(this.lblSignos3Warning, 2, 10);
+            this.tableLayoutPanel1.Controls.Add(this.btnRegistrarCabina, 1, 11);
+            this.tableLayoutPanel1.Controls.Add(this.lblSignos3Warning, 2, 11);
+            this.tableLayoutPanel1.Controls.Add(this.lblVacio3Warning, 2, 10);
+            this.tableLayoutPanel1.Controls.Add(this.label8, 1, 9);
+            this.tableLayoutPanel1.Controls.Add(this.txtContraCabina, 2, 9);
+            this.tableLayoutPanel1.Controls.Add(this.label7, 1, 8);
+            this.tableLayoutPanel1.Controls.Add(this.txtUsuarioCabina, 2, 8);
+            this.tableLayoutPanel1.Controls.Add(this.label9, 2, 7);
+            this.tableLayoutPanel1.Controls.Add(this.label5, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.txtCorreo, 2, 6);
+            this.tableLayoutPanel1.Controls.Add(this.label4, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.txtNombreEncargado, 2, 5);
+            this.tableLayoutPanel1.Controls.Add(this.label3, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.txtTelefono, 2, 4);
+            this.tableLayoutPanel1.Controls.Add(this.cmbCiudad, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.cmbDepartamento, 2, 2);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(29, 28);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 11;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.375299F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.289721F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.74693F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.743268F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.56479F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.74693F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.739603F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.650359F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.286056F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.92852F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.92852F));
+            this.tableLayoutPanel1.RowCount = 12;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.375073F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.289391F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.374809F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.374809F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.73969F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.55963F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.74962F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.739761F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.649729F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.289742F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.92813F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.92961F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(846, 541);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -105,7 +108,7 @@ namespace SALUDGODSV
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.tableLayoutPanel1.SetRowSpan(this.pictureBox1, 11);
+            this.tableLayoutPanel1.SetRowSpan(this.pictureBox1, 12);
             this.pictureBox1.Size = new System.Drawing.Size(417, 535);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
@@ -116,7 +119,7 @@ namespace SALUDGODSV
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Black", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(426, 117);
+            this.label2.Location = new System.Drawing.Point(426, 88);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(102, 25);
             this.label2.TabIndex = 2;
@@ -207,15 +210,6 @@ namespace SALUDGODSV
             this.label1.Text = "Registro";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // txtDireccion
-            // 
-            this.txtDireccion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtDireccion.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtDireccion.Location = new System.Drawing.Point(562, 112);
-            this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(250, 27);
-            this.txtDireccion.TabIndex = 10;
-            // 
             // txtTelefono
             // 
             this.txtTelefono.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -261,20 +255,6 @@ namespace SALUDGODSV
             this.txtContraCabina.Size = new System.Drawing.Size(187, 27);
             this.txtContraCabina.TabIndex = 15;
             // 
-            // btnRegistrarCabina
-            // 
-            this.btnRegistrarCabina.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnRegistrarCabina.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(77)))), ((int)(((byte)(188)))));
-            this.btnRegistrarCabina.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnRegistrarCabina.ForeColor = System.Drawing.Color.White;
-            this.btnRegistrarCabina.Location = new System.Drawing.Point(426, 497);
-            this.btnRegistrarCabina.Name = "btnRegistrarCabina";
-            this.btnRegistrarCabina.Size = new System.Drawing.Size(117, 41);
-            this.btnRegistrarCabina.TabIndex = 9;
-            this.btnRegistrarCabina.Text = "Registrar";
-            this.btnRegistrarCabina.UseVisualStyleBackColor = false;
-            this.btnRegistrarCabina.Click += new System.EventHandler(this.btnRegistrarCabina_Click);
-            // 
             // label9
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -288,6 +268,20 @@ namespace SALUDGODSV
             this.label9.TabIndex = 16;
             this.label9.Text = "Gestor";
             this.label9.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            // 
+            // btnRegistrarCabina
+            // 
+            this.btnRegistrarCabina.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnRegistrarCabina.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(77)))), ((int)(((byte)(188)))));
+            this.btnRegistrarCabina.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnRegistrarCabina.ForeColor = System.Drawing.Color.White;
+            this.btnRegistrarCabina.Location = new System.Drawing.Point(426, 497);
+            this.btnRegistrarCabina.Name = "btnRegistrarCabina";
+            this.btnRegistrarCabina.Size = new System.Drawing.Size(117, 41);
+            this.btnRegistrarCabina.TabIndex = 9;
+            this.btnRegistrarCabina.Text = "Registrar";
+            this.btnRegistrarCabina.UseVisualStyleBackColor = false;
+            this.btnRegistrarCabina.Click += new System.EventHandler(this.btnRegistrarCabina_Click);
             // 
             // lblVacio3Warning
             // 
@@ -313,6 +307,39 @@ namespace SALUDGODSV
             this.lblSignos3Warning.TabIndex = 18;
             this.lblSignos3Warning.Text = "Los campos rellenados no pueden poseer ninguno de los siguientes signos: \"\\,@,^,$" +
     ",%,-\". \r\nLos campos numéricos no pueden tener letras.";
+            // 
+            // cmbCiudad
+            // 
+            this.cmbCiudad.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.cmbCiudad.FormattingEnabled = true;
+            this.cmbCiudad.Location = new System.Drawing.Point(562, 116);
+            this.cmbCiudad.Name = "cmbCiudad";
+            this.cmbCiudad.Size = new System.Drawing.Size(250, 28);
+            this.cmbCiudad.TabIndex = 19;
+            // 
+            // cmbDepartamento
+            // 
+            this.cmbDepartamento.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.cmbDepartamento.FormattingEnabled = true;
+            this.cmbDepartamento.Items.AddRange(new object[] {
+            "Ahuachapán",
+            "Cabañas",
+            "Chalatenango",
+            "Cuscatlán",
+            "La Libertad",
+            "La Paz",
+            "La Unión",
+            "Morazán",
+            "San Miguel",
+            "San Salvador",
+            "San Vicente",
+            "Santa Ana",
+            "Sonsonate",
+            "Usulután"});
+            this.cmbDepartamento.Location = new System.Drawing.Point(562, 87);
+            this.cmbDepartamento.Name = "cmbDepartamento";
+            this.cmbDepartamento.Size = new System.Drawing.Size(250, 28);
+            this.cmbDepartamento.TabIndex = 20;
             // 
             // RegistroDeCabina
             // 
@@ -349,7 +376,6 @@ namespace SALUDGODSV
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnRegistrarCabina;
-        private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.TextBox txtNombreEncargado;
         private System.Windows.Forms.TextBox txtCorreo;
@@ -358,6 +384,8 @@ namespace SALUDGODSV
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lblVacio3Warning;
         private System.Windows.Forms.Label lblSignos3Warning;
+        private System.Windows.Forms.ComboBox cmbCiudad;
+        private System.Windows.Forms.ComboBox cmbDepartamento;
     }
 }
 
