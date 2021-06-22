@@ -77,6 +77,11 @@ CREATE TABLE appointment(
     dose char(10) NOT NULL
 );
 
+CREATE TABLE security_question(
+	code int PRIMARY KEY NOT NULL auto_increment,
+    security_question VARCHAR(90) NOT NULL
+);
+
 ALTER TABLE citizenxsecondary_effect 
 ADD CONSTRAINT FK_citizenxseccondary_effect_dui 
 FOREIGN KEY (citizen_dui) REFERENCES citizen (dui);
@@ -112,5 +117,34 @@ FOREIGN KEY (code_appointment) REFERENCES appointment (code);
 ALTER TABLE employee
 ADD CONSTRAINT FK_employee_accesslog
 FOREIGN KEY (code_accesslog) REFERENCES access_log (code);
+
+ALTER TABLE cabin
+	ADD COLUMN mail VARCHAR(75) NOT NULL AFTER caretaker,
+	MODIFY caretaker VARCHAR(75) NOT NULL;
+    
+ALTER TABLE citizen
+	MODIFY name varchar(75) NOT NULL,
+    MODIFY mail varchar(75) NOT NULL;
+    
+ALTER TABLE gob_institution
+	MODIFY institution varchar(75) NOT NULL;
+    
+ALTER TABLE employee
+	MODIFY mail varchar(75) NOT NULL,
+    MODIFY occupation varchar(75) NOT NULL,
+    ADD COLUMN code_security_question INT NOT NULL,
+    ADD CONSTRAINT FK_employee_securityquestion
+    FOREIGN KEY (code_security_question) REFERENCES security_question(code),
+    ADD COLUMN security_answer VARCHAR(90) NOT NULL;
+
+ALTER TABLE manager
+	MODIFY user varchar(75) NOT NULL,
+    MODIFY password varchar(75) NOT NULL;
+
+ALTER TABLE appointment
+	DROP COLUMN street;
+
+	
+
 
 
