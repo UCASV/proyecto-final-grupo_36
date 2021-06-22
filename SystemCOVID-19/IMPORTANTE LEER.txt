@@ -1,0 +1,45 @@
+Observaciones de la base de datos:
+Cambiar todos los varchar a 75 caracteres maximos (Si se dejan con pocos caracteres se corre el riesgo de que un string no se reconozca como tal y pete la db)
+Cuando se haga el banco de datos, en el codigo de appointment view, cuando se crea la variable Citizen, hay que descomentar las lineas correspondientes a los combobox enlazados
+
+
+PRIMI:
+Por cuestiones de tiempo, no voy a poder hacer el formulario de AppointmentView, lo que tenes que hacer es desarrollar la funcion de los botones y agregar uno extra que tiene que registrar a la persona para la segunda dosis
+Para hacer eso, debes verificar que ya haya sido vacunado con la primera dosis y  luego setear este valor a uno diferente de 1 o 2 para hacer que ya no se pueda vacunar o hacer otros proc3esos con esta persona.
+Las disculpas del caso, fue mi error no quedarme trabajando ayer.
+Tambien necesito que implementes en appointment view el sistema de las enfermedades y efectos secundarios en AppointmentView (No le entendi a la logica de como debiamos hacerlo xd)
+Porfa no culpes a nadie por la desicion que tomé, el unico que tiene la culpa soy yo.
+
+
+NATALY: No te rindas, comenté mi codigo para que puedan usarlo y ver como funciona por si quieren usarlo. Sos una buena lider, te diste el tiempo en una madrugada de hacer diseños que querias que ejecutaramos. Nadie te lo pidio
+pero igual lo hiciste, eso da a entender mucho.
+Confio en vos, en tu criterio y en tu mano dura xd.
+
+
+MARCK: Maldito hijo de perra te amo pero te estas haciendo pendejo en muchos aspectos, se que los problemas afectan pero no tenes que dejar que sobrepases tu capacidad mental.
+
+
+Por ultimo, lo siento mucho.
+
+Los vere el día de la exposición.
+*************************************************************************************************************
+EXPLICACION DE FUNCIONAMIENTO APPOINTMENT SYSTEM (para manual de usuario)
+*************************************************************************************************************
+El usuario que sta destinado a registrar una cita en el sistema, debe ingresar los campos solicitados (Nombres, Apellidos, Numero de telefono, Correo electronico, Fecha de nacimiento entre otros) Luego de haber rellenado los campos
+se verificara si la persona pertenece a uno de los grupos de riesgos en la actualidad, si este lo esta, se le asigna una fecha y hora al azar para su cita de vacunacion.
+
+Cada campo rellenado sera verificado en busca de errores que pudan intervenir con el resultado cuando el ciudadano sea citado para su vacunacion, este no podra ingresar simbolos en campos de texto y no podra dejar en blanco los campos escenciales.
+
+**************************************************************************************************************
+
+LOS TQM
+
+Si tienen una duda con alguna parte de mi codigo, siempre estan los comentarios y si eso no lo resuelve. Confio en que ustedes podran determinar como funciona.
+
+No me defrauden y los escucho el dia de la expo y los ensayos.
+Un gusto trabajar con ustedes.
+No me odien.
+Recordarles que tenemos 6 dias para la entrega, Nataly, te pido de favor que tomes un poco de seriedad en las mañanas y te comprometas con Primi y Marck para trabajar desde temprano.
+Así aprovechan el tiempo, ya que son las 4pm y no vi a ninguno de ustedes conectado en discord para avanzar en el trabajo.
+
+Favor, cuando alguien note este archivo en el repositorio, guardar una copia, borrarlo del repositorio de github y enviarselo a las personas del equipo de trabajo de poo.

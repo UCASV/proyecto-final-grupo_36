@@ -188,7 +188,6 @@ namespace SALUDGODSV.View
             this.Controls.Add(this.grpAppointmentView);
             this.Name = "AppointmentView";
             this.Text = "Visualizar cita";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AppointmentView_FormClosing);
             this.Load += new System.EventHandler(this.AppointmentView_Load);
             this.grpAppointmentView.ResumeLayout(false);
             this.grpAppointmentView.PerformLayout();

@@ -4,7 +4,7 @@ namespace SALUDGODSV.Functions
     static class StringVerifications
     {
         static public void VerifyString(string toVerify)
-        {
+        {//Comprueba si una cadeena de caracteres contiene simbolos o esta vacia y arroja una exception
             var toCompare = "$/-*";
             int counToReturn = 0;
             for ( var i = 0; i < toCompare.Length; i++)
