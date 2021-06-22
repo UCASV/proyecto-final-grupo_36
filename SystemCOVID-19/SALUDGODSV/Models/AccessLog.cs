@@ -14,7 +14,7 @@ namespace SALUDGODSV.Models
 
         public int Code { get; set; }
         public DateTime Date { get; set; }
-        public TimeSpan Hour { get; set; }
+        public TimeSpan Hour { get; set; } //enlazarlo al empleado
 
         public virtual ICollection<Employee> Employees { get; set; }
     }

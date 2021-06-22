@@ -17,7 +17,7 @@ namespace SALUDGODSV.Models
         public string City { get; set; }
         public string Departament { get; set; }
         public string Occupation { get; set; }
-        public int CodeAppointment { get; set; }
+        public int CodeAppointment { get; set; } //retirarlo
         public int CodeAccesslog { get; set; }
 
         public virtual AccessLog CodeAccesslogNavigation { get; set; }

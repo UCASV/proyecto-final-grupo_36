@@ -1,5 +1,6 @@
 ﻿
-namespace SALUDGODSV
+namespace SALUDGODSV.View
+
 {
     partial class RegistroGestor
     {
@@ -37,8 +38,10 @@ namespace SALUDGODSV
             this.txtContraGReg = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnRegistrarGestor = new System.Windows.Forms.Button();
             this.txtUsuarioGReg = new System.Windows.Forms.TextBox();
+            this.btnRegistrarGestor = new System.Windows.Forms.Button();
+            this.lblVacio2Warning = new System.Windows.Forms.Label();
+            this.lblSignos2Warning = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -74,7 +77,6 @@ namespace SALUDGODSV
             this.label1.TabIndex = 1;
             this.label1.Text = "Registrando Gestor";
             this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox1
             // 
@@ -95,14 +97,17 @@ namespace SALUDGODSV
             this.tableLayoutPanel2.Controls.Add(this.txtContraGReg, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label3, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.btnRegistrarGestor, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.txtUsuarioGReg, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnRegistrarGestor, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.lblVacio2Warning, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.lblSignos2Warning, 1, 3);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(25, 104);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 3;
+            this.tableLayoutPanel2.RowCount = 4;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(480, 317);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
@@ -143,6 +148,15 @@ namespace SALUDGODSV
             this.label3.Text = "Contraseña:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
+            // txtUsuarioGReg
+            // 
+            this.txtUsuarioGReg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtUsuarioGReg.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtUsuarioGReg.Location = new System.Drawing.Point(171, 65);
+            this.txtUsuarioGReg.Name = "txtUsuarioGReg";
+            this.txtUsuarioGReg.Size = new System.Drawing.Size(183, 27);
+            this.txtUsuarioGReg.TabIndex = 3;
+            // 
             // btnRegistrarGestor
             // 
             this.btnRegistrarGestor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -155,15 +169,33 @@ namespace SALUDGODSV
             this.btnRegistrarGestor.TabIndex = 2;
             this.btnRegistrarGestor.Text = "Registrar";
             this.btnRegistrarGestor.UseVisualStyleBackColor = false;
+            this.btnRegistrarGestor.Click += new System.EventHandler(this.btnRegistrarGestor_Click);
             // 
-            // txtUsuarioGReg
+            // lblVacio2Warning
             // 
-            this.txtUsuarioGReg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtUsuarioGReg.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.txtUsuarioGReg.Location = new System.Drawing.Point(171, 65);
-            this.txtUsuarioGReg.Name = "txtUsuarioGReg";
-            this.txtUsuarioGReg.Size = new System.Drawing.Size(183, 27);
-            this.txtUsuarioGReg.TabIndex = 3;
+            this.lblVacio2Warning.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblVacio2Warning.AutoSize = true;
+            this.lblVacio2Warning.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lblVacio2Warning.ForeColor = System.Drawing.Color.Red;
+            this.lblVacio2Warning.Location = new System.Drawing.Point(173, 213);
+            this.lblVacio2Warning.Name = "lblVacio2Warning";
+            this.lblVacio2Warning.Size = new System.Drawing.Size(304, 40);
+            this.lblVacio2Warning.TabIndex = 5;
+            this.lblVacio2Warning.Text = "Los campos no pueden estar vacíos, rellenelos por favor.";
+            // 
+            // lblSignos2Warning
+            // 
+            this.lblSignos2Warning.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSignos2Warning.AutoSize = true;
+            this.lblSignos2Warning.BackColor = System.Drawing.Color.White;
+            this.lblSignos2Warning.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lblSignos2Warning.ForeColor = System.Drawing.Color.Red;
+            this.lblSignos2Warning.Location = new System.Drawing.Point(174, 277);
+            this.lblSignos2Warning.Name = "lblSignos2Warning";
+            this.lblSignos2Warning.Size = new System.Drawing.Size(303, 40);
+            this.lblSignos2Warning.TabIndex = 6;
+            this.lblSignos2Warning.Text = "Los campos rellenados no pueden poseer ninguno de los siguientes signos: \"\\,@,^,$" +
+    ",%,-\"";
             // 
             // RegistroGestor
             // 
@@ -176,7 +208,9 @@ namespace SALUDGODSV
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RegistroGestor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrar Gestor";
+            this.Load += new System.EventHandler(this.RegistroGestor_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -197,5 +231,7 @@ namespace SALUDGODSV
         private System.Windows.Forms.Button btnRegistrarGestor;
         private System.Windows.Forms.TextBox txtUsuarioGReg;
         private System.Windows.Forms.TextBox txtContraGReg;
+        private System.Windows.Forms.Label lblVacio2Warning;
+        private System.Windows.Forms.Label lblSignos2Warning;
     }
 }

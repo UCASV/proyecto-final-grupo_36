@@ -1,5 +1,5 @@
 ﻿
-namespace SALUDGODSV
+namespace SALUDGODSV.View
 {
     partial class IniciandoGestor
     {
@@ -35,13 +35,13 @@ namespace SALUDGODSV
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblSignosWarning = new System.Windows.Forms.Label();
             this.txtContraG = new System.Windows.Forms.TextBox();
             this.txtUsuarioG = new System.Windows.Forms.TextBox();
-            this.btnIngresarGestor = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblVacioWarning = new System.Windows.Forms.Label();
-            this.lblSignosWarning = new System.Windows.Forms.Label();
+            this.btnIngresarGestor = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -129,6 +129,21 @@ namespace SALUDGODSV
             this.tableLayoutPanel2.Size = new System.Drawing.Size(480, 317);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
+            // lblSignosWarning
+            // 
+            this.lblSignosWarning.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSignosWarning.AutoSize = true;
+            this.lblSignosWarning.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lblSignosWarning.ForeColor = System.Drawing.Color.Red;
+            this.lblSignosWarning.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblSignosWarning.Location = new System.Drawing.Point(174, 277);
+            this.lblSignosWarning.Name = "lblSignosWarning";
+            this.lblSignosWarning.Size = new System.Drawing.Size(303, 40);
+            this.lblSignosWarning.TabIndex = 7;
+            this.lblSignosWarning.Text = "Los campos rellenados no pueden poseer ninguno de los siguientes signos: \"\\,@,^,$" +
+    ",%,-\"";
+            this.lblSignosWarning.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            // 
             // txtContraG
             // 
             this.txtContraG.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -146,20 +161,6 @@ namespace SALUDGODSV
             this.txtUsuarioG.Name = "txtUsuarioG";
             this.txtUsuarioG.Size = new System.Drawing.Size(183, 27);
             this.txtUsuarioG.TabIndex = 4;
-            // 
-            // btnIngresarGestor
-            // 
-            this.btnIngresarGestor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnIngresarGestor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(77)))), ((int)(((byte)(188)))));
-            this.btnIngresarGestor.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnIngresarGestor.ForeColor = System.Drawing.Color.White;
-            this.btnIngresarGestor.Location = new System.Drawing.Point(53, 276);
-            this.btnIngresarGestor.Name = "btnIngresarGestor";
-            this.btnIngresarGestor.Size = new System.Drawing.Size(112, 38);
-            this.btnIngresarGestor.TabIndex = 3;
-            this.btnIngresarGestor.Text = "Ingresar";
-            this.btnIngresarGestor.UseVisualStyleBackColor = false;
-            this.btnIngresarGestor.Click += new System.EventHandler(this.btnIngresarGestor_Click);
             // 
             // label2
             // 
@@ -203,20 +204,19 @@ namespace SALUDGODSV
             this.lblVacioWarning.Text = "Los campos no pueden estar vacíos, rellenelos por favor.";
             this.lblVacioWarning.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
-            // lblSignosWarning
+            // btnIngresarGestor
             // 
-            this.lblSignosWarning.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblSignosWarning.AutoSize = true;
-            this.lblSignosWarning.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.lblSignosWarning.ForeColor = System.Drawing.Color.Red;
-            this.lblSignosWarning.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblSignosWarning.Location = new System.Drawing.Point(174, 277);
-            this.lblSignosWarning.Name = "lblSignosWarning";
-            this.lblSignosWarning.Size = new System.Drawing.Size(303, 40);
-            this.lblSignosWarning.TabIndex = 7;
-            this.lblSignosWarning.Text = "Los campos rellenados no pueden poseer ninguno de los siguientes signos: \"\\,@,^,$" +
-    ",%,-\"";
-            this.lblSignosWarning.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnIngresarGestor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnIngresarGestor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(77)))), ((int)(((byte)(188)))));
+            this.btnIngresarGestor.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnIngresarGestor.ForeColor = System.Drawing.Color.White;
+            this.btnIngresarGestor.Location = new System.Drawing.Point(53, 276);
+            this.btnIngresarGestor.Name = "btnIngresarGestor";
+            this.btnIngresarGestor.Size = new System.Drawing.Size(112, 38);
+            this.btnIngresarGestor.TabIndex = 3;
+            this.btnIngresarGestor.Text = "Ingresar";
+            this.btnIngresarGestor.UseVisualStyleBackColor = false;
+            this.btnIngresarGestor.Click += new System.EventHandler(this.btnIngresarGestor_Click);
             // 
             // IniciandoGestor
             // 
@@ -230,6 +230,7 @@ namespace SALUDGODSV
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "IniciandoGestor";
             this.Text = "IniciandoGestor";
+            this.Load += new System.EventHandler(this.IniciandoGestor_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

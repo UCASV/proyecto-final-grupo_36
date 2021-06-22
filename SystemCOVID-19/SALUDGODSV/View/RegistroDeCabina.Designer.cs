@@ -48,6 +48,8 @@ namespace SALUDGODSV
             this.txtContraCabina = new System.Windows.Forms.TextBox();
             this.btnRegistrarCabina = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
+            this.lblVacio3Warning = new System.Windows.Forms.Label();
+            this.lblSignos3Warning = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -56,7 +58,7 @@ namespace SALUDGODSV
             // 
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.White;
             this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.00001F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.19385F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.80614F));
             this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 0);
@@ -74,33 +76,26 @@ namespace SALUDGODSV
             this.tableLayoutPanel1.Controls.Add(this.txtCorreo, 2, 5);
             this.tableLayoutPanel1.Controls.Add(this.txtUsuarioCabina, 2, 7);
             this.tableLayoutPanel1.Controls.Add(this.txtContraCabina, 2, 8);
-            this.tableLayoutPanel1.Controls.Add(this.btnRegistrarCabina, 1, 9);
             this.tableLayoutPanel1.Controls.Add(this.label9, 2, 6);
+            this.tableLayoutPanel1.Controls.Add(this.btnRegistrarCabina, 1, 10);
+            this.tableLayoutPanel1.Controls.Add(this.lblVacio3Warning, 2, 9);
+            this.tableLayoutPanel1.Controls.Add(this.lblSignos3Warning, 2, 10);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(29, 28);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 10;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.469501F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.426987F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.90573F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.872458F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.72089F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.90573F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.839187F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.763401F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.393715F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.18115F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowCount = 11;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.375299F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.289721F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.74693F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.743268F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.56479F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.74693F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.739603F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.650359F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.286056F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.92852F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.92852F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(846, 541);
             this.tableLayoutPanel1.TabIndex = 0;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // pictureBox1
             // 
@@ -110,7 +105,7 @@ namespace SALUDGODSV
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.tableLayoutPanel1.SetRowSpan(this.pictureBox1, 10);
+            this.tableLayoutPanel1.SetRowSpan(this.pictureBox1, 11);
             this.pictureBox1.Size = new System.Drawing.Size(417, 535);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
@@ -229,7 +224,6 @@ namespace SALUDGODSV
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(250, 27);
             this.txtTelefono.TabIndex = 11;
-            this.txtTelefono.TextChanged += new System.EventHandler(this.txtTelefono_TextChanged);
             // 
             // txtNombreEncargado
             // 
@@ -266,7 +260,6 @@ namespace SALUDGODSV
             this.txtContraCabina.Name = "txtContraCabina";
             this.txtContraCabina.Size = new System.Drawing.Size(187, 27);
             this.txtContraCabina.TabIndex = 15;
-            this.txtContraCabina.TextChanged += new System.EventHandler(this.txtContraCabina_TextChanged);
             // 
             // btnRegistrarCabina
             // 
@@ -280,6 +273,7 @@ namespace SALUDGODSV
             this.btnRegistrarCabina.TabIndex = 9;
             this.btnRegistrarCabina.Text = "Registrar";
             this.btnRegistrarCabina.UseVisualStyleBackColor = false;
+            this.btnRegistrarCabina.Click += new System.EventHandler(this.btnRegistrarCabina_Click);
             // 
             // label9
             // 
@@ -294,6 +288,31 @@ namespace SALUDGODSV
             this.label9.TabIndex = 16;
             this.label9.Text = "Gestor";
             this.label9.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            // 
+            // lblVacio3Warning
+            // 
+            this.lblVacio3Warning.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblVacio3Warning.AutoSize = true;
+            this.lblVacio3Warning.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lblVacio3Warning.ForeColor = System.Drawing.Color.Red;
+            this.lblVacio3Warning.Location = new System.Drawing.Point(603, 439);
+            this.lblVacio3Warning.Name = "lblVacio3Warning";
+            this.lblVacio3Warning.Size = new System.Drawing.Size(240, 40);
+            this.lblVacio3Warning.TabIndex = 17;
+            this.lblVacio3Warning.Text = "Los campos no pueden estar vacíos, rellenelos por favor.";
+            // 
+            // lblSignos3Warning
+            // 
+            this.lblSignos3Warning.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSignos3Warning.AutoSize = true;
+            this.lblSignos3Warning.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lblSignos3Warning.ForeColor = System.Drawing.Color.Red;
+            this.lblSignos3Warning.Location = new System.Drawing.Point(571, 490);
+            this.lblSignos3Warning.Name = "lblSignos3Warning";
+            this.lblSignos3Warning.Size = new System.Drawing.Size(272, 51);
+            this.lblSignos3Warning.TabIndex = 18;
+            this.lblSignos3Warning.Text = "Los campos rellenados no pueden poseer ninguno de los siguientes signos: \"\\,@,^,$" +
+    ",%,-\". \r\nLos campos numéricos no pueden tener letras.";
             // 
             // RegistroDeCabina
             // 
@@ -337,6 +356,8 @@ namespace SALUDGODSV
         private System.Windows.Forms.TextBox txtUsuarioCabina;
         private System.Windows.Forms.TextBox txtContraCabina;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblVacio3Warning;
+        private System.Windows.Forms.Label lblSignos3Warning;
     }
 }
 
