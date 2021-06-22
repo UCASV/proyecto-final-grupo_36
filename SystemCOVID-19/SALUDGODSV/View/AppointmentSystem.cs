@@ -18,50 +18,59 @@ namespace SALUDGODSV.View
 
         private const int CB_SETCUEBANNER = 0x1703;
 
+        //Para acceder a parametros internos del pc mediante user32.dll (No usar si no se explica un ejemplo)
         [System.Runtime.InteropServices.DllImport("user32.dll", CharSet = System.Runtime.InteropServices.CharSet.Auto)]
+
+        //Funcion para realizar un cambio en el mensaje default de un comboboc
         private static extern int SendMessage(IntPtr hWnd, int msg, int wParam, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPWStr)] string lParam);
 
         private void AppointmentSystem_Load(object sender, EventArgs e)
         {
+            //Editando el texto de combobox departamentos
             SendMessage(cmbDepartaments.Handle, CB_SETCUEBANNER, 0, "Departamento");
+            //Editando el texto de combobox municipios
             SendMessage(cmbCity.Handle, CB_SETCUEBANNER, 0, "Municipio");
+            //Definiendo colores para convertilos en html y cambiar fondo de formulario
             string toBackColor = "#1b1f7a", toBackColor2 = "#4b4dbc";
             Color myColor = ColorTranslator.FromHtml(toBackColor);
             Color myColor2 = ColorTranslator.FromHtml(toBackColor2);
             BackColor = myColor;
             tlpToMainDesign.BackColor = myColor2;
             btnNewAppointment.BackColor = myColor2;
+            //Funcion para iniciar variables con valores que no se repitan (O borrar lo que contienen)
             AppointmentSystem_StartVars();
 
+            /*Funcion para obtener la hora actual de la computadora (Usar para guardar el log de accesos de los empleados
             string src = DateTime.Now.ToString("HH:mm");
-            MessageBox.Show(src, "Hola", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(src, "Hola", MessageBoxButtons.OK, MessageBoxIcon.Error);*/
         }
 
         private void dgvAppointmentRecords_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            //Cuando se da clic sobre una celda del data grid view, llama al siguiente formulario
             Hide();
             using( var varToShow = new AppointmentView())
             {
-                varToShow.Show();
+                varToShow.ShowDialog();
             }
-            Show();
-            
+            Show(); 
         }
 
         private void btnNewAppointment_Click(object sender, EventArgs e)
         {
             try
             {
-                StringVerifications.VerifyString(txtInsertEmail.Text);
+                //Verificacion de strings para no romper la base de datos
+                //StringVerifications.VerifyString(txtInsertEmail.Text);
                 StringVerifications.VerifyString(txtInsertLastNames.Text);
                 StringVerifications.VerifyString(txtInsertName.Text);
-                StringVerifications.VerifyString(txtMedicalRecord.Text);
                 try
                 {
+                    //Convirtiendo texto a enteros
                     var auxiliarDuiNumber = Convert.ToInt32(txtInsertDUI.Text);
                     var auxiliarPhoneNumber = Convert.ToInt32(txtInsertPhoneNumer.Text);
                     if (txtInsertGobNumber.Text.CompareTo("") != 0)
-                    {
+                    {//Verificando si el numero de gobierno esta vacio
                         try
                         {
                             Convert.ToInt32(txtInsertGobNumber.Text);
@@ -73,44 +82,92 @@ namespace SALUDGODSV.View
                         }
                     }
                     lblGeneralWarningTwo.Visible = false;
+
                     try
                     {
-                        var auxiliarDateTime = Convert.ToDateTime(dtpBirtrhday);
-                        var auxiliarAge = DateTime.Now.Year - auxiliarDateTime.Year;
-                       
+                        //Convirtiendo los datos obtenidos en la caja de las fechas para convertirnos en un DateTime utilizable
+                        var auxiliarDateTime = Convert.ToDateTime(dtpBirtrhday.Text);
+                        //Generando la resta de la fecha de nacimiento y la fecha actual para determinar la edad de la persona
+                        var auxiliarAge = Convert.ToInt32(DateTime.Now.Year.ToString()) - Convert.ToInt32(auxiliarDateTime.Year.ToString());
+                        //Ayuda a tener una edad exacta de la persona a la que se esta ingresando la cita
                         if (DateTime.Now.DayOfYear < auxiliarDateTime.DayOfYear)
                             auxiliarAge -= 1;
-
-                        var startDate = DateTime.Today;
-                        var finalDdate = new DateTime(2022, 1, 1);
-                        var randomDate = new Random();
-                        var randomRange = (startDate - finalDdate).Days;
-                        var AppointmentDate = startDate.AddDays(randomDate.Next(randomRange));
-
+                        
+                        //Invocando la db
                         var db = new covidcontext();
-                        var auxCitizen = new Citizen
-                        {
+                        makeAppointment://Bloque de codigo
+                        var startDate = DateTime.Today;//Definir la fecha actual
+                        var finalDdate = new DateTime(2022, 1, 1);//Fecha limite para hacer citas
+                        var randomDate = new Random();//Variable random
+                        var randomRange = (finalDdate - startDate).Days;//Determinar los dias entre el ultimo dia para hacer citas y la fecha actual
+                        var appointmentDate = startDate.AddDays(randomDate.Next(randomRange));//Elegir un numero random entre ese rango de días
+                        var startHour = TimeSpan.FromHours(7);//Definicion de hora random
+                        var endHour = TimeSpan.FromHours(11);//Definincion de hora random
+                        var maxMinutes = (int)((endHour - startHour).TotalMinutes);//Randominar entre rangos de hora
+                        var useMinutes = randomDate.Next(maxMinutes);
+                        var appointmentHour = startHour.Add(TimeSpan.FromMinutes(useMinutes));//Realizar la conversion correcta al formato de hora
+
+                        List<Appointment> verifyAppointments = db.Appointments.ToList();//Lista de citas realizadas
+                        var checkRegister = verifyAppointments.Where(u => u.Date == appointmentDate && u.Hour == appointmentHour).ToList().Count() > 0;//Revisar si existe una cita a la misma hora y fecha
+                        if (checkRegister)//Si esto pasa, regresa al bloque de codigo donde se definen las horas y fechas random para que de una hora y fecha valida
+                            goto makeAppointment;
+
+                        var auxiliarAppointment = new Appointment()
+                        {//Si se creo con exito el appoointment, creamos la variable de appointment
+                            Date = appointmentDate,
+                            Hour = appointmentHour,
+                            Dose = "1",
+                            Street = "N/A",
+                            City = cmbCity.SelectedItem.ToString(),
+                            Departament = cmbDepartaments.SelectedItem.ToString()
+                        };
+
+                        db.Add(auxiliarAppointment);
+                        db.SaveChanges();//Se guarda en la base de datos
+
+                        List<Appointment> newList = db.Appointments.ToList();//Creamos otra lista pero actualizada
+                         var auxiliarID = newList.Where(u => u.Date == appointmentDate && u.Hour == appointmentHour).ToList();//Buscamos el id de la cita que creamos anteriormente para asociarlo con la variable de citizen
+
+                        var auxCitizen = new Citizen()
+                        {//Ingresamos los datos del citizen
                             Dui = auxiliarDuiNumber,
                             Name = txtInsertName.Text + " " + txtInsertLastNames.Text,
                             Mail = txtInsertEmail.Text,
                             City = cmbCity.SelectedItem.ToString(),
                             Departament = cmbDepartaments.SelectedItem.ToString(),
-                            Phone = Convert.ToInt32(txtInsertPhoneNumer.Text),
+                            Phone = auxiliarPhoneNumber,
                             Age = auxiliarAge,
-                            AssociateNumber = Convert.ToInt32(txtInsertGobNumber.Text),
-                            
+                            //AssociateNumber = int.Parse(txtInsertGobNumber.Text),
+                            AppointmentId = auxiliarID[0].Code,
+                            GobInstitutionId = int.Parse(cmbGobInstitution.SelectedIndex.ToString())                           
                         };
 
-
+                        List<Citizen> verifyCitizen = db.Citizens.ToList();//Creamos una list acon los ciudadanos actuales en el programa
+                        var checkCitizen = verifyCitizen.Where(u => u.Name.ToLower().CompareTo(auxCitizen.Name.ToLower()) == 0).ToList().Count() > 0;//Si existe o no el ciudadano
+                        if(!checkCitizen)//si no existe
+                        {//Agregamos la variable a la base de datos y reniciamos las variables de los compnentes del form
+                            db.Add(auxCitizen);
+                            db.SaveChanges();
+                            MessageBox.Show("¡La cita ha sido agregada con exito!", "Ministerio de Salud de El Salvador", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            AppointmentSystem_StartVars();
+                        }
+                        else
+                        {//Si existe 
+                            db.Remove(auxiliarAppointment);//Removemos el appointment y guardamos los cambios
+                            db.SaveChanges();
+                            MessageBox.Show("¡Esta persona ya tiene una cita asignada!", "Ministerio de Salud de El Salvador", MessageBoxButtons.OK, MessageBoxIcon.Error);//Se muestra un mensaje al usuario
+                            AppointmentSystem_StartVars();//Se reinician los componentes del form
+                        }
                     }
-                    catch
+                    catch (Exception f) 
                     {
-                        MessageBox.Show("Ocurrio un error al usar la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(f.Message);//Si se da un error (Para testeo)
+                        //MessageBox.Show("Ocurrio un error al usar la base de datos", "Minsterio de Salud de El Salvador", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch
                 {
-                    lblGeneralWarningTwo.Visible = true;
+                    lblGeneralWarningTwo.Visible = true;//Si los caracteres de los textbox contienen simbolos, se general un error que hace visibles los label de advertencias
                 }
                 lblGeneralWarning.Visible = false;
             }
@@ -121,7 +178,7 @@ namespace SALUDGODSV.View
         }
 
         private void AppointmentSystem_StartVars()
-        {
+        {//Iniciar todas las varibales de los componentes de los forms en null y recargar datasources
             lblGeneralWarning.Visible = false;
             lblGeneralWarningTwo.Visible = false;
             txtMedicalRecord.Text = null;
@@ -131,14 +188,20 @@ namespace SALUDGODSV.View
             txtInsertPhoneNumer.Text = null;
             txtInsertDUI.Text = null;
             txtInsertGobNumber.Text = null;
+            var db = new covidcontext();
+            List<GobInstitution> gobInstList = db.GobInstitutions.ToList();
+            cmbGobInstitution.DataSource = null;
+            cmbGobInstitution.DataSource = gobInstList;
+            cmbGobInstitution.ValueMember = "Code";
+            cmbGobInstitution.DisplayMember = "Institution";
         }
 
         private void cmbDepartaments_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Selected_Departament(cmbDepartaments.SelectedIndex);
+            Selected_Departament(cmbDepartaments.SelectedIndex);//Cuando el valor del combobox de departamentos cambie
         }
         private void Selected_Departament(int auxiliarIndex)
-        {
+        {//Elije el caso de departamento y acopla los municipios a ese caso de departamento
             switch(auxiliarIndex)
             {
                 case 0:

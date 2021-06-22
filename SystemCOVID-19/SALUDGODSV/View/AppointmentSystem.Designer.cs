@@ -41,8 +41,11 @@ namespace SALUDGODSV.View
             this.lblGeneralWarning = new System.Windows.Forms.Label();
             this.btnNewAppointment = new System.Windows.Forms.Button();
             this.grpMedicalInformation = new System.Windows.Forms.GroupBox();
+            this.cmbSIckness = new System.Windows.Forms.ComboBox();
             this.txtMedicalRecord = new System.Windows.Forms.Label();
             this.grpSalvadoranInformation = new System.Windows.Forms.GroupBox();
+            this.cmbGobInstitution = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtInsertGobNumber = new System.Windows.Forms.TextBox();
             this.lblGobNumber = new System.Windows.Forms.Label();
             this.txtInsertDUI = new System.Windows.Forms.TextBox();
@@ -65,9 +68,6 @@ namespace SALUDGODSV.View
             this.lblName = new System.Windows.Forms.Label();
             this.tpViewAppointments = new System.Windows.Forms.TabPage();
             this.dgvAppointmentRecords = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.tlpToMainDesign.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMinSalud)).BeginInit();
             this.tabAppointment.SuspendLayout();
@@ -237,7 +237,7 @@ namespace SALUDGODSV.View
             // 
             // grpMedicalInformation
             // 
-            this.grpMedicalInformation.Controls.Add(this.comboBox2);
+            this.grpMedicalInformation.Controls.Add(this.cmbSIckness);
             this.grpMedicalInformation.Controls.Add(this.txtMedicalRecord);
             this.grpMedicalInformation.Location = new System.Drawing.Point(620, 6);
             this.grpMedicalInformation.Name = "grpMedicalInformation";
@@ -245,6 +245,17 @@ namespace SALUDGODSV.View
             this.grpMedicalInformation.TabIndex = 13;
             this.grpMedicalInformation.TabStop = false;
             this.grpMedicalInformation.Text = "Datos medicos";
+            // 
+            // cmbSIckness
+            // 
+            this.cmbSIckness.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSIckness.FormattingEnabled = true;
+            this.cmbSIckness.Location = new System.Drawing.Point(6, 53);
+            this.cmbSIckness.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbSIckness.Name = "cmbSIckness";
+            this.cmbSIckness.Size = new System.Drawing.Size(258, 23);
+            this.cmbSIckness.TabIndex = 14;
+            this.cmbSIckness.Tag = "Departamento";
             // 
             // txtMedicalRecord
             // 
@@ -258,7 +269,7 @@ namespace SALUDGODSV.View
             // 
             // grpSalvadoranInformation
             // 
-            this.grpSalvadoranInformation.Controls.Add(this.comboBox1);
+            this.grpSalvadoranInformation.Controls.Add(this.cmbGobInstitution);
             this.grpSalvadoranInformation.Controls.Add(this.label1);
             this.grpSalvadoranInformation.Controls.Add(this.txtInsertGobNumber);
             this.grpSalvadoranInformation.Controls.Add(this.lblGobNumber);
@@ -270,6 +281,27 @@ namespace SALUDGODSV.View
             this.grpSalvadoranInformation.TabIndex = 12;
             this.grpSalvadoranInformation.TabStop = false;
             this.grpSalvadoranInformation.Text = "Datos legales";
+            // 
+            // cmbGobInstitution
+            // 
+            this.cmbGobInstitution.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbGobInstitution.FormattingEnabled = true;
+            this.cmbGobInstitution.Location = new System.Drawing.Point(7, 167);
+            this.cmbGobInstitution.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbGobInstitution.Name = "cmbGobInstitution";
+            this.cmbGobInstitution.Size = new System.Drawing.Size(250, 23);
+            this.cmbGobInstitution.TabIndex = 12;
+            this.cmbGobInstitution.Tag = "Departamento";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(6, 149);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(161, 16);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Institucion gubernamental:";
             // 
             // txtInsertGobNumber
             // 
@@ -524,38 +556,6 @@ namespace SALUDGODSV.View
             this.dgvAppointmentRecords.TabIndex = 0;
             this.dgvAppointmentRecords.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAppointmentRecords_CellContentClick);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(6, 149);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 16);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Institucion gubernamental:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(7, 167);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(250, 23);
-            this.comboBox1.TabIndex = 12;
-            this.comboBox1.Tag = "Departamento";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(6, 53);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(258, 23);
-            this.comboBox2.TabIndex = 14;
-            this.comboBox2.Tag = "Departamento";
-            // 
             // AppointmentSystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -628,7 +628,7 @@ namespace SALUDGODSV.View
         private System.Windows.Forms.ComboBox cmbDepartaments;
         private System.Windows.Forms.ComboBox cmbCity;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbSIckness;
+        private System.Windows.Forms.ComboBox cmbGobInstitution;
     }
 }
