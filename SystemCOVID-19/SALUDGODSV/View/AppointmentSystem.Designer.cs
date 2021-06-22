@@ -67,7 +67,7 @@ namespace SALUDGODSV.View
             this.txtInsertName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
             this.tpViewAppointments = new System.Windows.Forms.TabPage();
-            this.dgvAppointmentRecords = new System.Windows.Forms.DataGridView();
+            this.dgvToShowAppointments = new System.Windows.Forms.DataGridView();
             this.tlpToMainDesign.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMinSalud)).BeginInit();
             this.tabAppointment.SuspendLayout();
@@ -78,7 +78,7 @@ namespace SALUDGODSV.View
             this.grpContactThem.SuspendLayout();
             this.grpInformation.SuspendLayout();
             this.tpViewAppointments.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAppointmentRecords)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvToShowAppointments)).BeginInit();
             this.SuspendLayout();
             // 
             // tlpToMainDesign
@@ -534,7 +534,7 @@ namespace SALUDGODSV.View
             // 
             // tpViewAppointments
             // 
-            this.tpViewAppointments.Controls.Add(this.dgvAppointmentRecords);
+            this.tpViewAppointments.Controls.Add(this.dgvToShowAppointments);
             this.tpViewAppointments.Location = new System.Drawing.Point(4, 24);
             this.tpViewAppointments.Name = "tpViewAppointments";
             this.tpViewAppointments.Size = new System.Drawing.Size(896, 356);
@@ -542,19 +542,18 @@ namespace SALUDGODSV.View
             this.tpViewAppointments.Text = "Control de citas";
             this.tpViewAppointments.UseVisualStyleBackColor = true;
             // 
-            // dgvAppointmentRecords
+            // dgvToShowAppointments
             // 
-            this.dgvAppointmentRecords.AllowUserToAddRows = false;
-            this.dgvAppointmentRecords.AllowUserToDeleteRows = false;
-            this.dgvAppointmentRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAppointmentRecords.Location = new System.Drawing.Point(3, 3);
-            this.dgvAppointmentRecords.Name = "dgvAppointmentRecords";
-            this.dgvAppointmentRecords.ReadOnly = true;
-            this.dgvAppointmentRecords.RowHeadersWidth = 51;
-            this.dgvAppointmentRecords.RowTemplate.Height = 25;
-            this.dgvAppointmentRecords.Size = new System.Drawing.Size(890, 350);
-            this.dgvAppointmentRecords.TabIndex = 0;
-            this.dgvAppointmentRecords.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAppointmentRecords_CellContentClick);
+            this.dgvToShowAppointments.AllowUserToAddRows = false;
+            this.dgvToShowAppointments.AllowUserToDeleteRows = false;
+            this.dgvToShowAppointments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvToShowAppointments.Location = new System.Drawing.Point(0, 0);
+            this.dgvToShowAppointments.Name = "dgvToShowAppointments";
+            this.dgvToShowAppointments.ReadOnly = true;
+            this.dgvToShowAppointments.RowTemplate.Height = 25;
+            this.dgvToShowAppointments.Size = new System.Drawing.Size(896, 356);
+            this.dgvToShowAppointments.TabIndex = 0;
+            this.dgvToShowAppointments.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvToShowAppointments_CellContentClick);
             // 
             // AppointmentSystem
             // 
@@ -584,7 +583,7 @@ namespace SALUDGODSV.View
             this.grpInformation.ResumeLayout(false);
             this.grpInformation.PerformLayout();
             this.tpViewAppointments.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAppointmentRecords)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvToShowAppointments)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -623,12 +622,12 @@ namespace SALUDGODSV.View
         private System.Windows.Forms.Button btnNewAppointment;
         private System.Windows.Forms.Label lblGeneralWarning;
         private System.Windows.Forms.TabPage tpViewAppointments;
-        private System.Windows.Forms.DataGridView dgvAppointmentRecords;
         private System.Windows.Forms.Label lblGeneralWarningTwo;
         private System.Windows.Forms.ComboBox cmbDepartaments;
         private System.Windows.Forms.ComboBox cmbCity;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbSIckness;
         private System.Windows.Forms.ComboBox cmbGobInstitution;
+        private System.Windows.Forms.DataGridView dgvToShowAppointments;
     }
 }

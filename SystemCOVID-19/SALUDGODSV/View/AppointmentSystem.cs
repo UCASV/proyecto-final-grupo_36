@@ -16,6 +16,19 @@ namespace SALUDGODSV.View
             InitializeComponent();
         }
 
+        public struct toDataGridView
+        {
+
+            public int? appointmentDgvID { get; set; }
+            public string appointmentDgvName { get; set; }
+            public int appointmentDgvDui { get; set; }
+            public int appointmentDgvAge { get; set; }
+            public DateTime appointmentDgvDate { get; set; }
+            public TimeSpan appointmentDgvTime { get; set; }
+            public string appointmentDgvDose { get; set; }
+        };
+
+
         private const int CB_SETCUEBANNER = 0x1703;
 
         //Para acceder a parametros internos del pc mediante user32.dll (No usar si no se explica un ejemplo)
@@ -38,6 +51,7 @@ namespace SALUDGODSV.View
             tlpToMainDesign.BackColor = myColor2;
             btnNewAppointment.BackColor = myColor2;
             //Funcion para iniciar variables con valores que no se repitan (O borrar lo que contienen)
+            dgvToShowAppointments.BindingContext = BindingContext;
             AppointmentSystem_StartVars();
 
             /*Funcion para obtener la hora actual de la computadora (Usar para guardar el log de accesos de los empleados
@@ -45,12 +59,25 @@ namespace SALUDGODSV.View
             MessageBox.Show(src, "Hola", MessageBoxButtons.OK, MessageBoxIcon.Error);*/
         }
 
-        private void dgvAppointmentRecords_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvToShowAppointments_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //Cuando se da clic sobre una celda del data grid view, llama al siguiente formulario
             Hide();
-            using( var varToShow = new AppointmentView())
+            var auxVar = new toDataGridView();
+
+            //Extrae lo datos de la celda seleccionada actualmente para agregarlos a una struct usada en el datagridview del formulario anterior
+            auxVar.appointmentDgvAge = Convert.ToInt32(dgvToShowAppointments.CurrentRow.Cells["appointmentDgvAge"].Value.ToString());
+            auxVar.appointmentDgvDate = Convert.ToDateTime(dgvToShowAppointments.CurrentRow.Cells["appointmentDgvDate"].Value.ToString());
+            auxVar.appointmentDgvDui = Convert.ToInt32(dgvToShowAppointments.CurrentRow.Cells["appointmentDgvDui"].Value.ToString());
+            auxVar.appointmentDgvID = Convert.ToInt32(dgvToShowAppointments.CurrentRow.Cells["appointmentDgvID"].Value.ToString());
+            auxVar.appointmentDgvName = dgvToShowAppointments.CurrentRow.Cells["appointmentDgvName"].Value.ToString();
+            auxVar.appointmentDgvDose = dgvToShowAppointments.CurrentRow.Cells["appointmentDgvDose"].Value.ToString();
+            auxVar.appointmentDgvTime = TimeSpan.Parse(dgvToShowAppointments.CurrentRow.Cells["appointmentDgvTime"].Value.ToString());
+
+            using ( var varToShow = new AppointmentView())
             {
+                //Iguala la variable global en AppointmentView para pasar los datos correctamente que se eligieron en el datagridview
+                varToShow.GlobalStruct = auxVar;
                 varToShow.ShowDialog();
             }
             Show(); 
@@ -139,17 +166,28 @@ namespace SALUDGODSV.View
                             Age = auxiliarAge,
                             //AssociateNumber = int.Parse(txtInsertGobNumber.Text),
                             AppointmentId = auxiliarID[0].Code,
-                            GobInstitutionId = int.Parse(cmbGobInstitution.SelectedIndex.ToString())                           
+                            //GobInstitutionId = int.Parse(cmbGobInstitution.SelectedIndex.ToString())                           
                         };
 
                         List<Citizen> verifyCitizen = db.Citizens.ToList();//Creamos una list acon los ciudadanos actuales en el programa
                         var checkCitizen = verifyCitizen.Where(u => u.Name.ToLower().CompareTo(auxCitizen.Name.ToLower()) == 0).ToList().Count() > 0;//Si existe o no el ciudadano
                         if(!checkCitizen)//si no existe
                         {//Agregamos la variable a la base de datos y reniciamos las variables de los compnentes del form
-                            db.Add(auxCitizen);
-                            db.SaveChanges();
-                            MessageBox.Show("¡La cita ha sido agregada con exito!", "Ministerio de Salud de El Salvador", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            AppointmentSystem_StartVars();
+   
+                            if (auxCitizen.Age < 60 && auxCitizen.GobInstitutionId == null && auxCitizen.AssociateNumber == null)
+                            {
+                                db.Remove(auxiliarAppointment);//Removemos el appointment y guardamos los cambios
+                                db.SaveChanges();
+                                MessageBox.Show("¡Usted no pertenece a ningun grupo de riesgo!", "Ministerio de Salud de El Salvador", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                AppointmentSystem_StartVars();
+                            }
+                            else
+                            {
+                                db.Add(auxCitizen);
+                                db.SaveChanges();
+                                MessageBox.Show("¡Su cita fue agregada correctamente!", "Ministerio de Salud de El Salvador", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                AppointmentSystem_StartVars();
+                            }
                         }
                         else
                         {//Si existe 
@@ -194,6 +232,15 @@ namespace SALUDGODSV.View
             cmbGobInstitution.DataSource = gobInstList;
             cmbGobInstitution.ValueMember = "Code";
             cmbGobInstitution.DisplayMember = "Institution";
+            dgvToShowAppointments.DataSource = null;
+            dgvToShowAppointments.DataSource = PopulateDataGridView();
+            dgvToShowAppointments.Columns[0].HeaderText = "ID CITA";
+            dgvToShowAppointments.Columns[1].HeaderText = "NOMBRE";
+            dgvToShowAppointments.Columns[2].HeaderText = "DUI";
+            dgvToShowAppointments.Columns[3].HeaderText = "EDAD";
+            dgvToShowAppointments.Columns[4].HeaderText = "FECHA";
+            dgvToShowAppointments.Columns[5].HeaderText = "HORA";
+            dgvToShowAppointments.Columns[6].HeaderText = "DOSIS";
         }
 
         private void cmbDepartaments_SelectedIndexChanged(object sender, EventArgs e)
@@ -550,6 +597,29 @@ namespace SALUDGODSV.View
                     });
                     break;
             }
+        }
+
+        public List<toDataGridView> PopulateDataGridView()
+        {
+            List<toDataGridView> toPopulate = new List<toDataGridView>();
+            var db = new covidcontext();
+            List<Citizen> toListCitizen = db.Citizens.ToList();
+
+            toListCitizen.ForEach(u =>
+            {
+                List<Appointment> toListAppontment = db.Appointments.ToList();
+                var auxStruct = new toDataGridView();
+
+                auxStruct.appointmentDgvID = u.AppointmentId;
+                auxStruct.appointmentDgvName = u.Name;
+                auxStruct.appointmentDgvDui = u.Dui;
+                auxStruct.appointmentDgvAge = u.Age;
+                auxStruct.appointmentDgvDate = u.Appointment.Date;
+                auxStruct.appointmentDgvTime = u.Appointment.Hour;
+                auxStruct.appointmentDgvDose = u.Appointment.Dose;
+                toPopulate.Add(auxStruct);
+            });
+            return toPopulate;
         }
     }
 }
