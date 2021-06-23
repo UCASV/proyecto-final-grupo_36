@@ -33,22 +33,22 @@ namespace SALUDGODSV.View
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.txtNombreEncargado = new System.Windows.Forms.TextBox();
-            this.txtCorreo = new System.Windows.Forms.TextBox();
-            this.txtUsuarioCabina = new System.Windows.Forms.TextBox();
-            this.txtContraCabina = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.btnRegistrarCabina = new System.Windows.Forms.Button();
-            this.lblVacio3Warning = new System.Windows.Forms.Label();
             this.lblSignos3Warning = new System.Windows.Forms.Label();
+            this.lblVacio3Warning = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtContraCabina = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtUsuarioCabina = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtNombreEncargado = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.cmbCiudad = new System.Windows.Forms.ComboBox();
             this.cmbDepartamento = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
@@ -125,62 +125,6 @@ namespace SALUDGODSV.View
             this.label2.TabIndex = 2;
             this.label2.Text = "Dirección:";
             // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Black", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(426, 164);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 25);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Teléfono:";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Black", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(426, 196);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(130, 50);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Nombre del encargado:";
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Black", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(426, 254);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(117, 50);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Correo Electrónico:";
-            // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Black", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(426, 356);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(86, 25);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Usuario:";
-            // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI Black", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(426, 395);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(117, 25);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "Contraseña:";
-            // 
             // label6
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -210,41 +154,55 @@ namespace SALUDGODSV.View
             this.label1.Text = "Registro";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // txtTelefono
+            // btnRegistrarCabina
             // 
-            this.txtTelefono.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtTelefono.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtTelefono.Location = new System.Drawing.Point(562, 159);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(250, 27);
-            this.txtTelefono.TabIndex = 11;
+            this.btnRegistrarCabina.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnRegistrarCabina.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(77)))), ((int)(((byte)(188)))));
+            this.btnRegistrarCabina.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnRegistrarCabina.ForeColor = System.Drawing.Color.White;
+            this.btnRegistrarCabina.Location = new System.Drawing.Point(426, 497);
+            this.btnRegistrarCabina.Name = "btnRegistrarCabina";
+            this.btnRegistrarCabina.Size = new System.Drawing.Size(117, 41);
+            this.btnRegistrarCabina.TabIndex = 9;
+            this.btnRegistrarCabina.Text = "Registrar";
+            this.btnRegistrarCabina.UseVisualStyleBackColor = false;
+            this.btnRegistrarCabina.Click += new System.EventHandler(this.btnRegistrarCabina_Click);
             // 
-            // txtNombreEncargado
+            // lblSignos3Warning
             // 
-            this.txtNombreEncargado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtNombreEncargado.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtNombreEncargado.Location = new System.Drawing.Point(562, 216);
-            this.txtNombreEncargado.Name = "txtNombreEncargado";
-            this.txtNombreEncargado.Size = new System.Drawing.Size(250, 27);
-            this.txtNombreEncargado.TabIndex = 12;
+            this.lblSignos3Warning.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSignos3Warning.AutoSize = true;
+            this.lblSignos3Warning.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lblSignos3Warning.ForeColor = System.Drawing.Color.Red;
+            this.lblSignos3Warning.Location = new System.Drawing.Point(571, 490);
+            this.lblSignos3Warning.Name = "lblSignos3Warning";
+            this.lblSignos3Warning.Size = new System.Drawing.Size(272, 51);
+            this.lblSignos3Warning.TabIndex = 18;
+            this.lblSignos3Warning.Text = "Los campos rellenados no pueden poseer ninguno de los siguientes signos: \"\\,@,^,$" +
+    ",%,-\". \r\nLos campos numéricos no pueden tener letras.";
             // 
-            // txtCorreo
+            // lblVacio3Warning
             // 
-            this.txtCorreo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtCorreo.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtCorreo.Location = new System.Drawing.Point(562, 274);
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(250, 27);
-            this.txtCorreo.TabIndex = 13;
+            this.lblVacio3Warning.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblVacio3Warning.AutoSize = true;
+            this.lblVacio3Warning.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lblVacio3Warning.ForeColor = System.Drawing.Color.Red;
+            this.lblVacio3Warning.Location = new System.Drawing.Point(603, 439);
+            this.lblVacio3Warning.Name = "lblVacio3Warning";
+            this.lblVacio3Warning.Size = new System.Drawing.Size(240, 40);
+            this.lblVacio3Warning.TabIndex = 17;
+            this.lblVacio3Warning.Text = "Los campos no pueden estar vacíos, rellenelos por favor.";
             // 
-            // txtUsuarioCabina
+            // label8
             // 
-            this.txtUsuarioCabina.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtUsuarioCabina.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtUsuarioCabina.Location = new System.Drawing.Point(562, 351);
-            this.txtUsuarioCabina.Name = "txtUsuarioCabina";
-            this.txtUsuarioCabina.Size = new System.Drawing.Size(187, 27);
-            this.txtUsuarioCabina.TabIndex = 14;
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Black", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(426, 395);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(117, 25);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "Contraseña:";
             // 
             // txtContraCabina
             // 
@@ -254,6 +212,26 @@ namespace SALUDGODSV.View
             this.txtContraCabina.Name = "txtContraCabina";
             this.txtContraCabina.Size = new System.Drawing.Size(187, 27);
             this.txtContraCabina.TabIndex = 15;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Black", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(426, 356);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(86, 25);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Usuario:";
+            // 
+            // txtUsuarioCabina
+            // 
+            this.txtUsuarioCabina.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtUsuarioCabina.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txtUsuarioCabina.Location = new System.Drawing.Point(562, 351);
+            this.txtUsuarioCabina.Name = "txtUsuarioCabina";
+            this.txtUsuarioCabina.Size = new System.Drawing.Size(187, 27);
+            this.txtUsuarioCabina.TabIndex = 14;
             // 
             // label9
             // 
@@ -269,44 +247,66 @@ namespace SALUDGODSV.View
             this.label9.Text = "Gestor";
             this.label9.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
-            // btnRegistrarCabina
+            // label5
             // 
-            this.btnRegistrarCabina.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnRegistrarCabina.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(77)))), ((int)(((byte)(188)))));
-            this.btnRegistrarCabina.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnRegistrarCabina.ForeColor = System.Drawing.Color.White;
-            this.btnRegistrarCabina.Location = new System.Drawing.Point(426, 497);
-            this.btnRegistrarCabina.Name = "btnRegistrarCabina";
-            this.btnRegistrarCabina.Size = new System.Drawing.Size(117, 41);
-            this.btnRegistrarCabina.TabIndex = 9;
-            this.btnRegistrarCabina.Text = "Registrar";
-            this.btnRegistrarCabina.UseVisualStyleBackColor = false;
-            this.btnRegistrarCabina.Click += new System.EventHandler(this.btnRegistrarCabina_Click);
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Black", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(426, 254);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(117, 50);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Correo Electrónico:";
             // 
-            // lblVacio3Warning
+            // txtCorreo
             // 
-            this.lblVacio3Warning.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblVacio3Warning.AutoSize = true;
-            this.lblVacio3Warning.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.lblVacio3Warning.ForeColor = System.Drawing.Color.Red;
-            this.lblVacio3Warning.Location = new System.Drawing.Point(603, 439);
-            this.lblVacio3Warning.Name = "lblVacio3Warning";
-            this.lblVacio3Warning.Size = new System.Drawing.Size(240, 40);
-            this.lblVacio3Warning.TabIndex = 17;
-            this.lblVacio3Warning.Text = "Los campos no pueden estar vacíos, rellenelos por favor.";
+            this.txtCorreo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtCorreo.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txtCorreo.Location = new System.Drawing.Point(562, 274);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(250, 27);
+            this.txtCorreo.TabIndex = 13;
             // 
-            // lblSignos3Warning
+            // label4
             // 
-            this.lblSignos3Warning.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblSignos3Warning.AutoSize = true;
-            this.lblSignos3Warning.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.lblSignos3Warning.ForeColor = System.Drawing.Color.Red;
-            this.lblSignos3Warning.Location = new System.Drawing.Point(571, 490);
-            this.lblSignos3Warning.Name = "lblSignos3Warning";
-            this.lblSignos3Warning.Size = new System.Drawing.Size(272, 51);
-            this.lblSignos3Warning.TabIndex = 18;
-            this.lblSignos3Warning.Text = "Los campos rellenados no pueden poseer ninguno de los siguientes signos: \"\\,@,^,$" +
-    ",%,-\". \r\nLos campos numéricos no pueden tener letras.";
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Black", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(426, 196);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(130, 50);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Nombre del encargado:";
+            // 
+            // txtNombreEncargado
+            // 
+            this.txtNombreEncargado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtNombreEncargado.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txtNombreEncargado.Location = new System.Drawing.Point(562, 216);
+            this.txtNombreEncargado.Name = "txtNombreEncargado";
+            this.txtNombreEncargado.Size = new System.Drawing.Size(250, 27);
+            this.txtNombreEncargado.TabIndex = 12;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Black", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(426, 164);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(96, 25);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Teléfono:";
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtTelefono.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txtTelefono.Location = new System.Drawing.Point(562, 159);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(250, 27);
+            this.txtTelefono.TabIndex = 11;
             // 
             // cmbCiudad
             // 
@@ -316,6 +316,7 @@ namespace SALUDGODSV.View
             this.cmbCiudad.Name = "cmbCiudad";
             this.cmbCiudad.Size = new System.Drawing.Size(250, 28);
             this.cmbCiudad.TabIndex = 19;
+            this.cmbCiudad.Tag = "Departamento";
             // 
             // cmbDepartamento
             // 
@@ -340,6 +341,7 @@ namespace SALUDGODSV.View
             this.cmbDepartamento.Name = "cmbDepartamento";
             this.cmbDepartamento.Size = new System.Drawing.Size(250, 28);
             this.cmbDepartamento.TabIndex = 20;
+            this.cmbDepartamento.Tag = "Departamento";
             // 
             // RegistroDeCabina
             // 
