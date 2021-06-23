@@ -5,16 +5,15 @@ using System.Collections.Generic;
 
 namespace SALUDGODSV.Models
 {
-    public partial class AccessLog
+    public partial class SecurityQuestion
     {
-        public AccessLog()
+        public SecurityQuestion()
         {
             Employees = new HashSet<Employee>();
         }
 
         public int Code { get; set; }
-        public DateTime Date { get; set; }
-        public TimeSpan Hour { get; set; }
+        public string SecurityQuestion1 { get; set; }
 
         public virtual ICollection<Employee> Employees { get; set; }
     }

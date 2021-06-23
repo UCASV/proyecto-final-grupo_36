@@ -16,7 +16,6 @@ namespace SALUDGODSV.Models
         public int Code { get; set; }
         public DateTime Date { get; set; }
         public TimeSpan Hour { get; set; }
-        public string Street { get; set; }
         public string City { get; set; }
         public string Departament { get; set; }
         public string Dose { get; set; }

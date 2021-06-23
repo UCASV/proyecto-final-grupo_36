@@ -57,7 +57,7 @@ namespace SALUDGODSV.View
                     }
                     lblSignos3Warning.Visible = false;
                     
-                    if (Username = txtUsuarioCabina.Text && Password = txtContraCabina.Text)
+
                     {
                         try//meter este try catch en un if del si user y contra son iguales
                         {
@@ -66,7 +66,7 @@ namespace SALUDGODSV.View
                             List<Cabin> auxCabina = db.Cabins.ToList();
                             var auxCabin = new Cabin
                             {
-                                Phone = txtTelefono.Text,
+
                                 Caretaker = txtNombreEncargado.Text,
                                 Code = auxCabina[0].Code
                             };

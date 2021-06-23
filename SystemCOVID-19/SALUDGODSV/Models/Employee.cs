@@ -17,11 +17,14 @@ namespace SALUDGODSV.Models
         public string City { get; set; }
         public string Departament { get; set; }
         public string Occupation { get; set; }
-        public int CodeAppointment { get; set; } //retirarlo
+        public int CodeAppointment { get; set; }
         public int CodeAccesslog { get; set; }
+        public int CodeSecurityQuestion { get; set; }
+        public string SecurityAnswer { get; set; }
 
         public virtual AccessLog CodeAccesslogNavigation { get; set; }
         public virtual Appointment CodeAppointmentNavigation { get; set; }
+        public virtual SecurityQuestion CodeSecurityQuestionNavigation { get; set; }
         public virtual ICollection<Manager> Managers { get; set; }
     }
 }

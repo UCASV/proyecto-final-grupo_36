@@ -1,6 +1,5 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
-using SALUDGODSV.Models;
 using Microsoft.EntityFrameworkCore.Metadata;
 
 #nullable disable
@@ -24,10 +23,12 @@ namespace SALUDGODSV.Context
         public virtual DbSet<Citizen> Citizens { get; set; }
         public virtual DbSet<CitizenxsecondaryEffect> CitizenxsecondaryEffects { get; set; }
         public virtual DbSet<Citizenxsickness> Citizenxsicknesses { get; set; }
+        public virtual DbSet<Efmigrationshistory> Efmigrationshistories { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<GobInstitution> GobInstitutions { get; set; }
         public virtual DbSet<Manager> Managers { get; set; }
         public virtual DbSet<SecondaryEffect> SecondaryEffects { get; set; }
+        public virtual DbSet<SecurityQuestion> SecurityQuestions { get; set; }
         public virtual DbSet<Sickness> Sicknesses { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -88,11 +89,6 @@ namespace SALUDGODSV.Context
                     .IsFixedLength(true);
 
                 entity.Property(e => e.Hour).HasColumnName("hour");
-
-                entity.Property(e => e.Street)
-                    .IsRequired()
-                    .HasMaxLength(30)
-                    .HasColumnName("street");
             });
 
             modelBuilder.Entity<Cabin>(entity =>
@@ -106,7 +102,7 @@ namespace SALUDGODSV.Context
 
                 entity.Property(e => e.Caretaker)
                     .IsRequired()
-                    .HasMaxLength(35)
+                    .HasMaxLength(75)
                     .HasColumnName("caretaker");
 
                 entity.Property(e => e.City)
@@ -121,6 +117,11 @@ namespace SALUDGODSV.Context
                     .IsFixedLength(true);
 
                 entity.Property(e => e.EmployeeCode).HasColumnName("employee_code");
+
+                entity.Property(e => e.Mail)
+                    .IsRequired()
+                    .HasMaxLength(75)
+                    .HasColumnName("mail");
 
                 entity.Property(e => e.Phone).HasColumnName("phone");
             });
@@ -159,12 +160,12 @@ namespace SALUDGODSV.Context
 
                 entity.Property(e => e.Mail)
                     .IsRequired()
-                    .HasMaxLength(25)
+                    .HasMaxLength(75)
                     .HasColumnName("mail");
 
                 entity.Property(e => e.Name)
                     .IsRequired()
-                    .HasMaxLength(40)
+                    .HasMaxLength(75)
                     .HasColumnName("name");
 
                 entity.Property(e => e.Phone).HasColumnName("phone");
@@ -236,6 +237,20 @@ namespace SALUDGODSV.Context
                     .HasConstraintName("FK_citizenxsickeness_code");
             });
 
+            modelBuilder.Entity<Efmigrationshistory>(entity =>
+            {
+                entity.HasKey(e => e.MigrationId)
+                    .HasName("PRIMARY");
+
+                entity.ToTable("__efmigrationshistory");
+
+                entity.Property(e => e.MigrationId).HasMaxLength(150);
+
+                entity.Property(e => e.ProductVersion)
+                    .IsRequired()
+                    .HasMaxLength(32);
+            });
+
             modelBuilder.Entity<Employee>(entity =>
             {
                 entity.HasKey(e => e.Code)
@@ -246,6 +261,8 @@ namespace SALUDGODSV.Context
                 entity.HasIndex(e => e.CodeAccesslog, "FK_employee_accesslog");
 
                 entity.HasIndex(e => e.CodeAppointment, "FK_employee_appointment");
+
+                entity.HasIndex(e => e.CodeSecurityQuestion, "FK_employee_securityquestion");
 
                 entity.Property(e => e.Code).HasColumnName("code");
 
@@ -258,6 +275,8 @@ namespace SALUDGODSV.Context
 
                 entity.Property(e => e.CodeAppointment).HasColumnName("code_appointment");
 
+                entity.Property(e => e.CodeSecurityQuestion).HasColumnName("code_security_question");
+
                 entity.Property(e => e.Departament)
                     .IsRequired()
                     .HasMaxLength(15)
@@ -266,13 +285,18 @@ namespace SALUDGODSV.Context
 
                 entity.Property(e => e.Mail)
                     .IsRequired()
-                    .HasMaxLength(25)
+                    .HasMaxLength(75)
                     .HasColumnName("mail");
 
                 entity.Property(e => e.Occupation)
                     .IsRequired()
-                    .HasMaxLength(30)
+                    .HasMaxLength(75)
                     .HasColumnName("occupation");
+
+                entity.Property(e => e.SecurityAnswer)
+                    .IsRequired()
+                    .HasMaxLength(90)
+                    .HasColumnName("security_answer");
 
                 entity.HasOne(d => d.CodeAccesslogNavigation)
                     .WithMany(p => p.Employees)
@@ -285,6 +309,12 @@ namespace SALUDGODSV.Context
                     .HasForeignKey(d => d.CodeAppointment)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_employee_appointment");
+
+                entity.HasOne(d => d.CodeSecurityQuestionNavigation)
+                    .WithMany(p => p.Employees)
+                    .HasForeignKey(d => d.CodeSecurityQuestion)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_employee_securityquestion");
             });
 
             modelBuilder.Entity<GobInstitution>(entity =>
@@ -298,7 +328,7 @@ namespace SALUDGODSV.Context
 
                 entity.Property(e => e.Institution)
                     .IsRequired()
-                    .HasMaxLength(50)
+                    .HasMaxLength(75)
                     .HasColumnName("institution");
             });
 
@@ -321,12 +351,12 @@ namespace SALUDGODSV.Context
 
                 entity.Property(e => e.Password)
                     .IsRequired()
-                    .HasMaxLength(40)
+                    .HasMaxLength(75)
                     .HasColumnName("password");
 
                 entity.Property(e => e.User)
                     .IsRequired()
-                    .HasMaxLength(30)
+                    .HasMaxLength(75)
                     .HasColumnName("user");
 
                 entity.HasOne(d => d.CodeCabinNavigation)
@@ -355,6 +385,21 @@ namespace SALUDGODSV.Context
                     .IsRequired()
                     .HasMaxLength(50)
                     .HasColumnName("secondary_effect");
+            });
+
+            modelBuilder.Entity<SecurityQuestion>(entity =>
+            {
+                entity.HasKey(e => e.Code)
+                    .HasName("PRIMARY");
+
+                entity.ToTable("security_question");
+
+                entity.Property(e => e.Code).HasColumnName("code");
+
+                entity.Property(e => e.SecurityQuestion1)
+                    .IsRequired()
+                    .HasMaxLength(90)
+                    .HasColumnName("security_question");
             });
 
             modelBuilder.Entity<Sickness>(entity =>
