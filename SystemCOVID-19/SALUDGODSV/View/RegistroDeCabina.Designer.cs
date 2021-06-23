@@ -160,9 +160,10 @@ namespace SALUDGODSV.View
             this.btnRegistrarCabina.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(77)))), ((int)(((byte)(188)))));
             this.btnRegistrarCabina.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnRegistrarCabina.ForeColor = System.Drawing.Color.White;
-            this.btnRegistrarCabina.Location = new System.Drawing.Point(426, 497);
+            this.btnRegistrarCabina.Location = new System.Drawing.Point(426, 483);
+            this.btnRegistrarCabina.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRegistrarCabina.Name = "btnRegistrarCabina";
-            this.btnRegistrarCabina.Size = new System.Drawing.Size(117, 41);
+            this.btnRegistrarCabina.Size = new System.Drawing.Size(129, 54);
             this.btnRegistrarCabina.TabIndex = 9;
             this.btnRegistrarCabina.Text = "Registrar";
             this.btnRegistrarCabina.UseVisualStyleBackColor = false;
@@ -228,9 +229,10 @@ namespace SALUDGODSV.View
             // 
             this.txtUsuarioCabina.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtUsuarioCabina.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtUsuarioCabina.Location = new System.Drawing.Point(562, 351);
+            this.txtUsuarioCabina.Location = new System.Drawing.Point(562, 350);
+            this.txtUsuarioCabina.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUsuarioCabina.Name = "txtUsuarioCabina";
-            this.txtUsuarioCabina.Size = new System.Drawing.Size(187, 27);
+            this.txtUsuarioCabina.Size = new System.Drawing.Size(213, 27);
             this.txtUsuarioCabina.TabIndex = 14;
             // 
             // label9
@@ -262,9 +264,10 @@ namespace SALUDGODSV.View
             // 
             this.txtCorreo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtCorreo.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtCorreo.Location = new System.Drawing.Point(562, 274);
+            this.txtCorreo.Location = new System.Drawing.Point(562, 273);
+            this.txtCorreo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(250, 27);
+            this.txtCorreo.Size = new System.Drawing.Size(279, 27);
             this.txtCorreo.TabIndex = 13;
             // 
             // label4
@@ -283,9 +286,10 @@ namespace SALUDGODSV.View
             // 
             this.txtNombreEncargado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtNombreEncargado.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtNombreEncargado.Location = new System.Drawing.Point(562, 216);
+            this.txtNombreEncargado.Location = new System.Drawing.Point(562, 215);
+            this.txtNombreEncargado.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNombreEncargado.Name = "txtNombreEncargado";
-            this.txtNombreEncargado.Size = new System.Drawing.Size(250, 27);
+            this.txtNombreEncargado.Size = new System.Drawing.Size(279, 27);
             this.txtNombreEncargado.TabIndex = 12;
             // 
             // label3
@@ -303,9 +307,10 @@ namespace SALUDGODSV.View
             // 
             this.txtTelefono.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtTelefono.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtTelefono.Location = new System.Drawing.Point(562, 159);
+            this.txtTelefono.Location = new System.Drawing.Point(562, 158);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(250, 27);
+            this.txtTelefono.Size = new System.Drawing.Size(279, 27);
             this.txtTelefono.TabIndex = 11;
             // 
             // cmbCiudad

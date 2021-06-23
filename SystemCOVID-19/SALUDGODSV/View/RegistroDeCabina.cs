@@ -58,9 +58,13 @@ namespace SALUDGODSV.View
                     }
                     lblSignos3Warning.Visible = false;
 
+
                     var auxUser = txtUsuarioCabina.Text;
                     var auxContra = txtContraCabina.Text;
                     if (auxUser == Username && auxContra == Password)
+                    
+
+
                     {
                         try
                         {
@@ -69,11 +73,12 @@ namespace SALUDGODSV.View
                             List<Cabin> auxCabina = db.Cabins.ToList();
                             var auxCabin = new Cabin
                             {
+
                                 Phone = auxiliarNumero,
                                 Caretaker = txtNombreEncargado.Text,
-                                Code = auxCabina[0].Code
-                                City = cmbCiudad.SelectedItem.ToString()
-                                Department = cmbDepartamento.SelectedItem.ToString()
+                                Code = auxCabina[0].Code,
+                                City = cmbCiudad.SelectedItem.ToString(),
+                                Departament = cmbDepartamento.SelectedItem.ToString()
                             };
                             db.Add(auxCabin);
                             db.SaveChanges();
