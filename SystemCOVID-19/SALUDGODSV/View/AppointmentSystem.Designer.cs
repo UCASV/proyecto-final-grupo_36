@@ -29,6 +29,7 @@ namespace SALUDGODSV.View
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AppointmentSystem));
             this.tlpToMainDesign = new System.Windows.Forms.TableLayoutPanel();
             this.picMinSalud = new System.Windows.Forms.PictureBox();
             this.lblMinSalud = new System.Windows.Forms.Label();
@@ -90,22 +91,24 @@ namespace SALUDGODSV.View
             this.tlpToMainDesign.Controls.Add(this.picMinSalud, 0, 0);
             this.tlpToMainDesign.Controls.Add(this.lblMinSalud, 1, 0);
             this.tlpToMainDesign.Controls.Add(this.tabAppointment, 0, 1);
-            this.tlpToMainDesign.Location = new System.Drawing.Point(12, 12);
+            this.tlpToMainDesign.Location = new System.Drawing.Point(14, 16);
+            this.tlpToMainDesign.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tlpToMainDesign.Name = "tlpToMainDesign";
             this.tlpToMainDesign.RowCount = 2;
             this.tlpToMainDesign.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlpToMainDesign.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tlpToMainDesign.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpToMainDesign.Size = new System.Drawing.Size(910, 487);
+            this.tlpToMainDesign.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tlpToMainDesign.Size = new System.Drawing.Size(1040, 649);
             this.tlpToMainDesign.TabIndex = 0;
             // 
             // picMinSalud
             // 
             this.picMinSalud.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picMinSalud.Image = global::SALUDGODSV.Properties.Resources.gobiernoDelSalvador;
-            this.picMinSalud.Location = new System.Drawing.Point(3, 3);
+            this.picMinSalud.Location = new System.Drawing.Point(3, 4);
+            this.picMinSalud.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.picMinSalud.Name = "picMinSalud";
-            this.picMinSalud.Size = new System.Drawing.Size(130, 91);
+            this.picMinSalud.Size = new System.Drawing.Size(150, 121);
             this.picMinSalud.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picMinSalud.TabIndex = 0;
             this.picMinSalud.TabStop = false;
@@ -119,10 +122,10 @@ namespace SALUDGODSV.View
             this.lblMinSalud.BackColor = System.Drawing.Color.Transparent;
             this.lblMinSalud.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblMinSalud.ForeColor = System.Drawing.Color.White;
-            this.lblMinSalud.Location = new System.Drawing.Point(139, 0);
+            this.lblMinSalud.Location = new System.Drawing.Point(159, 0);
             this.lblMinSalud.Name = "lblMinSalud";
             this.lblMinSalud.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblMinSalud.Size = new System.Drawing.Size(768, 97);
+            this.lblMinSalud.Size = new System.Drawing.Size(878, 129);
             this.lblMinSalud.TabIndex = 1;
             this.lblMinSalud.Text = "MINISTERIO DE SALUD";
             this.lblMinSalud.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -133,10 +136,11 @@ namespace SALUDGODSV.View
             this.tabAppointment.Controls.Add(this.tpWelcome);
             this.tabAppointment.Controls.Add(this.tpNewAppointment);
             this.tabAppointment.Controls.Add(this.tpViewAppointments);
-            this.tabAppointment.Location = new System.Drawing.Point(3, 100);
+            this.tabAppointment.Location = new System.Drawing.Point(3, 133);
+            this.tabAppointment.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabAppointment.Name = "tabAppointment";
             this.tabAppointment.SelectedIndex = 0;
-            this.tabAppointment.Size = new System.Drawing.Size(904, 384);
+            this.tabAppointment.Size = new System.Drawing.Size(1033, 512);
             this.tabAppointment.TabIndex = 2;
             // 
             // tpWelcome
@@ -147,39 +151,41 @@ namespace SALUDGODSV.View
             this.tpWelcome.Controls.Add(this.lblFirstText);
             this.tpWelcome.Controls.Add(this.lblWelcome);
             this.tpWelcome.ForeColor = System.Drawing.Color.Transparent;
-            this.tpWelcome.Location = new System.Drawing.Point(4, 24);
+            this.tpWelcome.Location = new System.Drawing.Point(4, 29);
+            this.tpWelcome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tpWelcome.Name = "tpWelcome";
-            this.tpWelcome.Padding = new System.Windows.Forms.Padding(3);
-            this.tpWelcome.Size = new System.Drawing.Size(896, 356);
+            this.tpWelcome.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tpWelcome.Size = new System.Drawing.Size(1025, 479);
             this.tpWelcome.TabIndex = 0;
             this.tpWelcome.Text = "Bienvenido";
             // 
             // lblFirstText
             // 
             this.lblFirstText.AutoSize = true;
-            this.lblFirstText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblFirstText.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lblFirstText.ForeColor = System.Drawing.Color.White;
-            this.lblFirstText.Location = new System.Drawing.Point(47, 328);
+            this.lblFirstText.Location = new System.Drawing.Point(197, 389);
             this.lblFirstText.Name = "lblFirstText";
-            this.lblFirstText.Size = new System.Drawing.Size(817, 25);
+            this.lblFirstText.Size = new System.Drawing.Size(615, 76);
             this.lblFirstText.TabIndex = 1;
-            this.lblFirstText.Text = "Sistema de control de vacunas contra COVID-19, Ministerio de Salud de El Salvador" +
-    "";
+            this.lblFirstText.Text = "Sistema de control de vacunas contra COVID-19, \r\nMinisterio de Salud de El Salvad" +
+    "or";
+            this.lblFirstText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblWelcome
             // 
             this.lblWelcome.AutoSize = true;
-            this.lblWelcome.Font = new System.Drawing.Font("Stencil", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblWelcome.Font = new System.Drawing.Font("Segoe UI Black", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblWelcome.ForeColor = System.Drawing.Color.White;
-            this.lblWelcome.Location = new System.Drawing.Point(147, 3);
+            this.lblWelcome.Location = new System.Drawing.Point(108, 4);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(609, 114);
+            this.lblWelcome.Size = new System.Drawing.Size(827, 159);
             this.lblWelcome.TabIndex = 0;
             this.lblWelcome.Text = "BIENVENIDO";
             // 
             // tpNewAppointment
             // 
-            this.tpNewAppointment.BackColor = System.Drawing.Color.White;
+            this.tpNewAppointment.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.tpNewAppointment.Controls.Add(this.lblGeneralWarningTwo);
             this.tpNewAppointment.Controls.Add(this.lblGeneralWarning);
             this.tpNewAppointment.Controls.Add(this.btnNewAppointment);
@@ -187,36 +193,37 @@ namespace SALUDGODSV.View
             this.tpNewAppointment.Controls.Add(this.grpSalvadoranInformation);
             this.tpNewAppointment.Controls.Add(this.grpContactThem);
             this.tpNewAppointment.Controls.Add(this.grpInformation);
-            this.tpNewAppointment.Location = new System.Drawing.Point(4, 24);
+            this.tpNewAppointment.Location = new System.Drawing.Point(4, 29);
+            this.tpNewAppointment.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tpNewAppointment.Name = "tpNewAppointment";
-            this.tpNewAppointment.Padding = new System.Windows.Forms.Padding(3);
-            this.tpNewAppointment.Size = new System.Drawing.Size(896, 356);
+            this.tpNewAppointment.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tpNewAppointment.Size = new System.Drawing.Size(1025, 479);
             this.tpNewAppointment.TabIndex = 1;
             this.tpNewAppointment.Text = "Generar nueva cita";
             // 
             // lblGeneralWarningTwo
             // 
-            this.lblGeneralWarningTwo.BackColor = System.Drawing.Color.White;
-            this.lblGeneralWarningTwo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblGeneralWarningTwo.BackColor = System.Drawing.Color.Transparent;
+            this.lblGeneralWarningTwo.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lblGeneralWarningTwo.ForeColor = System.Drawing.Color.Red;
             this.lblGeneralWarningTwo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblGeneralWarningTwo.Location = new System.Drawing.Point(620, 147);
+            this.lblGeneralWarningTwo.Location = new System.Drawing.Point(709, 196);
             this.lblGeneralWarningTwo.Name = "lblGeneralWarningTwo";
             this.lblGeneralWarningTwo.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblGeneralWarningTwo.Size = new System.Drawing.Size(267, 47);
+            this.lblGeneralWarningTwo.Size = new System.Drawing.Size(305, 63);
             this.lblGeneralWarningTwo.TabIndex = 16;
             this.lblGeneralWarningTwo.Text = "Los campos que deben poseer numeros, no pueden poseer letras o simbolos.";
             // 
             // lblGeneralWarning
             // 
-            this.lblGeneralWarning.BackColor = System.Drawing.Color.White;
-            this.lblGeneralWarning.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblGeneralWarning.BackColor = System.Drawing.Color.Transparent;
+            this.lblGeneralWarning.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lblGeneralWarning.ForeColor = System.Drawing.Color.Red;
             this.lblGeneralWarning.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblGeneralWarning.Location = new System.Drawing.Point(620, 188);
+            this.lblGeneralWarning.Location = new System.Drawing.Point(709, 259);
             this.lblGeneralWarning.Name = "lblGeneralWarning";
             this.lblGeneralWarning.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblGeneralWarning.Size = new System.Drawing.Size(267, 47);
+            this.lblGeneralWarning.Size = new System.Drawing.Size(305, 63);
             this.lblGeneralWarning.TabIndex = 15;
             this.lblGeneralWarning.Text = "Los campos rellenados no pueden poseer ninguno de los siguientes signos:\r\n\" $ \", " +
     "\" - \", \" / \", \" @ \", \" \" \", \" * \" \r\n";
@@ -225,11 +232,12 @@ namespace SALUDGODSV.View
             // 
             this.btnNewAppointment.AutoSize = true;
             this.btnNewAppointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNewAppointment.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnNewAppointment.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnNewAppointment.ForeColor = System.Drawing.Color.White;
-            this.btnNewAppointment.Location = new System.Drawing.Point(626, 101);
+            this.btnNewAppointment.Location = new System.Drawing.Point(715, 135);
+            this.btnNewAppointment.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnNewAppointment.Name = "btnNewAppointment";
-            this.btnNewAppointment.Size = new System.Drawing.Size(187, 43);
+            this.btnNewAppointment.Size = new System.Drawing.Size(214, 57);
             this.btnNewAppointment.TabIndex = 14;
             this.btnNewAppointment.Text = "Registrar cita";
             this.btnNewAppointment.UseVisualStyleBackColor = true;
@@ -237,11 +245,14 @@ namespace SALUDGODSV.View
             // 
             // grpMedicalInformation
             // 
+            this.grpMedicalInformation.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.grpMedicalInformation.Controls.Add(this.cmbSIckness);
             this.grpMedicalInformation.Controls.Add(this.txtMedicalRecord);
-            this.grpMedicalInformation.Location = new System.Drawing.Point(620, 6);
+            this.grpMedicalInformation.Location = new System.Drawing.Point(709, 8);
+            this.grpMedicalInformation.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grpMedicalInformation.Name = "grpMedicalInformation";
-            this.grpMedicalInformation.Size = new System.Drawing.Size(270, 89);
+            this.grpMedicalInformation.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.grpMedicalInformation.Size = new System.Drawing.Size(309, 119);
             this.grpMedicalInformation.TabIndex = 13;
             this.grpMedicalInformation.TabStop = false;
             this.grpMedicalInformation.Text = "Datos medicos";
@@ -250,34 +261,36 @@ namespace SALUDGODSV.View
             // 
             this.cmbSIckness.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSIckness.FormattingEnabled = true;
-            this.cmbSIckness.Location = new System.Drawing.Point(6, 53);
-            this.cmbSIckness.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbSIckness.Location = new System.Drawing.Point(7, 71);
             this.cmbSIckness.Name = "cmbSIckness";
-            this.cmbSIckness.Size = new System.Drawing.Size(258, 23);
+            this.cmbSIckness.Size = new System.Drawing.Size(294, 28);
             this.cmbSIckness.TabIndex = 14;
             this.cmbSIckness.Tag = "Departamento";
             // 
             // txtMedicalRecord
             // 
             this.txtMedicalRecord.AutoSize = true;
-            this.txtMedicalRecord.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtMedicalRecord.Location = new System.Drawing.Point(6, 19);
+            this.txtMedicalRecord.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtMedicalRecord.Location = new System.Drawing.Point(7, 25);
             this.txtMedicalRecord.Name = "txtMedicalRecord";
-            this.txtMedicalRecord.Size = new System.Drawing.Size(199, 32);
+            this.txtMedicalRecord.Size = new System.Drawing.Size(251, 46);
             this.txtMedicalRecord.TabIndex = 10;
             this.txtMedicalRecord.Text = "Enfermedades no transmisibles \r\nque padece:";
             // 
             // grpSalvadoranInformation
             // 
+            this.grpSalvadoranInformation.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.grpSalvadoranInformation.Controls.Add(this.cmbGobInstitution);
             this.grpSalvadoranInformation.Controls.Add(this.label1);
             this.grpSalvadoranInformation.Controls.Add(this.txtInsertGobNumber);
             this.grpSalvadoranInformation.Controls.Add(this.lblGobNumber);
             this.grpSalvadoranInformation.Controls.Add(this.txtInsertDUI);
             this.grpSalvadoranInformation.Controls.Add(this.lblDUI);
-            this.grpSalvadoranInformation.Location = new System.Drawing.Point(307, 141);
+            this.grpSalvadoranInformation.Location = new System.Drawing.Point(351, 188);
+            this.grpSalvadoranInformation.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grpSalvadoranInformation.Name = "grpSalvadoranInformation";
-            this.grpSalvadoranInformation.Size = new System.Drawing.Size(270, 212);
+            this.grpSalvadoranInformation.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.grpSalvadoranInformation.Size = new System.Drawing.Size(309, 283);
             this.grpSalvadoranInformation.TabIndex = 12;
             this.grpSalvadoranInformation.TabStop = false;
             this.grpSalvadoranInformation.Text = "Datos legales";
@@ -286,20 +299,19 @@ namespace SALUDGODSV.View
             // 
             this.cmbGobInstitution.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGobInstitution.FormattingEnabled = true;
-            this.cmbGobInstitution.Location = new System.Drawing.Point(7, 167);
-            this.cmbGobInstitution.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbGobInstitution.Location = new System.Drawing.Point(8, 223);
             this.cmbGobInstitution.Name = "cmbGobInstitution";
-            this.cmbGobInstitution.Size = new System.Drawing.Size(250, 23);
+            this.cmbGobInstitution.Size = new System.Drawing.Size(285, 28);
             this.cmbGobInstitution.TabIndex = 12;
             this.cmbGobInstitution.Tag = "Departamento";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(6, 149);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(7, 199);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 16);
+            this.label1.Size = new System.Drawing.Size(216, 23);
             this.label1.TabIndex = 13;
             this.label1.Text = "Institucion gubernamental:";
             // 
@@ -308,18 +320,19 @@ namespace SALUDGODSV.View
             this.txtInsertGobNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtInsertGobNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtInsertGobNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtInsertGobNumber.Location = new System.Drawing.Point(183, 110);
+            this.txtInsertGobNumber.Location = new System.Drawing.Point(209, 147);
+            this.txtInsertGobNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtInsertGobNumber.Name = "txtInsertGobNumber";
-            this.txtInsertGobNumber.Size = new System.Drawing.Size(81, 24);
+            this.txtInsertGobNumber.Size = new System.Drawing.Size(92, 29);
             this.txtInsertGobNumber.TabIndex = 12;
             // 
             // lblGobNumber
             // 
             this.lblGobNumber.AutoSize = true;
-            this.lblGobNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblGobNumber.Location = new System.Drawing.Point(6, 85);
+            this.lblGobNumber.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblGobNumber.Location = new System.Drawing.Point(7, 113);
             this.lblGobNumber.Name = "lblGobNumber";
-            this.lblGobNumber.Size = new System.Drawing.Size(251, 16);
+            this.lblGobNumber.Size = new System.Drawing.Size(280, 20);
             this.lblGobNumber.TabIndex = 11;
             this.lblGobNumber.Text = "Numero Asociado a Inst. Gubernamental:";
             // 
@@ -328,31 +341,35 @@ namespace SALUDGODSV.View
             this.txtInsertDUI.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtInsertDUI.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtInsertDUI.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtInsertDUI.Location = new System.Drawing.Point(183, 39);
+            this.txtInsertDUI.Location = new System.Drawing.Point(209, 52);
+            this.txtInsertDUI.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtInsertDUI.Name = "txtInsertDUI";
-            this.txtInsertDUI.Size = new System.Drawing.Size(81, 24);
+            this.txtInsertDUI.Size = new System.Drawing.Size(92, 29);
             this.txtInsertDUI.TabIndex = 10;
             // 
             // lblDUI
             // 
             this.lblDUI.AutoSize = true;
-            this.lblDUI.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblDUI.Location = new System.Drawing.Point(6, 19);
+            this.lblDUI.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblDUI.Location = new System.Drawing.Point(7, 25);
             this.lblDUI.Name = "lblDUI";
-            this.lblDUI.Size = new System.Drawing.Size(192, 16);
+            this.lblDUI.Size = new System.Drawing.Size(249, 23);
             this.lblDUI.TabIndex = 10;
             this.lblDUI.Text = "Documento Unico de Idenidad:";
             // 
             // grpContactThem
             // 
+            this.grpContactThem.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.grpContactThem.Controls.Add(this.txtInsertEmail);
             this.grpContactThem.Controls.Add(this.lblEmail);
             this.grpContactThem.Controls.Add(this.txtInsertPhoneNumer);
             this.grpContactThem.Controls.Add(this.lblAditionalText);
             this.grpContactThem.Controls.Add(this.lblPhoneNumer);
-            this.grpContactThem.Location = new System.Drawing.Point(307, 6);
+            this.grpContactThem.Location = new System.Drawing.Point(351, 8);
+            this.grpContactThem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grpContactThem.Name = "grpContactThem";
-            this.grpContactThem.Size = new System.Drawing.Size(270, 129);
+            this.grpContactThem.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.grpContactThem.Size = new System.Drawing.Size(309, 172);
             this.grpContactThem.TabIndex = 1;
             this.grpContactThem.TabStop = false;
             this.grpContactThem.Text = "Información de contacto";
@@ -362,19 +379,20 @@ namespace SALUDGODSV.View
             this.txtInsertEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtInsertEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtInsertEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtInsertEmail.Location = new System.Drawing.Point(7, 92);
+            this.txtInsertEmail.Location = new System.Drawing.Point(8, 123);
+            this.txtInsertEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtInsertEmail.Name = "txtInsertEmail";
-            this.txtInsertEmail.Size = new System.Drawing.Size(257, 24);
+            this.txtInsertEmail.Size = new System.Drawing.Size(293, 29);
             this.txtInsertEmail.TabIndex = 10;
             this.txtInsertEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblEmail.Location = new System.Drawing.Point(6, 73);
+            this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblEmail.Location = new System.Drawing.Point(7, 97);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(120, 16);
+            this.lblEmail.Size = new System.Drawing.Size(155, 23);
             this.lblEmail.TabIndex = 11;
             this.lblEmail.Text = "Correo electronico:";
             // 
@@ -383,33 +401,35 @@ namespace SALUDGODSV.View
             this.txtInsertPhoneNumer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtInsertPhoneNumer.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtInsertPhoneNumer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtInsertPhoneNumer.Location = new System.Drawing.Point(183, 37);
+            this.txtInsertPhoneNumer.Location = new System.Drawing.Point(209, 49);
+            this.txtInsertPhoneNumer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtInsertPhoneNumer.Name = "txtInsertPhoneNumer";
-            this.txtInsertPhoneNumer.Size = new System.Drawing.Size(80, 24);
+            this.txtInsertPhoneNumer.Size = new System.Drawing.Size(91, 29);
             this.txtInsertPhoneNumer.TabIndex = 10;
             // 
             // lblAditionalText
             // 
             this.lblAditionalText.AutoSize = true;
             this.lblAditionalText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblAditionalText.Location = new System.Drawing.Point(142, 39);
+            this.lblAditionalText.Location = new System.Drawing.Point(162, 52);
             this.lblAditionalText.Name = "lblAditionalText";
-            this.lblAditionalText.Size = new System.Drawing.Size(35, 16);
+            this.lblAditionalText.Size = new System.Drawing.Size(46, 20);
             this.lblAditionalText.TabIndex = 10;
             this.lblAditionalText.Text = "+503";
             // 
             // lblPhoneNumer
             // 
             this.lblPhoneNumer.AutoSize = true;
-            this.lblPhoneNumer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblPhoneNumer.Location = new System.Drawing.Point(6, 19);
+            this.lblPhoneNumer.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblPhoneNumer.Location = new System.Drawing.Point(7, 25);
             this.lblPhoneNumer.Name = "lblPhoneNumer";
-            this.lblPhoneNumer.Size = new System.Drawing.Size(128, 16);
+            this.lblPhoneNumer.Size = new System.Drawing.Size(169, 23);
             this.lblPhoneNumer.TabIndex = 10;
             this.lblPhoneNumer.Text = "Número de teléfono:";
             // 
             // grpInformation
             // 
+            this.grpInformation.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.grpInformation.Controls.Add(this.cmbCity);
             this.grpInformation.Controls.Add(this.cmbDepartaments);
             this.grpInformation.Controls.Add(this.lblDirection);
@@ -419,9 +439,11 @@ namespace SALUDGODSV.View
             this.grpInformation.Controls.Add(this.lblLastNames);
             this.grpInformation.Controls.Add(this.txtInsertName);
             this.grpInformation.Controls.Add(this.lblName);
-            this.grpInformation.Location = new System.Drawing.Point(6, 6);
+            this.grpInformation.Location = new System.Drawing.Point(7, 8);
+            this.grpInformation.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grpInformation.Name = "grpInformation";
-            this.grpInformation.Size = new System.Drawing.Size(255, 345);
+            this.grpInformation.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.grpInformation.Size = new System.Drawing.Size(291, 460);
             this.grpInformation.TabIndex = 0;
             this.grpInformation.TabStop = false;
             this.grpInformation.Text = "Datos personales";
@@ -430,10 +452,9 @@ namespace SALUDGODSV.View
             // 
             this.cmbCity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCity.FormattingEnabled = true;
-            this.cmbCity.Location = new System.Drawing.Point(5, 265);
-            this.cmbCity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbCity.Location = new System.Drawing.Point(6, 353);
             this.cmbCity.Name = "cmbCity";
-            this.cmbCity.Size = new System.Drawing.Size(207, 23);
+            this.cmbCity.Size = new System.Drawing.Size(236, 28);
             this.cmbCity.TabIndex = 11;
             this.cmbCity.Tag = "Departamento";
             // 
@@ -456,10 +477,9 @@ namespace SALUDGODSV.View
             "Santa Ana",
             "Sonsonate",
             "Usulután"});
-            this.cmbDepartaments.Location = new System.Drawing.Point(6, 233);
-            this.cmbDepartaments.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbDepartaments.Location = new System.Drawing.Point(7, 311);
             this.cmbDepartaments.Name = "cmbDepartaments";
-            this.cmbDepartaments.Size = new System.Drawing.Size(207, 23);
+            this.cmbDepartaments.Size = new System.Drawing.Size(236, 28);
             this.cmbDepartaments.TabIndex = 10;
             this.cmbDepartaments.Tag = "Departamento";
             this.cmbDepartaments.SelectedIndexChanged += new System.EventHandler(this.cmbDepartaments_SelectedIndexChanged);
@@ -467,28 +487,29 @@ namespace SALUDGODSV.View
             // lblDirection
             // 
             this.lblDirection.AutoSize = true;
-            this.lblDirection.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblDirection.Location = new System.Drawing.Point(6, 213);
+            this.lblDirection.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblDirection.Location = new System.Drawing.Point(7, 284);
             this.lblDirection.Name = "lblDirection";
-            this.lblDirection.Size = new System.Drawing.Size(67, 16);
+            this.lblDirection.Size = new System.Drawing.Size(85, 23);
             this.lblDirection.TabIndex = 7;
             this.lblDirection.Text = "Direccion:";
             // 
             // dtpBirtrhday
             // 
             this.dtpBirtrhday.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dtpBirtrhday.Location = new System.Drawing.Point(6, 168);
+            this.dtpBirtrhday.Location = new System.Drawing.Point(7, 224);
+            this.dtpBirtrhday.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpBirtrhday.Name = "dtpBirtrhday";
-            this.dtpBirtrhday.Size = new System.Drawing.Size(236, 23);
+            this.dtpBirtrhday.Size = new System.Drawing.Size(269, 27);
             this.dtpBirtrhday.TabIndex = 1;
             // 
             // lblBirthday
             // 
             this.lblBirthday.AutoSize = true;
-            this.lblBirthday.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblBirthday.Location = new System.Drawing.Point(5, 148);
+            this.lblBirthday.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblBirthday.Location = new System.Drawing.Point(6, 197);
             this.lblBirthday.Name = "lblBirthday";
-            this.lblBirthday.Size = new System.Drawing.Size(135, 16);
+            this.lblBirthday.Size = new System.Drawing.Size(172, 23);
             this.lblBirthday.TabIndex = 6;
             this.lblBirthday.Text = "Fecha de nacimiento:";
             // 
@@ -497,18 +518,19 @@ namespace SALUDGODSV.View
             this.txtInsertLastNames.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtInsertLastNames.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtInsertLastNames.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtInsertLastNames.Location = new System.Drawing.Point(73, 105);
+            this.txtInsertLastNames.Location = new System.Drawing.Point(83, 140);
+            this.txtInsertLastNames.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtInsertLastNames.Name = "txtInsertLastNames";
-            this.txtInsertLastNames.Size = new System.Drawing.Size(169, 24);
+            this.txtInsertLastNames.Size = new System.Drawing.Size(193, 29);
             this.txtInsertLastNames.TabIndex = 3;
             // 
             // lblLastNames
             // 
             this.lblLastNames.AutoSize = true;
-            this.lblLastNames.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblLastNames.Location = new System.Drawing.Point(5, 85);
+            this.lblLastNames.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblLastNames.Location = new System.Drawing.Point(6, 113);
             this.lblLastNames.Name = "lblLastNames";
-            this.lblLastNames.Size = new System.Drawing.Size(67, 16);
+            this.lblLastNames.Size = new System.Drawing.Size(83, 23);
             this.lblLastNames.TabIndex = 2;
             this.lblLastNames.Text = "Apellidos:";
             // 
@@ -517,27 +539,29 @@ namespace SALUDGODSV.View
             this.txtInsertName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtInsertName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtInsertName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtInsertName.Location = new System.Drawing.Point(74, 39);
+            this.txtInsertName.Location = new System.Drawing.Point(85, 52);
+            this.txtInsertName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtInsertName.Name = "txtInsertName";
-            this.txtInsertName.Size = new System.Drawing.Size(168, 24);
+            this.txtInsertName.Size = new System.Drawing.Size(192, 29);
             this.txtInsertName.TabIndex = 1;
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblName.Location = new System.Drawing.Point(6, 19);
+            this.lblName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblName.Location = new System.Drawing.Point(7, 25);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(66, 16);
+            this.lblName.Size = new System.Drawing.Size(84, 23);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Nombres:";
             // 
             // tpViewAppointments
             // 
             this.tpViewAppointments.Controls.Add(this.dgvToShowAppointments);
-            this.tpViewAppointments.Location = new System.Drawing.Point(4, 24);
+            this.tpViewAppointments.Location = new System.Drawing.Point(4, 29);
+            this.tpViewAppointments.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tpViewAppointments.Name = "tpViewAppointments";
-            this.tpViewAppointments.Size = new System.Drawing.Size(896, 356);
+            this.tpViewAppointments.Size = new System.Drawing.Size(1025, 479);
             this.tpViewAppointments.TabIndex = 2;
             this.tpViewAppointments.Text = "Control de citas";
             this.tpViewAppointments.UseVisualStyleBackColor = true;
@@ -548,20 +572,24 @@ namespace SALUDGODSV.View
             this.dgvToShowAppointments.AllowUserToDeleteRows = false;
             this.dgvToShowAppointments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvToShowAppointments.Location = new System.Drawing.Point(0, 0);
+            this.dgvToShowAppointments.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvToShowAppointments.Name = "dgvToShowAppointments";
             this.dgvToShowAppointments.ReadOnly = true;
+            this.dgvToShowAppointments.RowHeadersWidth = 51;
             this.dgvToShowAppointments.RowTemplate.Height = 25;
-            this.dgvToShowAppointments.Size = new System.Drawing.Size(896, 356);
+            this.dgvToShowAppointments.Size = new System.Drawing.Size(1024, 475);
             this.dgvToShowAppointments.TabIndex = 0;
             this.dgvToShowAppointments.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvToShowAppointments_CellContentClick);
             // 
             // AppointmentSystem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(31)))), ((int)(((byte)(122)))));
-            this.ClientSize = new System.Drawing.Size(934, 511);
+            this.ClientSize = new System.Drawing.Size(1067, 681);
             this.Controls.Add(this.tlpToMainDesign);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "AppointmentSystem";
             this.Text = "Seguimiento de procesos";

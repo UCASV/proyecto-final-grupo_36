@@ -347,6 +347,7 @@ namespace SALUDGODSV.View
             this.cmbDepartamento.Size = new System.Drawing.Size(250, 28);
             this.cmbDepartamento.TabIndex = 20;
             this.cmbDepartamento.Tag = "Departamento";
+            this.cmbDepartamento.SelectedIndexChanged += new System.EventHandler(this.cmbDepartamento_SelectedIndexChanged);
             // 
             // RegistroDeCabina
             // 

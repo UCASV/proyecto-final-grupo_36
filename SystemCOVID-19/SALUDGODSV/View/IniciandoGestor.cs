@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using SALUDGODSV.Functions;
 using SALUDGODSV.Models;
@@ -38,24 +34,8 @@ namespace SALUDGODSV.View
 
                     try
                     {
-
                         var db = new covidcontext();
                         List<Manager> auxManager = db.Managers.ToList();
-
-                        if(auxManager.Count == 0 )
-                        {
-                            MessageBox.Show("Su usuario no existe! Pasaremos a registrarlo", "Ministerio De Salud",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            using (var newRegistroGestor = new RegistroGestor())
-                            {
-                                Hide();
-                                newRegistroGestor.ShowDialog();
-                                
-                                Show();
-                            }
-
-                        }
-
                         bool check = auxManager
                         .Where(u => u.User == txtUsuarioG.Text &&
                                u.Password == txtContraG.Text)

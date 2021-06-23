@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using SALUDGODSV.Functions;
 using SALUDGODSV.Models;
 using SALUDGODSV.Context;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace SALUDGODSV.View
 {
@@ -20,7 +15,7 @@ namespace SALUDGODSV.View
             InitializeComponent();
         }
 
-        public string Username { get; set; } //Voy a comprobar si son iguales a los q escribio en el Form anterior y despues guardarlos en la db
+        public string Username { get; set; } 
         public string Password { get; set; }
 
         private void RegistroDeCabina_Load(object sender, EventArgs e)
@@ -31,7 +26,6 @@ namespace SALUDGODSV.View
 
         private void btnRegistrarCabina_Click(object sender, EventArgs e)
         {
-            //Q no este vacio / lo de los signos para todo / Registrar la cabina (Hacer variable cabina y agrgarlo a la db con todos los atributos q tiene ademas del code cabin) = Asignar Code Cabin a Manager / Verificar el Usuario y Contra y guardarlos en la db
             try
             {   
                 StringVerifications.VerifyString(txtNombreEncargado.Text);
@@ -43,53 +37,62 @@ namespace SALUDGODSV.View
                     {
                         lblVacio3Warning.Visible = true;
                     }
-                    var auxiliarNumero = Convert.ToInt32(txtTelefono.Text); //verificar q no tenga letras el telefono!
-                    if (txtTelefono.Text.CompareTo("") != 0)
-                    {
-                        try
-                        {
-                            Convert.ToInt32(txtTelefono.Text);
-                            lblSignos3Warning.Visible = false;
-                        }
-                        catch
-                        {
-                            lblSignos3Warning.Visible = true;
-                        }
-                    }
+                    var auxNumber = Convert.ToInt32(txtTelefono.Text); //verificar q no tenga letras el telefono!
                     lblSignos3Warning.Visible = false;
-
 
                     var auxUser = txtUsuarioCabina.Text;
                     var auxContra = txtContraCabina.Text;
-                    if (auxUser == Username && auxContra == Password)
-                    
-
-
+                    if (Username.CompareTo(auxUser) == 0 && Password.CompareTo(auxContra) == 0)
                     {
                         try
                         {
-                            //Agregar valores de Cabin a la db. PENDIENTE!
                             var db = new covidcontext();
-                            List<Cabin> auxCabina = db.Cabins.ToList();
                             var auxCabin = new Cabin
                             {
 
-                                Phone = auxiliarNumero,
+                                Phone = auxNumber,
                                 Caretaker = txtNombreEncargado.Text,
-                                Code = auxCabina[0].Code,
                                 City = cmbCiudad.SelectedItem.ToString(),
-                                Departament = cmbDepartamento.SelectedItem.ToString()
+                                Departament = cmbDepartamento.SelectedItem.ToString(),
+                                Mail = txtCorreo.Text
                             };
                             db.Add(auxCabin);
                             db.SaveChanges();
 
+                            try 
+                            {
+                                List<Cabin> cabinas = db.Cabins.ToList();
+                                List<Employee> empleados = db.Employees.ToList();
+                                var auxManager = new Manager()
+                                {
+                                    User = Username,
+                                    Password = Password,
+                                    CodeCabin = cabinas[0].Code,
+                                    CodeEmployee = empleados[0].Code
+                                };
+                                db.Add(auxManager);
+                                db.SaveChanges();
+                            }
+                            catch (Exception v)
+                            {
+                                MessageBox.Show(v.ToString(), "Ministerio De Salud", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
 
+                            MessageBox.Show("Su usuario ha sido registrado con exito!", "Ministerio De Salud", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            using (var newAppointment = new AppointmentSystem())
+                            {
+                                Hide();
+                                newAppointment.ShowDialog();
+                                newAppointment.Close();
+                                Show();
+                            }
                         }
                         catch
                         {
                             MessageBox.Show("Ocurrio un error al usar la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-                    }else
+                    }
+                    else
                     {
                       MessageBox.Show("Su Usuario o Contraseña no coincide", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }

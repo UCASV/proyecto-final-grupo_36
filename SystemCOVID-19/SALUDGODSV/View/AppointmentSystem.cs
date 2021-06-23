@@ -52,7 +52,7 @@ namespace SALUDGODSV.View
             btnNewAppointment.BackColor = myColor2;
             //Funcion para iniciar variables con valores que no se repitan (O borrar lo que contienen)
             dgvToShowAppointments.BindingContext = BindingContext;
-            //AppointmentSystem_StartVars();
+            AppointmentSystem_StartVars();
 
             //Funcion para obtener la hora actual de la computadora (Usar para guardar el log de accesos de los empleados
             //string src = DateTime.Now.ToString("HH:mm");
