@@ -10,7 +10,6 @@ namespace SALUDGODSV.Models
         public Appointment()
         {
             Citizens = new HashSet<Citizen>();
-            Employees = new HashSet<Employee>();
         }
 
         public int Code { get; set; }
@@ -19,8 +18,9 @@ namespace SALUDGODSV.Models
         public string City { get; set; }
         public string Departament { get; set; }
         public string Dose { get; set; }
+        public int EmployeeCode { get; set; }
 
+        public virtual Employee EmployeeCodeNavigation { get; set; }
         public virtual ICollection<Citizen> Citizens { get; set; }
-        public virtual ICollection<Employee> Employees { get; set; }
     }
 }

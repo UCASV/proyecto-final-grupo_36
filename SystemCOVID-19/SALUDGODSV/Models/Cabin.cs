@@ -18,7 +18,6 @@ namespace SALUDGODSV.Models
         public string Mail { get; set; }
         public string City { get; set; }
         public string Departament { get; set; }
-        public int EmployeeCode { get; set; }
 
         public virtual ICollection<Manager> Managers { get; set; }
     }

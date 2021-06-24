@@ -7,15 +7,11 @@ namespace SALUDGODSV.Models
 {
     public partial class AccessLog
     {
-        public AccessLog()
-        {
-            Employees = new HashSet<Employee>();
-        }
-
         public int Code { get; set; }
         public DateTime Date { get; set; }
         public TimeSpan Hour { get; set; }
+        public int EmployeeCode { get; set; }
 
-        public virtual ICollection<Employee> Employees { get; set; }
+        public virtual Employee EmployeeCodeNavigation { get; set; }
     }
 }

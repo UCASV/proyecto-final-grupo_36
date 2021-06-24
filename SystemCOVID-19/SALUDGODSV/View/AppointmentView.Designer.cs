@@ -38,7 +38,6 @@ namespace SALUDGODSV.View
             this.lblBirthday = new System.Windows.Forms.Label();
             this.lblShowName = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
-            this.btnAddToQueue = new System.Windows.Forms.Button();
             this.btnVacunar = new System.Windows.Forms.Button();
             this.btnShowInformation = new System.Windows.Forms.Button();
             this.grpAppointmentView.SuspendLayout();
@@ -115,9 +114,9 @@ namespace SALUDGODSV.View
             this.lblBirthday.ForeColor = System.Drawing.Color.White;
             this.lblBirthday.Location = new System.Drawing.Point(6, 48);
             this.lblBirthday.Name = "lblBirthday";
-            this.lblBirthday.Size = new System.Drawing.Size(120, 15);
+            this.lblBirthday.Size = new System.Drawing.Size(36, 15);
             this.lblBirthday.TabIndex = 2;
-            this.lblBirthday.Text = "Fecha de nacimiento:";
+            this.lblBirthday.Text = "Edad:";
             // 
             // lblShowName
             // 
@@ -138,41 +137,27 @@ namespace SALUDGODSV.View
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Nombre: ";
             // 
-            // btnAddToQueue
-            // 
-            this.btnAddToQueue.AutoSize = true;
-            this.btnAddToQueue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddToQueue.Font = new System.Drawing.Font("Bembo Std", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAddToQueue.ForeColor = System.Drawing.Color.White;
-            this.btnAddToQueue.Location = new System.Drawing.Point(10, 162);
-            this.btnAddToQueue.Name = "btnAddToQueue";
-            this.btnAddToQueue.Size = new System.Drawing.Size(119, 29);
-            this.btnAddToQueue.TabIndex = 1;
-            this.btnAddToQueue.Text = "Agregar a la cola";
-            this.btnAddToQueue.UseVisualStyleBackColor = true;
-            // 
             // btnVacunar
             // 
-            this.btnVacunar.AutoSize = true;
             this.btnVacunar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVacunar.Font = new System.Drawing.Font("Bembo Std", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnVacunar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnVacunar.ForeColor = System.Drawing.Color.White;
-            this.btnVacunar.Location = new System.Drawing.Point(148, 162);
+            this.btnVacunar.Location = new System.Drawing.Point(175, 183);
             this.btnVacunar.Name = "btnVacunar";
-            this.btnVacunar.Size = new System.Drawing.Size(174, 29);
+            this.btnVacunar.Size = new System.Drawing.Size(147, 46);
             this.btnVacunar.TabIndex = 2;
             this.btnVacunar.Text = "Registrar como vacunado";
             this.btnVacunar.UseVisualStyleBackColor = true;
+            this.btnVacunar.Click += new System.EventHandler(this.btnVacunar_Click);
             // 
             // btnShowInformation
             // 
-            this.btnShowInformation.AutoSize = true;
             this.btnShowInformation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShowInformation.Font = new System.Drawing.Font("Bembo Std", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnShowInformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnShowInformation.ForeColor = System.Drawing.Color.White;
-            this.btnShowInformation.Location = new System.Drawing.Point(78, 208);
+            this.btnShowInformation.Location = new System.Drawing.Point(10, 183);
             this.btnShowInformation.Name = "btnShowInformation";
-            this.btnShowInformation.Size = new System.Drawing.Size(174, 29);
+            this.btnShowInformation.Size = new System.Drawing.Size(150, 46);
             this.btnShowInformation.TabIndex = 3;
             this.btnShowInformation.Text = "Imprimir datos";
             this.btnShowInformation.UseVisualStyleBackColor = true;
@@ -181,10 +166,9 @@ namespace SALUDGODSV.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(334, 249);
+            this.ClientSize = new System.Drawing.Size(339, 249);
             this.Controls.Add(this.btnShowInformation);
             this.Controls.Add(this.btnVacunar);
-            this.Controls.Add(this.btnAddToQueue);
             this.Controls.Add(this.grpAppointmentView);
             this.Name = "AppointmentView";
             this.Text = "Visualizar cita";
@@ -192,7 +176,6 @@ namespace SALUDGODSV.View
             this.grpAppointmentView.ResumeLayout(false);
             this.grpAppointmentView.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -207,7 +190,6 @@ namespace SALUDGODSV.View
         private System.Windows.Forms.Label lblShowDUI;
         private System.Windows.Forms.Label lblDosis;
         private System.Windows.Forms.Label lblShowDosis;
-        private System.Windows.Forms.Button btnAddToQueue;
         private System.Windows.Forms.Button btnVacunar;
         private System.Windows.Forms.Button btnShowInformation;
     }

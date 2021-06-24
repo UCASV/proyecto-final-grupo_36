@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SALUDGODSV.Context;
+using SALUDGODSV.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,7 @@ namespace SALUDGODSV.View
         public AppointmentView()
         {
             InitializeComponent();
+            
         }
 
         //Variable global utilizada para verificar y obtener datos (Por medio de estos puede consultar cosas en la base de datos)
@@ -27,9 +30,44 @@ namespace SALUDGODSV.View
             Color myColor2 = ColorTranslator.FromHtml(toBackColor2);
             BackColor = myColor;
             grpAppointmentView.BackColor = myColor2;
-            btnAddToQueue.BackColor = myColor2;
             btnVacunar.BackColor = myColor2;
             btnShowInformation.BackColor = myColor2;
+            lblShowName.Text = GlobalStruct.appointmentDgvName;
+            lblShowBirthday.Text = GlobalStruct.appointmentDgvAge.ToString();
+            lblShowDUI.Text = GlobalStruct.appointmentDgvDui.ToString();
+            lblShowDosis.Text = GlobalStruct.appointmentDgvDose;
+
+        }
+
+        private void btnVacunar_Click(object sender, EventArgs e)
+        {
+            var db = new covidcontext();
+            makeAppointment://Bloque de codigo
+            var startDate = DateTime.Today;//Definir la fecha actual
+            var finalDdate = new DateTime(2022, 1, 1);//Fecha limite para hacer citas
+            var randomDate = new Random();//Variable random
+            var randomRange = (finalDdate - startDate).Days;//Determinar los dias entre el ultimo dia para hacer citas y la fecha actual
+            var appointmentDate = startDate.AddDays(randomDate.Next(randomRange));//Elegir un numero random entre ese rango de días
+            var startHour = TimeSpan.FromHours(7);//Definicion de hora random
+            var endHour = TimeSpan.FromHours(11);//Definincion de hora random
+            var maxMinutes = (int)((endHour - startHour).TotalMinutes);//Randominar entre rangos de hora
+            var useMinutes = randomDate.Next(maxMinutes);
+            var appointmentHour = startHour.Add(TimeSpan.FromMinutes(useMinutes));//Realizar la conversion correcta al formato de hora
+
+            List<Appointment> verifyAppointments = db.Appointments.ToList();//Lista de citas realizadas
+            var checkRegister = verifyAppointments.Where(u => u.Date == appointmentDate && u.Hour == appointmentHour).ToList().Count() > 0;//Revisar si existe una cita a la misma hora y fecha
+            if (checkRegister)//Si esto pasa, regresa al bloque de codigo donde se definen las horas y fechas random para que de una hora y fecha valida
+                goto makeAppointment;
+            
+            Appointment toReBuild = (from aux in db.Appointments
+                              where aux.Code == GlobalStruct.appointmentDgvID
+                              select aux).First();
+            toReBuild.Dose = "2";
+            toReBuild.Date = appointmentDate;
+            toReBuild.Hour = appointmentHour;
+            db.SaveChanges();
+            MessageBox.Show("Se ha registrado para su segunda dosis exitosamente.", "Ministerio de salud", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
         }
     }
 }

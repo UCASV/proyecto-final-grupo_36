@@ -49,13 +49,23 @@ namespace SALUDGODSV.Context
 
                 entity.ToTable("access_log");
 
+                entity.HasIndex(e => e.EmployeeCode, "FK_accesslog_employee");
+
                 entity.Property(e => e.Code).HasColumnName("code");
 
                 entity.Property(e => e.Date)
                     .HasColumnType("date")
                     .HasColumnName("date");
 
+                entity.Property(e => e.EmployeeCode).HasColumnName("employee_code");
+
                 entity.Property(e => e.Hour).HasColumnName("hour");
+
+                entity.HasOne(d => d.EmployeeCodeNavigation)
+                    .WithMany(p => p.AccessLogs)
+                    .HasForeignKey(d => d.EmployeeCode)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_accesslog_employee");
             });
 
             modelBuilder.Entity<Appointment>(entity =>
@@ -64,6 +74,8 @@ namespace SALUDGODSV.Context
                     .HasName("PRIMARY");
 
                 entity.ToTable("appointment");
+
+                entity.HasIndex(e => e.EmployeeCode, "FK_appointment_employee");
 
                 entity.Property(e => e.Code).HasColumnName("code");
 
@@ -88,7 +100,15 @@ namespace SALUDGODSV.Context
                     .HasColumnName("dose")
                     .IsFixedLength(true);
 
+                entity.Property(e => e.EmployeeCode).HasColumnName("employee_code");
+
                 entity.Property(e => e.Hour).HasColumnName("hour");
+
+                entity.HasOne(d => d.EmployeeCodeNavigation)
+                    .WithMany(p => p.Appointments)
+                    .HasForeignKey(d => d.EmployeeCode)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_appointment_employee");
             });
 
             modelBuilder.Entity<Cabin>(entity =>
@@ -115,8 +135,6 @@ namespace SALUDGODSV.Context
                     .HasMaxLength(15)
                     .HasColumnName("departament")
                     .IsFixedLength(true);
-
-                entity.Property(e => e.EmployeeCode).HasColumnName("employee_code");
 
                 entity.Property(e => e.Mail)
                     .IsRequired()
@@ -244,9 +262,7 @@ namespace SALUDGODSV.Context
 
                 entity.ToTable("employee");
 
-                entity.HasIndex(e => e.CodeAccesslog, "FK_employee_accesslog");
-
-                entity.HasIndex(e => e.CodeAppointment, "FK_employee_appointment");
+                entity.HasIndex(e => e.ManagerCode, "FK_employee_manager");
 
                 entity.HasIndex(e => e.CodeSecurityQuestion, "FK_employee_securityquestion");
 
@@ -256,10 +272,6 @@ namespace SALUDGODSV.Context
                     .IsRequired()
                     .HasMaxLength(25)
                     .HasColumnName("city");
-
-                entity.Property(e => e.CodeAccesslog).HasColumnName("code_accesslog");
-
-                entity.Property(e => e.CodeAppointment).HasColumnName("code_appointment");
 
                 entity.Property(e => e.CodeSecurityQuestion).HasColumnName("code_security_question");
 
@@ -274,33 +286,24 @@ namespace SALUDGODSV.Context
                     .HasMaxLength(75)
                     .HasColumnName("mail");
 
+                entity.Property(e => e.ManagerCode).HasColumnName("manager_code");
+
                 entity.Property(e => e.Occupation)
                     .IsRequired()
                     .HasMaxLength(75)
                     .HasColumnName("occupation");
-
-                entity.Property(e => e.SecurityAnswer)
-                    .IsRequired()
-                    .HasMaxLength(90)
-                    .HasColumnName("security_answer");
-
-                entity.HasOne(d => d.CodeAccesslogNavigation)
-                    .WithMany(p => p.Employees)
-                    .HasForeignKey(d => d.CodeAccesslog)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_employee_accesslog");
-
-                entity.HasOne(d => d.CodeAppointmentNavigation)
-                    .WithMany(p => p.Employees)
-                    .HasForeignKey(d => d.CodeAppointment)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_employee_appointment");
 
                 entity.HasOne(d => d.CodeSecurityQuestionNavigation)
                     .WithMany(p => p.Employees)
                     .HasForeignKey(d => d.CodeSecurityQuestion)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_employee_securityquestion");
+
+                entity.HasOne(d => d.ManagerCodeNavigation)
+                    .WithMany(p => p.Employees)
+                    .HasForeignKey(d => d.ManagerCode)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_employee_manager");
             });
 
             modelBuilder.Entity<GobInstitution>(entity =>
@@ -327,13 +330,11 @@ namespace SALUDGODSV.Context
 
                 entity.HasIndex(e => e.CodeCabin, "FK_manager_cabin");
 
-                entity.HasIndex(e => e.CodeEmployee, "FK_manager_employee");
-
                 entity.Property(e => e.Code).HasColumnName("code");
 
                 entity.Property(e => e.CodeCabin).HasColumnName("code_cabin");
 
-                entity.Property(e => e.CodeEmployee).HasColumnName("code_employee");
+                entity.Property(e => e.CodeSecurityQuestion).HasColumnName("code_security_question");
 
                 entity.Property(e => e.Password)
                     .IsRequired()
@@ -350,12 +351,6 @@ namespace SALUDGODSV.Context
                     .HasForeignKey(d => d.CodeCabin)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_manager_cabin");
-
-                entity.HasOne(d => d.CodeEmployeeNavigation)
-                    .WithMany(p => p.Managers)
-                    .HasForeignKey(d => d.CodeEmployee)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_manager_employee");
             });
 
             modelBuilder.Entity<SecondaryEffect>(entity =>

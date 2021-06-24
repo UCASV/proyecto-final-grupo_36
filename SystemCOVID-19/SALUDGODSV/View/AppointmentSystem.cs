@@ -80,6 +80,7 @@ namespace SALUDGODSV.View
                     varToShow.GlobalStruct = auxVar;
                     varToShow.ShowDialog();
                 }
+                AppointmentSystem_StartVars();
                 Show(); 
             }
 
