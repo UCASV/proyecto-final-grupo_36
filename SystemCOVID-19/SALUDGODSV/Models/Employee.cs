@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace SALUDGODSV.Models
+namespace SALUDGODSV
 {
     public partial class Employee
     {

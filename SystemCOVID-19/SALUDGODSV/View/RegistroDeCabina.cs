@@ -68,7 +68,7 @@ namespace SALUDGODSV.View
                                     User = Username,
                                     Password = Password,
                                     CodeCabin = cabinas[0].Code,
-                                    CodeEmployee = empleados[0].Code
+
                                 };
                                 db.Add(auxManager);
                                 db.SaveChanges();

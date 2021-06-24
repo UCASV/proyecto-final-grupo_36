@@ -93,7 +93,7 @@ FOREIGN KEY (secondaryeffect_code) REFERENCES secondary_effect (code);
 ALTER TABLE citizenxsickness 
 ADD CONSTRAINT FK_citizenxsickeness_dui
 FOREIGN KEY (citizen_dui) REFERENCES citizen (dui);
-ALTER TABLE citizenxsecondary_effect 
+ALTER TABLE citizenxsickness
 ADD CONSTRAINT FK_citizenxsickeness_code
 FOREIGN KEY (sickness_code) REFERENCES sickness (code);
 

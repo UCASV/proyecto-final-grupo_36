@@ -1,11 +1,10 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using SALUDGODSV.Models;
 
 #nullable disable
 
-namespace SALUDGODSV.Context
+namespace SALUDGODSV
 {
     public partial class covidcontext : DbContext
     {
