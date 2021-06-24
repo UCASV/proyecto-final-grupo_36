@@ -2,7 +2,7 @@ CREATE DATABASE SystemCOVID_19DB;
 USE systemcovid_19db;
 
 CREATE TABLE CITIZEN(
-	DUI INT PRIMARY KEY NOT NULL auto_increment,
+	DUI INT PRIMARY KEY NOT NULL,
     name varchar(40) NOT NULL,
     mail varchar(25) NOT NULL,
     city varchar(25) NOT NULL,
@@ -40,8 +40,7 @@ CREATE TABLE cabin(
     phone int NOT NULL,
     caretaker varchar(35) NOT NULL,
     city varchar(25) NOT NULL,
-    departament char(15) NOT NULL,
-    employee_code int NOT NULL
+    departament char(15) NOT NULL
 );
 CREATE TABLE employee(
 	code int PRIMARY KEY NOT NULL auto_increment,
@@ -49,22 +48,23 @@ CREATE TABLE employee(
     city varchar(25) NOT NULL,
     departament char(15) NOT NULL,
     occupation varchar(30) NOT NULL,
-	code_appointment int NOT NULL,
-	code_accesslog int NOT NULL
+    manager_code int NOT NULL,
+    code_security_question int NOT NULL
 );
 
 CREATE TABLE manager(
 	code int PRIMARY KEY NOT NULL auto_increment,
     user varchar(30) NOT NULL,
     password varchar(40) NOT NULL,
-    code_employee int NOT NULL,
-    code_cabin int NOT NULL
+    code_cabin int NOT NULL,
+    code_security_question int NOT NULL
 );
 
 CREATE TABLE access_log(
 	code int PRIMARY KEY NOT NULL auto_increment,
     date date NOT NULL,
-    hour time NOT NULL
+    hour time NOT NULL,
+    employee_code int NOT NULL
 );
 
 CREATE TABLE appointment(
@@ -74,7 +74,8 @@ CREATE TABLE appointment(
     street varchar(30) NOT NULL,
     city varchar(25) NOT NULL,
     departament char(15) NOT NULL,
-    dose char(10) NOT NULL
+    dose char(10) NOT NULL,
+    employee_code int NOT NULL
 );
 
 CREATE TABLE security_question(
@@ -92,7 +93,7 @@ FOREIGN KEY (secondaryeffect_code) REFERENCES secondary_effect (code);
 ALTER TABLE citizenxsickness 
 ADD CONSTRAINT FK_citizenxsickeness_dui
 FOREIGN KEY (citizen_dui) REFERENCES citizen (dui);
-ALTER TABLE citizenxsickness 
+ALTER TABLE citizenxsecondary_effect 
 ADD CONSTRAINT FK_citizenxsickeness_code
 FOREIGN KEY (sickness_code) REFERENCES sickness (code);
 
@@ -103,20 +104,25 @@ ALTER TABLE citizen
 ADD CONSTRAINT FK_citizen_appointment
 FOREIGN KEY (Appointment_id) REFERENCES appointment (code);
 
-
 ALTER TABLE manager
 ADD CONSTRAINT FK_manager_cabin
 FOREIGN KEY (code_cabin) REFERENCES cabin (code);
-ALTER TABLE manager
-ADD CONSTRAINT FK_manager_employee
-FOREIGN KEY (code_employee) REFERENCES employee (code);
 
 ALTER TABLE employee
-ADD CONSTRAINT FK_employee_appointment
-FOREIGN KEY (code_appointment) REFERENCES appointment (code);
+ADD CONSTRAINT FK_employee_manager
+FOREIGN KEY (manager_code) REFERENCES manager (code);
 ALTER TABLE employee
-ADD CONSTRAINT FK_employee_accesslog
-FOREIGN KEY (code_accesslog) REFERENCES access_log (code);
+ADD CONSTRAINT FK_employee_securityquestion
+FOREIGN KEY (code_security_question) REFERENCES security_question(code);
+
+ALTER TABLE access_log
+ADD CONSTRAINT FK_accesslog_employee
+FOREIGN KEY (employee_code) REFERENCES employee(code);
+
+ALTER TABLE appointment
+ADD CONSTRAINT FK_appointment_employee
+FOREIGN KEY (employee_code) REFERENCES employee(code);
+
 
 ALTER TABLE cabin
 	ADD COLUMN mail VARCHAR(75) NOT NULL AFTER caretaker,
@@ -131,11 +137,7 @@ ALTER TABLE gob_institution
     
 ALTER TABLE employee
 	MODIFY mail varchar(75) NOT NULL,
-    MODIFY occupation varchar(75) NOT NULL,
-    ADD COLUMN code_security_question INT NOT NULL,
-    ADD CONSTRAINT FK_employee_securityquestion
-    FOREIGN KEY (code_security_question) REFERENCES security_question(code),
-    ADD COLUMN security_answer VARCHAR(90) NOT NULL;
+    MODIFY occupation varchar(75) NOT NULL;
 
 ALTER TABLE manager
 	MODIFY user varchar(75) NOT NULL,
