@@ -34,4 +34,36 @@ VALUES ("Periodistas");
 INSERT INTO gob_institution(institution)
 VALUES ("Cruz roja");
 
+INSERT INTO secondary_effect(secondary_effect)
+VALUES ("Dolor de cabeza");
+INSERT INTO secondary_effect(secondary_effect)
+VALUES ("Diarrea");
+INSERT INTO secondary_effect(secondary_effect)
+VALUES ("Dolor");
+INSERT INTO secondary_effect(secondary_effect)
+VALUES ("Temperatura");
+INSERT INTO secondary_effect(secondary_effect)
+VALUES ("Nausas");
+INSERT INTO secondary_effect(secondary_effect)
+VALUES ("Rash localizados");
+INSERT INTO secondary_effect(secondary_effect)
+VALUES ("Malestar General");
 
+INSERT INTO sickness(sickness)
+VALUES ("Enfermedades cardiovasculares");
+INSERT INTO sickness(sickness)
+VALUES ("Diabetes");
+INSERT INTO sickness(sickness)
+VALUES ("Obesidad grado III");
+INSERT INTO sickness(sickness)
+VALUES ("Sindrome de Down");
+INSERT INTO sickness(sickness)
+VALUES ("Insuficiencia renal");
+INSERT INTO sickness(sickness)
+VALUES ("Esclerosis multiple");
+INSERT INTO sickness(sickness)
+VALUES ("Neoplasia maligna");
+INSERT INTO sickness(sickness)
+VALUES ("Esquizofrenia");
+INSERT INTO sickness(sickness)
+VALUES ("Transplante");

@@ -16,7 +16,6 @@ namespace SALUDGODSV.Models
         public string User { get; set; }
         public string Password { get; set; }
         public int CodeCabin { get; set; }
-        public int CodeSecurityQuestion { get; set; }
 
         public virtual Cabin CodeCabinNavigation { get; set; }
         public virtual ICollection<Employee> Employees { get; set; }

@@ -56,8 +56,7 @@ CREATE TABLE manager(
 	code int PRIMARY KEY NOT NULL auto_increment,
     user varchar(30) NOT NULL,
     password varchar(40) NOT NULL,
-    code_cabin int NOT NULL,
-    code_security_question int NOT NULL
+    code_cabin int NOT NULL
 );
 
 CREATE TABLE access_log(

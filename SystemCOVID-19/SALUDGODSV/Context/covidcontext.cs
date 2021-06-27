@@ -334,8 +334,6 @@ namespace SALUDGODSV.Context
 
                 entity.Property(e => e.CodeCabin).HasColumnName("code_cabin");
 
-                entity.Property(e => e.CodeSecurityQuestion).HasColumnName("code_security_question");
-
                 entity.Property(e => e.Password)
                     .IsRequired()
                     .HasMaxLength(75)
