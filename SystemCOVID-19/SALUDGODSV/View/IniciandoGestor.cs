@@ -45,12 +45,26 @@ namespace SALUDGODSV.View
                         {
                             MessageBox.Show($"Sus credenciales han sido confirmadas {txtUsuarioG}, bienvenido", "Ministerio De Salud",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            using (var newAppointmentSystem = new AppointmentSystem())
+                            var checkEmployeesList = db.Employees.ToList().Count > 0;
+                            switch(checkEmployeesList)
                             {
-                                Hide();
-                                newAppointmentSystem.ShowDialog();
-                                newAppointmentSystem.Close();
-                                Close();
+                                case true:
+                                    using(var auxLogin = new IngresarEmpleado())
+                                    {
+                                        Hide();
+                                        auxLogin.ShowDialog();
+                                        Show();
+                                    }
+                                    break;
+
+                                case false:
+                                    using (var auxRegister = new RegistrarEmpleado())
+                                    {
+                                        Hide();
+                                        auxRegister.ShowDialog();
+                                        Show();
+                                    }
+                                    break;
                             }
                         }
                         else

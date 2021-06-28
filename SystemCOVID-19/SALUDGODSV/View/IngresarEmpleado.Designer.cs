@@ -39,9 +39,10 @@ namespace SALUDGODSV.View
             this.lblShowSecurityQuestion = new System.Windows.Forms.Label();
             this.lblShowAnswer = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
-            this.txtInsertID = new System.Windows.Forms.TextBox();
             this.lblShowQuestion = new System.Windows.Forms.Label();
+            this.txtInsertID = new System.Windows.Forms.TextBox();
             this.txtInsertAnswer = new System.Windows.Forms.TextBox();
+            this.btnRegister = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -101,6 +102,7 @@ namespace SALUDGODSV.View
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.51497F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.48503F));
+            this.tableLayoutPanel2.Controls.Add(this.btnRegister, 1, 3);
             this.tableLayoutPanel2.Controls.Add(this.lblShowID, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.lblShowSecurityQuestion, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.lblShowAnswer, 0, 2);
@@ -176,14 +178,7 @@ namespace SALUDGODSV.View
             this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Ingresar";
             this.btnLogin.UseVisualStyleBackColor = false;
-            // 
-            // txtInsertID
-            // 
-            this.txtInsertID.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtInsertID.Location = new System.Drawing.Point(145, 14);
-            this.txtInsertID.Name = "txtInsertID";
-            this.txtInsertID.Size = new System.Drawing.Size(157, 23);
-            this.txtInsertID.TabIndex = 4;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // lblShowQuestion
             // 
@@ -195,6 +190,15 @@ namespace SALUDGODSV.View
             this.lblShowQuestion.TabIndex = 5;
             this.lblShowQuestion.Text = "N/A";
             // 
+            // txtInsertID
+            // 
+            this.txtInsertID.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtInsertID.Location = new System.Drawing.Point(145, 14);
+            this.txtInsertID.Name = "txtInsertID";
+            this.txtInsertID.Size = new System.Drawing.Size(157, 23);
+            this.txtInsertID.TabIndex = 4;
+            this.txtInsertID.TextChanged += new System.EventHandler(this.txtInsertID_TextChanged);
+            // 
             // txtInsertAnswer
             // 
             this.txtInsertAnswer.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -202,6 +206,21 @@ namespace SALUDGODSV.View
             this.txtInsertAnswer.Name = "txtInsertAnswer";
             this.txtInsertAnswer.Size = new System.Drawing.Size(157, 23);
             this.txtInsertAnswer.TabIndex = 6;
+            // 
+            // btnRegister
+            // 
+            this.btnRegister.AutoSize = true;
+            this.btnRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(77)))), ((int)(((byte)(188)))));
+            this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegister.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnRegister.ForeColor = System.Drawing.Color.White;
+            this.btnRegister.Location = new System.Drawing.Point(145, 156);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(166, 25);
+            this.btnRegister.TabIndex = 7;
+            this.btnRegister.Text = "Registrar nuevos empleados";
+            this.btnRegister.UseVisualStyleBackColor = false;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // IngresarEmpleado
             // 
@@ -238,5 +257,6 @@ namespace SALUDGODSV.View
         private System.Windows.Forms.TextBox txtInsertID;
         private System.Windows.Forms.Label lblShowQuestion;
         private System.Windows.Forms.TextBox txtInsertAnswer;
+        private System.Windows.Forms.Button btnRegister;
     }
 }

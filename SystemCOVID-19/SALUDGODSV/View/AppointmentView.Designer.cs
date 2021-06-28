@@ -161,6 +161,7 @@ namespace SALUDGODSV.View
             this.btnShowInformation.TabIndex = 3;
             this.btnShowInformation.Text = "Imprimir datos";
             this.btnShowInformation.UseVisualStyleBackColor = true;
+            this.btnShowInformation.Click += new System.EventHandler(this.btnShowInformation_Click);
             // 
             // AppointmentView
             // 

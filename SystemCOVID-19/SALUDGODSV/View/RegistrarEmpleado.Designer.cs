@@ -32,7 +32,6 @@ namespace SALUDGODSV.View
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrarEmpleado));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tlpInsertEmployee = new System.Windows.Forms.TableLayoutPanel();
-            this.txtInsertAge = new System.Windows.Forms.TextBox();
             this.txtInsertEmployee = new System.Windows.Forms.TextBox();
             this.txtInsertDirection = new System.Windows.Forms.TextBox();
             this.txtInsertEmail = new System.Windows.Forms.TextBox();
@@ -40,7 +39,6 @@ namespace SALUDGODSV.View
             this.lblTextEmail = new System.Windows.Forms.Label();
             this.lblTextDirection = new System.Windows.Forms.Label();
             this.lblTextEmployee = new System.Windows.Forms.Label();
-            this.lblTextAge = new System.Windows.Forms.Label();
             this.lblTextQuestion = new System.Windows.Forms.Label();
             this.lblTextAnswer = new System.Windows.Forms.Label();
             this.btnAccept = new System.Windows.Forms.Button();
@@ -75,7 +73,6 @@ namespace SALUDGODSV.View
             this.tlpInsertEmployee.ColumnCount = 2;
             this.tlpInsertEmployee.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tlpInsertEmployee.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tlpInsertEmployee.Controls.Add(this.txtInsertAge, 1, 4);
             this.tlpInsertEmployee.Controls.Add(this.txtInsertEmployee, 1, 3);
             this.tlpInsertEmployee.Controls.Add(this.txtInsertDirection, 1, 2);
             this.tlpInsertEmployee.Controls.Add(this.txtInsertEmail, 1, 1);
@@ -83,7 +80,6 @@ namespace SALUDGODSV.View
             this.tlpInsertEmployee.Controls.Add(this.lblTextEmail, 0, 1);
             this.tlpInsertEmployee.Controls.Add(this.lblTextDirection, 0, 2);
             this.tlpInsertEmployee.Controls.Add(this.lblTextEmployee, 0, 3);
-            this.tlpInsertEmployee.Controls.Add(this.lblTextAge, 0, 4);
             this.tlpInsertEmployee.Controls.Add(this.lblTextQuestion, 0, 5);
             this.tlpInsertEmployee.Controls.Add(this.lblTextAnswer, 0, 6);
             this.tlpInsertEmployee.Controls.Add(this.btnAccept, 0, 7);
@@ -103,16 +99,6 @@ namespace SALUDGODSV.View
             this.tlpInsertEmployee.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tlpInsertEmployee.Size = new System.Drawing.Size(408, 267);
             this.tlpInsertEmployee.TabIndex = 0;
-            // 
-            // txtInsertAge
-            // 
-            this.txtInsertAge.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtInsertAge.Location = new System.Drawing.Point(166, 135);
-            this.txtInsertAge.Name = "txtInsertAge";
-            this.txtInsertAge.Size = new System.Drawing.Size(239, 23);
-            this.txtInsertAge.TabIndex = 12;
             // 
             // txtInsertEmployee
             // 
@@ -199,20 +185,6 @@ namespace SALUDGODSV.View
             this.lblTextEmployee.TabIndex = 3;
             this.lblTextEmployee.Text = "Tipo de empleado:";
             this.lblTextEmployee.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblTextAge
-            // 
-            this.lblTextAge.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTextAge.AutoSize = true;
-            this.lblTextAge.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTextAge.Location = new System.Drawing.Point(3, 132);
-            this.lblTextAge.Name = "lblTextAge";
-            this.lblTextAge.Size = new System.Drawing.Size(157, 33);
-            this.lblTextAge.TabIndex = 4;
-            this.lblTextAge.Text = "Edad:";
-            this.lblTextAge.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblTextQuestion
             // 
@@ -364,7 +336,6 @@ namespace SALUDGODSV.View
         private System.Windows.Forms.Label lblTextEmail;
         private System.Windows.Forms.Label lblTextDirection;
         private System.Windows.Forms.Label lblTextEmployee;
-        private System.Windows.Forms.Label lblTextAge;
         private System.Windows.Forms.Label lblTextQuestion;
         private System.Windows.Forms.Label lblTextAnswer;
         private System.Windows.Forms.Button btnAccept;
@@ -372,7 +343,6 @@ namespace SALUDGODSV.View
         private System.Windows.Forms.TextBox txtInsertEmail;
         private System.Windows.Forms.TextBox txtInsertDirection;
         private System.Windows.Forms.TextBox txtInsertEmployee;
-        private System.Windows.Forms.TextBox txtInsertAge;
         private System.Windows.Forms.TextBox txtInsertAnswer;
         private System.Windows.Forms.ComboBox cmbInsertQuestion;
     }

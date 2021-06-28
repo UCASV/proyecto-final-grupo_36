@@ -26,30 +26,42 @@ namespace SALUDGODSV.View
                 var auxName = txtInsertName.Text;
                 StringVerifications.VerifyString(auxName);
                 var auxEmail = txtInsertEmail.Text;
-                StringVerifications.VerifyString(auxEmail);
                 var auxDirection = txtInsertDirection.Text;
                 StringVerifications.VerifyString(auxDirection);
                 var auxEmployee = txtInsertEmployee.Text;
                 StringVerifications.VerifyString(auxEmployee);
                 var auxAnswer = txtInsertAnswer.Text;
                 StringVerifications.VerifyString(auxAnswer);
-                int auxAge = 0;
+                
                 try
                 {
-                    auxAge = Convert.ToInt32(txtInsertAge.Text);
+                    var db = new covidcontext();
+                    var managerList = db.Managers.ToList();
+                    var auxEmployeeVar = new Employee()
+                    {
+                        Mail = auxEmail,
+                        City = auxDirection,
+                        Departament = "",
+                        Occupation = auxEmployee,
+                        ManagerCode = managerList[0].Code,
+                        SecurityAnswer = auxAnswer,
+                        CodeSecurityQuestion = Convert.ToInt32(cmbInsertQuestion.SelectedIndex.ToString())+1
+                    };
+                    db.Add(auxEmployeeVar);
+                    db.SaveChanges();
+                    var auxEmployees = db.Employees.ToList();
+                    var lastEmployee = auxEmployees.Last();
+                    MessageBox.Show($"Felicidades, su empleado a ha sido registrado, su ID es : {lastEmployee.Code}", "Ministerio de salud", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    using(var auxLogin = new IngresarEmpleado())
+                    {
+                        Hide();
+                        auxLogin.ShowDialog();
+                        Show();
+                    }
                 }
-                catch
+                catch ( Exception asd)
                 {
-                    MessageBox.Show("Ha introducido una edad incorrecta", "Ministerio de Salud", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-                try
-                {
-
-                }
-                catch
-                {
-
+                    MessageBox.Show(asd.ToString(), "Ministerio de salud", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch

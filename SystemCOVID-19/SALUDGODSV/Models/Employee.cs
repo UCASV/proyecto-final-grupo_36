@@ -19,6 +19,7 @@ namespace SALUDGODSV.Models
         public string Departament { get; set; }
         public string Occupation { get; set; }
         public int ManagerCode { get; set; }
+        public string SecurityAnswer { get; set; }
         public int CodeSecurityQuestion { get; set; }
 
         public virtual SecurityQuestion CodeSecurityQuestionNavigation { get; set; }

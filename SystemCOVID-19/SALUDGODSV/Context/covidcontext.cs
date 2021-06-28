@@ -293,6 +293,11 @@ namespace SALUDGODSV.Context
                     .HasMaxLength(75)
                     .HasColumnName("occupation");
 
+                entity.Property(e => e.SecurityAnswer)
+                    .IsRequired()
+                    .HasMaxLength(75)
+                    .HasColumnName("security_answer");
+
                 entity.HasOne(d => d.CodeSecurityQuestionNavigation)
                     .WithMany(p => p.Employees)
                     .HasForeignKey(d => d.CodeSecurityQuestion)

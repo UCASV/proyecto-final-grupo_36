@@ -28,7 +28,7 @@ namespace SALUDGODSV.View
             public string appointmentDgvDose { get; set; }
         };
 
-
+        public int globalEmployeeSystem { get; set; }
 
         //Para acceder a parametros internos del pc mediante user32.dll (No usar si no se explica un ejemplo)
 
@@ -141,7 +141,8 @@ namespace SALUDGODSV.View
                                 Hour = appointmentHour,
                                 Dose = "1",
                                 City = cmbCity.SelectedItem.ToString(),
-                                Departament = cmbDepartaments.SelectedItem.ToString()
+                                Departament = cmbDepartaments.SelectedItem.ToString(),
+                                EmployeeCode = globalEmployeeSystem
                             };
 
                             db.Add(auxiliarAppointment);
@@ -159,9 +160,9 @@ namespace SALUDGODSV.View
                                 Departament = cmbDepartaments.SelectedItem.ToString(),
                                 Phone = auxiliarPhoneNumber,
                                 Age = auxiliarAge,
-                                //AssociateNumber = int.Parse(txtInsertGobNumber.Text),
+                                AssociateNumber = int.Parse(txtInsertGobNumber.Text),
                                 AppointmentId = auxiliarID[0].Code,
-                                //GobInstitutionId = int.Parse(cmbGobInstitution.SelectedIndex.ToString())                           
+                                GobInstitutionId = 1 + int.Parse(cmbGobInstitution.SelectedIndex.ToString())                               
                             };
 
                             List<Citizen> verifyCitizen = db.Citizens.ToList();//Creamos una list acon los ciudadanos actuales en el programa
@@ -194,7 +195,7 @@ namespace SALUDGODSV.View
                         }
                         catch (Exception f) 
                         {
-                            MessageBox.Show(f.Message);//Si se da un error (Para testeo)
+                            MessageBox.Show(f.ToString());//Si se da un error (Para testeo)
                             //MessageBox.Show("Ocurrio un error al usar la base de datos", "Minsterio de Salud de El Salvador", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
@@ -236,6 +237,11 @@ namespace SALUDGODSV.View
                 dgvToShowAppointments.Columns[4].HeaderText = "FECHA";
                 dgvToShowAppointments.Columns[5].HeaderText = "HORA";
                 dgvToShowAppointments.Columns[6].HeaderText = "DOSIS";
+                cmbSIckness.DataSource = null;
+                cmbSIckness.DisplayMember = "Sickness1";
+                cmbSIckness.ValueMember = "Code";
+                var sicknessList = db.Sicknesses.ToList();
+                cmbSIckness.DataSource = sicknessList;
             }
 
             private void cmbDepartaments_SelectedIndexChanged(object sender, EventArgs e)
@@ -595,7 +601,7 @@ namespace SALUDGODSV.View
             }
 
             public List<toDataGridView> PopulateDataGridView()
-            {
+            {//Crea una lista con todos los ciudadanos registrados
                 List<toDataGridView> toPopulate = new List<toDataGridView>();
                 var db = new covidcontext();
                 List<Citizen> toListCitizen = db.Citizens.ToList();

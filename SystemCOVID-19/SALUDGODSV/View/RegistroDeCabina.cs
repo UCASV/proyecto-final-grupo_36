@@ -62,29 +62,40 @@ namespace SALUDGODSV.View
                             try 
                             {
                                 List<Cabin> cabinas = db.Cabins.ToList();
-                                List<Employee> empleados = db.Employees.ToList();
+                                var verifyEmployees = db.Employees.ToList().Count > 0;
                                 var auxManager = new Manager()
                                 {
                                     User = Username,
                                     Password = Password,
-                                    CodeCabin = cabinas[0].Code,
-
+                                    CodeCabin = cabinas[0].Code
                                 };
                                 db.Add(auxManager);
                                 db.SaveChanges();
+                                MessageBox.Show("¡Su usuario ha sido registrado con exito!", "Ministerio de salud", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                switch(verifyEmployees)
+                                {
+                                    case true:
+                                        using(var auxLoginEmployees = new IngresarEmpleado())
+                                        {
+                                            Hide();
+                                            auxLoginEmployees.ShowDialog();
+                                            Show();
+                                        }
+                                        break;
+                                    case false:
+                                        MessageBox.Show("No se ha detectado ningun empleado registrado en su base de datos, pasaremos a registrar uno", "Ministerio de salud", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        using(var auxRegisterEmployee = new RegistrarEmpleado())
+                                        {
+                                            Hide();
+                                            auxRegisterEmployee.ShowDialog();
+                                            Show();
+                                        }
+                                        break;
+                                }
                             }
                             catch (Exception v)
                             {
-                                MessageBox.Show(v.ToString(), "Ministerio De Salud", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
-
-                            MessageBox.Show("Su usuario ha sido registrado con exito!", "Ministerio De Salud", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            using (var newAppointment = new AppointmentSystem())
-                            {
-                                Hide();
-                                newAppointment.ShowDialog();
-                                newAppointment.Close();
-                                Show();
+                                MessageBox.Show("Un error ha ocurrido", "Ministerio De Salud", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                         }
                         catch
