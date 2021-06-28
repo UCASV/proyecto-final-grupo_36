@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SALUDGODSV.Functions;
+using SALUDGODSV.Models;
+using SALUDGODSV.Context;
 
 namespace SALUDGODSV.View
 {
@@ -17,7 +19,6 @@ namespace SALUDGODSV.View
         {
             InitializeComponent();
         }
-
         private void btnAccept_Click(object sender, EventArgs e)
         {
             try
@@ -56,6 +57,16 @@ namespace SALUDGODSV.View
                 MessageBox.Show("Un error ha ocurrido, verifique haber introducido explicitamente texto en los cuadros correspondientes", "Ministerio de Salud",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }            
+        }
+
+        private void RegistrarEmpleado_Load(object sender, EventArgs e)
+        {
+            var db = new covidcontext();
+            var questionsList = db.SecurityQuestions.ToList();
+            cmbInsertQuestion.DataSource = null;
+            cmbInsertQuestion.ValueMember = "Code";
+            cmbInsertQuestion.DisplayMember = "SecurityQuestion1";
+            cmbInsertQuestion.DataSource = questionsList;
         }
     }
 }

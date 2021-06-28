@@ -19,7 +19,7 @@ namespace SALUDGODSV
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new IngresarEmpleado());
+            Application.Run(new RegistrarEmpleado());
 
             //Abrir un form dependiendo a si existen usuarios o no.
            /*var db = new covidcontext();

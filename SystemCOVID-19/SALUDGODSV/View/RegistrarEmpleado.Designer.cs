@@ -342,6 +342,7 @@ namespace SALUDGODSV.View
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RegistrarEmpleado";
             this.Text = "Registrar empleado";
+            this.Load += new System.EventHandler(this.RegistrarEmpleado_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tlpInsertEmployee.ResumeLayout(false);
             this.tlpInsertEmployee.PerformLayout();

@@ -29,20 +29,15 @@ namespace SALUDGODSV.View
         };
 
 
-        private const int CB_SETCUEBANNER = 0x1703;
 
         //Para acceder a parametros internos del pc mediante user32.dll (No usar si no se explica un ejemplo)
-        [System.Runtime.InteropServices.DllImport("user32.dll", CharSet = System.Runtime.InteropServices.CharSet.Auto)]
-
-        //Funcion para realizar un cambio en el mensaje default de un comboboc
-        private static extern int SendMessage(IntPtr hWnd, int msg, int wParam, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPWStr)] string lParam);
 
         private void AppointmentSystem_Load(object sender, EventArgs e)
         {
             //Editando el texto de combobox departamentos
-            SendMessage(cmbDepartaments.Handle, CB_SETCUEBANNER, 0, "Departamento");
+            ChangeComboBoxText.SendMessage(cmbDepartaments.Handle, 0x1703, 0, "Departamento");
             //Editando el texto de combobox municipios
-            SendMessage(cmbCity.Handle, CB_SETCUEBANNER, 0, "Municipio");
+            ChangeComboBoxText.SendMessage(cmbCity.Handle, 0x1703, 0, "Municipio");
             //Definiendo colores para convertilos en html y cambiar fondo de formulario
             string toBackColor = "#1b1f7a", toBackColor2 = "#4b4dbc";
             Color myColor = ColorTranslator.FromHtml(toBackColor);
