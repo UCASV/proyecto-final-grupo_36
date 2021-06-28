@@ -49,6 +49,7 @@ CREATE TABLE employee(
     departament char(15) NOT NULL,
     occupation varchar(30) NOT NULL,
     manager_code int NOT NULL,
+    security_answer varchar(75) NOT NULL,
     code_security_question int NOT NULL
 );
 
