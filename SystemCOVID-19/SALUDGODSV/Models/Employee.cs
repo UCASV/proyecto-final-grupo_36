@@ -14,6 +14,7 @@ namespace SALUDGODSV.Models
         }
 
         public int Code { get; set; }
+        public string Name { get; set; }
         public string Mail { get; set; }
         public string City { get; set; }
         public string Departament { get; set; }

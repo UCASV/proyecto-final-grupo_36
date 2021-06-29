@@ -1,5 +1,11 @@
 USE systemcovid_19db;
 
+INSERT INTO cabin (phone, caretaker, mail, city, departament)
+VALUES (63102398, "Henry","VacunasES@MDS.gob.sv", "San Salvador", "El Salvador");
+
+INSERT INTO manager (user, password, code_cabin)
+VALUES ("HenryChikito", "12345", 1);
+
 INSERT INTO security_question(security_question)
 VALUES ("¿Cual es el nombre de su primera mascota?");
 INSERT INTO security_question(security_question)

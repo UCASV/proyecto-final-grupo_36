@@ -39,6 +39,7 @@ namespace SALUDGODSV.View
                     var managerList = db.Managers.ToList();
                     var auxEmployeeVar = new Employee()
                     {
+                        Name = auxName,
                         Mail = auxEmail,
                         City = auxDirection,
                         Departament = "",

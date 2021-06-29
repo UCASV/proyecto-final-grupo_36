@@ -43,7 +43,7 @@ namespace SALUDGODSV.View
 
                         if (check)
                         {
-                            MessageBox.Show($"Sus credenciales han sido confirmadas {txtUsuarioG}, bienvenido", "Ministerio De Salud",
+                            MessageBox.Show($"Sus credenciales han sido confirmadas {txtUsuarioG.Text}, bienvenido", "Ministerio De Salud",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
                             var checkEmployeesList = db.Employees.ToList().Count > 0;
                             switch(checkEmployeesList)

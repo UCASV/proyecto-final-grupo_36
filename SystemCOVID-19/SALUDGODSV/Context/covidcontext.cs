@@ -283,14 +283,19 @@ namespace SALUDGODSV.Context
 
                 entity.Property(e => e.Mail)
                     .IsRequired()
-                    .HasMaxLength(75)
+                    .HasMaxLength(25)
                     .HasColumnName("mail");
 
                 entity.Property(e => e.ManagerCode).HasColumnName("manager_code");
 
-                entity.Property(e => e.Occupation)
+                entity.Property(e => e.Name)
                     .IsRequired()
                     .HasMaxLength(75)
+                    .HasColumnName("name");
+
+                entity.Property(e => e.Occupation)
+                    .IsRequired()
+                    .HasMaxLength(30)
                     .HasColumnName("occupation");
 
                 entity.Property(e => e.SecurityAnswer)

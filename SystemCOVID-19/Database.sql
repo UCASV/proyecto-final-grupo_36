@@ -137,7 +137,8 @@ ALTER TABLE gob_institution
     
 ALTER TABLE employee
 	MODIFY mail varchar(75) NOT NULL,
-    MODIFY occupation varchar(75) NOT NULL;
+    MODIFY occupation varchar(75) NOT NULL,
+    ADD COLUMN name varchar(75) NOT NULL AFTER code;
 
 ALTER TABLE manager
 	MODIFY user varchar(75) NOT NULL,
