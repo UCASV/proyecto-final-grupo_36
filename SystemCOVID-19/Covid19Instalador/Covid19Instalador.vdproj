@@ -21,7 +21,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_95E446DE3A85419FADC1845EECC61747"
+        "MsmKey" = "8:_CCFC9EF3BEA84D71B791F24CC381BB08"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -43,6 +43,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -59,6 +67,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -90,9 +106,9 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_95E446DE3A85419FADC1845EECC61747"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CCFC9EF3BEA84D71B791F24CC381BB08"
             {
-            "SourcePath" = "8:..\\..\\..\\..\\..\\Downloads\\gobiernoDelSalvador.ico"
+            "SourcePath" = "8:..\\SALUDGODSV\\Resources\\gobiernoDelSalvador.ico"
             "TargetName" = "8:gobiernoDelSalvador.ico"
             "Tag" = "8:"
             "Folder" = "8:_A5AD88412387486A9CADEE8710D10C8F"
@@ -309,7 +325,7 @@
             "Target" = "8:_6A768FB1654F441FB02509DE78C2239B"
             "Folder" = "8:_836BB5A4DF2345B5A49A047965EB9CA4"
             "WorkingFolder" = "8:_A5AD88412387486A9CADEE8710D10C8F"
-            "Icon" = "8:_95E446DE3A85419FADC1845EECC61747"
+            "Icon" = "8:_CCFC9EF3BEA84D71B791F24CC381BB08"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_B35111D40B5B45428C10FF0BC372F7E5"
@@ -323,7 +339,7 @@
             "Target" = "8:_6A768FB1654F441FB02509DE78C2239B"
             "Folder" = "8:_6A78EE3667474F2FACF97976929CEEE1"
             "WorkingFolder" = "8:_A5AD88412387486A9CADEE8710D10C8F"
-            "Icon" = "8:_95E446DE3A85419FADC1845EECC61747"
+            "Icon" = "8:_CCFC9EF3BEA84D71B791F24CC381BB08"
             "Feature" = "8:"
             }
         }
