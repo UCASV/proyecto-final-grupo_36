@@ -42,7 +42,6 @@ namespace SALUDGODSV.View
 
         private void btnVacunar_Click(object sender, EventArgs e)
         {
-
             if(GlobalStruct.appointmentDgvDose.CompareTo("2") == 0)
             {
                 MessageBox.Show("Usted ya ha sido registrado con anterioridad para su segunda dosis", "Ministerio de salud", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
