@@ -213,6 +213,7 @@ namespace SALUDGODSV.View
             this.txtContraCabina.Location = new System.Drawing.Point(492, 286);
             this.txtContraCabina.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtContraCabina.Name = "txtContraCabina";
+            this.txtContraCabina.PasswordChar = '*';
             this.txtContraCabina.Size = new System.Drawing.Size(164, 23);
             this.txtContraCabina.TabIndex = 15;
             // 
@@ -314,6 +315,7 @@ namespace SALUDGODSV.View
             // cmbCiudad
             // 
             this.cmbCiudad.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.cmbCiudad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCiudad.FormattingEnabled = true;
             this.cmbCiudad.Location = new System.Drawing.Point(492, 85);
             this.cmbCiudad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -325,6 +327,7 @@ namespace SALUDGODSV.View
             // cmbDepartamento
             // 
             this.cmbDepartamento.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.cmbDepartamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDepartamento.FormattingEnabled = true;
             this.cmbDepartamento.Items.AddRange(new object[] {
             "Ahuachapán",

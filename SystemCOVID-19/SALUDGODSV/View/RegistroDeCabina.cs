@@ -95,7 +95,7 @@ namespace SALUDGODSV.View
                             }
                             catch (Exception v)
                             {
-                                MessageBox.Show("Un error ha ocurrido", "Ministerio De Salud", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show(v.ToString());
                             }
                         }
                         catch
